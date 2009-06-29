@@ -1395,11 +1395,11 @@ namespace eLePhant.Client
 				int itemNumber=contextMenuAbout.MenuItems.IndexOf((MenuItem)sender);
 				switch(itemNumber)
 				{
-					case 0:System.Diagnostics.Process.Start("http://www.lphant.com");
+					case 0:System.Diagnostics.Process.Start("http://not.website.yet");
 						break;
-					case 1:System.Diagnostics.Process.Start("http://www.lphant.com/forum");
+					case 1:System.Diagnostics.Process.Start("http://not.website.yet/forum");
 						break;
-					case 2:System.Diagnostics.Process.Start("http://www.lphant.com/skins");
+					case 2:System.Diagnostics.Process.Start("http://not.website.yet/skins");
 						break;
 					default:
 						if (itemNumber==this.contextMenuAbout.MenuItems.Count-1)

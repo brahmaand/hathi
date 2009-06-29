@@ -135,12 +135,12 @@ namespace eLePhant.eDonkey
 				CKernel.ServersList.Load("",true);
 
 			//currently for fun only, should be removed
-			//httpDownload.GetInfo(@"http://www.lphant.com/Messages/TestVersions-pre5-test2.txt");
+			//httpDownload.GetInfo(@"http://not.website.yet/Messages/TestVersions-pre5-test2.txt");
 
 			// TODO: Version
 			//Xml example :
 			string[] myLog=new string[] {"version","log"};
-			httpDownload.GetInfoXML(@"http://www.lphant.com/Messages/v1.00.xml?lang="+Globalization.Language,myLog,true);
+			httpDownload.GetInfoXML(@"http://not.website.yet/Messages/v1.00.xml?lang="+Globalization.Language,myLog,true);
 
 			//if threaded = true, it returns "", else can be used later to get
 			//CLog.Log(Constants.Log.Info,httpDownload.getReadInfoFromXML("log"));
@@ -168,7 +168,7 @@ namespace eLePhant.eDonkey
 		{
 			try
 			{
-				string uriString = "http://www.lphant.com/report/bugs.php";
+				string uriString = "http://not.website.yet/report/bugs.php";
 
 				// Create a new WebClient instance.
 				WebClient webClient = new WebClient();
@@ -257,7 +257,7 @@ namespace eLePhant.eDonkey
 					e.Value=(short)2;
 					break;
 				case "UserName":
-					e.Value="http://www.lphant.com";
+					e.Value="http://not.website.yet";
 					break;
 				case "AutoReconnect":
 					e.Value=true;

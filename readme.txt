@@ -21,11 +21,11 @@ Welcome to lphant, a filesharing client based on the eDonkey2000(C) network.
 
 
 Visit us at
- http://www.lphant.com
+ http://not.website.yet
 and
  http://sourceforge.net/projects/lphant
 
-The official Forum is also at http://www.lphant.com
+The official Forum is also at http://not.website.yet
 
 Please remember that this is an early version, not all features are implemented yet,
 and not everything might work as expected.

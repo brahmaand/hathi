@@ -26,10 +26,10 @@ VersionInfoVersion=0.1.0.0
 ;--------------------------------------------------------------------
 
 AppPublisher=Juanjo
-AppPublisherURL=http://www.lphant.com
-AppSupportURL=http://www.lphant.com
-AppUpdatesURL=http://www.lphant.com
-AppMutex={lphant-DD14EC11-CB90-4956-B8F4-F5D6D708DC33}
+AppPublisherURL=http://not.website.yet
+AppSupportURL=http://not.website.yet
+AppUpdatesURL=http://not.website.yet
+;AppMutex={lphant-DD14EC11-CB90-4956-B8F4-F5D6D708DC33}
 DefaultDirName={pf}\lphant
 DefaultGroupName=lphant
 DisableProgramGroupPage=true
@@ -65,7 +65,7 @@ Source: ..\license.txt; DestDir: {app}; Flags: ignoreversion
 Source: Language\Custom-*; DestDir: {tmp}; Flags: dontcopy
 
 [INI]
-Filename: {app}\eLePhantClient.url; Section: InternetShortcut; Key: URL; String: http://www.lphant.com
+Filename: {app}\eLePhantClient.url; Section: InternetShortcut; Key: URL; String: http://not.website.yet
 Filename: {app}\dotnet.url; Section: InternetShortcut; Key: URL; String: http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&DisplayLang=en
 
 [Icons]
@@ -145,7 +145,7 @@ procedure URLLabelOnClick(Sender: TObject);
 var
   Dummy: Integer;
 begin
-  InstShellExec('http://www.lphant.com', '', '', SW_SHOWNORMAL, Dummy);
+  InstShellExec('http://not.website.yet', '', '', SW_SHOWNORMAL, Dummy);
 end;
 
 procedure InitializeWizard();
@@ -155,7 +155,7 @@ begin
   URLLabel := TNewStaticText.Create(WizardForm);
   URLLabel.Top := 333;
   URLLabel.Left := 20;
-  URLLabel.Caption := 'www.lphant.com';
+  URLLabel.Caption := 'not.website.yet';
   URLLabel.Font.Style := URLLabel.Font.Style + [fsUnderLine];
   URLLabel.Font.Color := clBlue;
   URLLabel.Cursor := crHand;

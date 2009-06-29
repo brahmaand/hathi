@@ -1195,7 +1195,7 @@ namespace eLePhant.eDonkey
 			CKernel.Preferences.SetProperty("UDPPort", config.UDPPort);
 			CKernel.Preferences.SetProperty("TCPPort", config.TCPPort);
 			CKernel.Preferences.SetProperty("UseEmuleProtocol", config.UseeMuleProtocol);
-			CKernel.Preferences.SetProperty("UserName", (config.UserName.Length==0)?"http://www.lphant.com":config.UserName);
+			CKernel.Preferences.SetProperty("UserName", (config.UserName.Length==0)?"http://not.website.yet":config.UserName);
 			CKernel.Preferences.SetProperty("RemoteControlEnabled", config.RemoteControlEnabled);
 			CKernel.Preferences.SetProperty("DownloadServerMet", config.DownloadServerMet);
 			CKernel.Preferences.SetProperty("ServerMetUri", config.ServerMetUri);

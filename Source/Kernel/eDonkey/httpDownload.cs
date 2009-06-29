@@ -140,7 +140,7 @@ namespace eLePhant.eDonkey
 			catch{}
 			
 			HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(m_remoteUri); 
-			myHttpWebRequest.UserAgent = "www.lPhant.com";
+			myHttpWebRequest.UserAgent = "not.website.yet";
 			HttpWebResponse myHttpWebResponse = null;
 						
 			try 
@@ -239,7 +239,7 @@ namespace eLePhant.eDonkey
 		*lphant-v0.01-pre5
 		*lphant-v0.01-pre5
 		-----------
-		http://www.lphant.com
+		http://not.website.yet
 		</log>
 		<statusbar>lphant-v0.01-pre5</statusbar> 
 		<messagebox>xxx xxx xx xxxxxx</messagebox> 

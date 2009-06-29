@@ -30,7 +30,7 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyTitle("lphant")]
 [assembly: AssemblyDescription("lphant Kernel")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("www.lphant.com")]
+[assembly: AssemblyCompany("not.website.yet")]
 [assembly: AssemblyProduct("lphant")]
 [assembly: AssemblyCopyright("Copyright Juanjo 2003")]
 [assembly: AssemblyTrademark("")]

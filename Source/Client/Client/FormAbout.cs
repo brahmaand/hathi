@@ -90,7 +90,7 @@ namespace eLePhant.Client
 			this.linkLabel1.Size = new System.Drawing.Size(134, 26);
 			this.linkLabel1.TabIndex = 5;
 			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "www.lphant.com";
+			this.linkLabel1.Text = "not.website.yet";
 			this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Transparent;
 			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
 			// 
@@ -139,7 +139,7 @@ namespace eLePhant.Client
 
 		private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
-			System.Diagnostics.Process.Start("http://www.lphant.com");
+			System.Diagnostics.Process.Start("http://not.website.yet");
 		}
 
 		private void FormAbout_Load(object sender, System.EventArgs e)
