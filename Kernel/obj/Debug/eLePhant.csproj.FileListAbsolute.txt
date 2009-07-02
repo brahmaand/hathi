@@ -1,0 +1,6 @@
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\bin\Debug\eLePhant.dll
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\bin\Debug\eLePhant.pdb
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\obj\Debug\eLePhant.dll
+C:\Documents and Settings\servive\Desktop\Open Source\Hathi\Source\Kernel\obj\Debug\eLePhant.pdb
