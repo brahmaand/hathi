@@ -1211,7 +1211,7 @@ namespace eLePhant.eDonkey
 
 					//si coincide el hash con el que tenemos en HashSet
 
-					if ((hash_correct!=null) && (CKernel.SameHash(ref (byte[])hash_chunk, ref (byte[]) hash_correct)))
+					if ((hash_correct!=null) && (CKernel.SameHash(ref hash_chunk, ref hash_correct)))
 					{
 						//ICH
 						if ((m_CorruptedChunks!=null)&&(m_CorruptedChunks.Contains(num_chunk)))
@@ -1335,7 +1335,7 @@ namespace eLePhant.eDonkey
 			//unlock the file
 			m_isWritingFile	= false;
 
-			if (!(CKernel.SameHash(ref (byte[])m_Hash, ref (byte[])FileHash)))
+			if (!(CKernel.SameHash(ref m_Hash, ref FileHash)))
 			{	
 				FileStatus=Protocol.FileState.Ready;
 				if (m_MyFile.Length>0) m_CheckCompleteChunk(0,m_FileSize-1,false,m_EdonkeyHash.HashSet);

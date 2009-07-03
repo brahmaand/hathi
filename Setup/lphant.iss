@@ -54,7 +54,8 @@ Source: ..\Source\Client\bin\Release\MagicLibrary.dll; DestDir: {app}; Flags: ig
 Source: ..\Source\Client\bin\Release\ICSharpCode.SharpZipLib.dll; DestDir: {app}; Flags: ignoreversion
 Source: ..\Source\Client\bin\Release\server.met; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
 ;Source: ..\Source\Client\bin\Release\ipfilter.dat; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
-Source: ..\Source\Client\bin\Release\webSearchs.xml; DestDir: {app}; Flags: ignoreversion; Check: BackupFile({app}\webSearchs.xml)
+Source: ..\Source\Client\bin\Release\webSearchs.xml; DestDir: {app}; Flags: ignoreversion
+; Check: BackupFile({app}\webSearchs.xml)
 Source: ..\Source\Client\bin\Release\Language\*; DestDir: {app}\Language; Flags: ignoreversion recursesubdirs
 Source: ..\Source\Client\bin\Release\Skins\*; DestDir: {app}\Skins; Flags: ignoreversion recursesubdirs
 Source: ..\changelog.txt; DestDir: {app}; Flags: ignoreversion isreadme
@@ -135,7 +136,7 @@ begin
 	LanguageCode := Copy(ActiveLanguage(),0,2);
 	if not RegValueExists(HKLM,'SOFTWARE\Microsoft\.NETFramework\policy\v1.1','4322') then begin
 		MsgBox(GetValue('Messages','WarningDotNet1')+#13#13+GetValue('Messages','WarningDotNet2'), mbError, MB_OK);
-		InstShellExec('http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&DisplayLang='+LanguageCode, '', '', SW_SHOWNORMAL, Dummy);
+		ShellExec('open', 'http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&DisplayLang='+LanguageCode, '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
 		Result:=False;
 	end else
 		Result:=True;
@@ -145,7 +146,7 @@ procedure URLLabelOnClick(Sender: TObject);
 var
   Dummy: Integer;
 begin
-  InstShellExec('http://not.website.yet', '', '', SW_SHOWNORMAL, Dummy);
+  ShellExec('open', 'http://not.website.yet', '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
 end;
 
 procedure InitializeWizard();
