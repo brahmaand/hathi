@@ -1,7 +1,14 @@
-#region Copyright (c)2003 Juanjo<http://lphant.sourceforge.net >
+#region Copyright (c)2009 Hathi Project < http://hathi.sourceforge.net >
 /*
-* This file is part of eLePhant
-* Copyright (C)2003 Juanjo<j_u_a_n_j_o@users.sourceforge.net / http://lphant.sourceforge.net >
+* This file is part of Hathi Project
+* Hathi Developers Team:
+* andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
+* knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
+* 
+* Hathi is a fork of lphant version 1.0 GPL
+* lphant team
+* Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
+* andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License
