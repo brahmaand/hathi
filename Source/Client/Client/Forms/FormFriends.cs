@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,10 +34,10 @@ using System.Windows.Forms;
 using System.Text;
 using System.Text.RegularExpressions; 
 using System.Net;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormFriends.
@@ -49,7 +49,7 @@ namespace eLePhant.Client
 		private CkernelGateway krnGateway;
 		private InterfaceClient m_LastClient;
 		private Crownwood.Magic.Controls.TabControl tabMessages;
-		private eLePhantListView listViewFriends;
+		private HathiListView listViewFriends;
 		private System.Windows.Forms.TextBox textBoxMessage;
 		private System.Windows.Forms.Button buttonSend;
 		private string m_LastMessage;
@@ -92,21 +92,21 @@ namespace eLePhant.Client
 		private void m_Globalize()
 		{
 			listViewFriends.Columns.Clear();
-			listViewFriends.Columns.Add(eLePhantForm.Globalization["LBL_FRIENDS"],134,false /*HorizontalAlignment.Left*/);
-			//labelFriends.Text = eLePhantForm.Globalization["LBL_FRIENDS"];
-			buttonSend.Text = eLePhantForm.Globalization["LBL_SEND"];
-			ContextMenuFriends.MenuItems[0].Text=eLePhantForm.Globalization["LBL_SENDMESSAGE"];
-			ContextMenuFriends.MenuItems[1].Text=eLePhantForm.Globalization["LBL_VIEWFILES"];
-			ContextMenuFriends.MenuItems[3].Text=eLePhantForm.Globalization["LBL_RENAMEFRIEND"];
-			ContextMenuFriends.MenuItems[4].Text=eLePhantForm.Globalization["LBL_DELETEFRIEND"];
-			ContextMenuFriends.MenuItems[6].Text=eLePhantForm.Globalization["LBL_FRIENDSLOT"];
-			buttonAddFriendCancel.Text = eLePhantForm.Globalization["LBL_CANCEL"];
-			labelIP.Text = eLePhantForm.Globalization["LBL_IP_OR_ID"];
-			labelName.Text = eLePhantForm.Globalization["LBL_NAME"];
-			labelPort.Text = eLePhantForm.Globalization["LBL_PORT"];
-			labelUserHash.Text = eLePhantForm.Globalization["LBL_USERHASH"];
-			buttonAddFriend.Text = eLePhantForm.Globalization["LBL_ADDFRIEND"];
-			labelOptional.Text = "(" + eLePhantForm.Globalization["LBL_OPTIONAL"] + ")";
+			listViewFriends.Columns.Add(HathiForm.Globalization["LBL_FRIENDS"],134,false /*HorizontalAlignment.Left*/);
+			//labelFriends.Text = HathiForm.Globalization["LBL_FRIENDS"];
+			buttonSend.Text = HathiForm.Globalization["LBL_SEND"];
+			ContextMenuFriends.MenuItems[0].Text=HathiForm.Globalization["LBL_SENDMESSAGE"];
+			ContextMenuFriends.MenuItems[1].Text=HathiForm.Globalization["LBL_VIEWFILES"];
+			ContextMenuFriends.MenuItems[3].Text=HathiForm.Globalization["LBL_RENAMEFRIEND"];
+			ContextMenuFriends.MenuItems[4].Text=HathiForm.Globalization["LBL_DELETEFRIEND"];
+			ContextMenuFriends.MenuItems[6].Text=HathiForm.Globalization["LBL_FRIENDSLOT"];
+			buttonAddFriendCancel.Text = HathiForm.Globalization["LBL_CANCEL"];
+			labelIP.Text = HathiForm.Globalization["LBL_IP_OR_ID"];
+			labelName.Text = HathiForm.Globalization["LBL_NAME"];
+			labelPort.Text = HathiForm.Globalization["LBL_PORT"];
+			labelUserHash.Text = HathiForm.Globalization["LBL_USERHASH"];
+			buttonAddFriend.Text = HathiForm.Globalization["LBL_ADDFRIEND"];
+			labelOptional.Text = "(" + HathiForm.Globalization["LBL_OPTIONAL"] + ")";
 		}
 
 		public void Globalize()
@@ -210,7 +210,7 @@ namespace eLePhant.Client
 			{
 				textBoxName.Text=m_Friends[index].Name;
 			}
-			buttonAddFriendOk.Text=eLePhantForm.Globalization["LBL_RENAME"];
+			buttonAddFriendOk.Text=HathiForm.Globalization["LBL_RENAME"];
 			textBoxUserHash.Enabled=false;
 			textBoxIP.Enabled=false;
 			textBoxPort.Enabled=false;
@@ -299,8 +299,8 @@ namespace eLePhant.Client
 				textBoxMsg.BorderStyle=BorderStyle.FixedSingle;
 				textBoxMsg.ScrollBars=RichTextBoxScrollBars.Both;
 				textBoxMsg.Dock=DockStyle.Fill;
-				textBoxMsg.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-				textBoxMsg.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+				textBoxMsg.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+				textBoxMsg.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				textBoxMsg.DetectUrls=true;
 				textBoxMsg.LinkClicked+=new LinkClickedEventHandler(Link_Clicked);
 				
@@ -356,7 +356,7 @@ namespace eLePhant.Client
 			this.components = new System.ComponentModel.Container();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.buttonAddFriend = new System.Windows.Forms.Button();
-			this.listViewFriends = new eLePhant.Client.eLePhantListView();
+			this.listViewFriends = new Hathi.Client.HathiListView();
 			this.panelAddFriend = new System.Windows.Forms.Panel();
 			this.textBoxUserHash = new System.Windows.Forms.TextBox();
 			this.labelOptional = new System.Windows.Forms.Label();
@@ -642,8 +642,8 @@ namespace eLePhant.Client
 		{
 			panelAddFriend.Visible=true;
 			buttonAddFriend.Visible=false;
-			buttonAddFriendOk.Text=eLePhantForm.Globalization["LBL_ADD"];
-			textBoxName.Text=eLePhantForm.Globalization["LBL_MYNEWFRIEND"];
+			buttonAddFriendOk.Text=HathiForm.Globalization["LBL_ADD"];
+			textBoxName.Text=HathiForm.Globalization["LBL_MYNEWFRIEND"];
 			textBoxIP.Text="";
 			textBoxPort.Text="";
 			textBoxUserHash.Text="";
@@ -725,70 +725,70 @@ namespace eLePhant.Client
 		
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 
-			panel1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel2.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panelAddFriend.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel2.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panelAddFriend.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 
-			tabMessages.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabMessages.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
+			tabMessages.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabMessages.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
 
-			//labelFriends.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			//labelFriends.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			//labelFriends.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			//labelFriends.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelIP.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelIP.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelIP.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelIP.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelName.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelName.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelName.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelName.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelOptional.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelOptional.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelOptional.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelOptional.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelPort.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelPort.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelPort.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelPort.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelUserHash.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelUserHash.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelUserHash.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelUserHash.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			textBoxName.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxName.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxName.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxName.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxIP.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxIP.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxIP.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxIP.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxPort.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxPort.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxPort.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxPort.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 			
-			textBoxUserHash.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxUserHash.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxUserHash.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxUserHash.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxMessage.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxMessage.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxMessage.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxMessage.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			buttonAddFriend.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAddFriend.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAddFriend.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAddFriend.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonAddFriendCancel.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAddFriendCancel.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAddFriendCancel.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAddFriendCancel.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonAddFriendOk.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAddFriendOk.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAddFriendOk.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAddFriendOk.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonSend.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonSend.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonSend.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonSend.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			listViewFriends.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			listViewFriends.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			listViewFriends.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
-			listViewFriends.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
+			listViewFriends.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			listViewFriends.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			listViewFriends.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
+			listViewFriends.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
 
-			m_SetFlatScrollBar(eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb());
+			m_SetFlatScrollBar(HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb());
 
 			imageListFriends.Images.Clear();
-			imageListFriends.Images.Add(eLePhantForm.Skin.GetBitmap("Friend"));
-			imageListFriends.Images.Add(eLePhantForm.Skin.GetBitmap("FriendSlot"));
+			imageListFriends.Images.Add(HathiForm.Skin.GetBitmap("Friend"));
+			imageListFriends.Images.Add(HathiForm.Skin.GetBitmap("FriendSlot"));
 
 			listViewFriends.SmallImageList=imageListFriends;
 

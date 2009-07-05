@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="es-ES">
 	<entry key="LBL_DOWNLOADS">Descargas</entry>
 	<entry key="LBL_UPLOADS">Subidas</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Descargado</entry>
 	<entry key="LBL_UPLOADED">Subido</entry>
 	<entry key="LBL_OPTIONAL">Opcional</entry>
-	<entry key="MSG_EXIT">Estás seguro que quieres salir de lphant?</entry>	
+	<entry key="MSG_EXIT">Estás seguro que quieres salir de Hathi?</entry>	
 	<entry key="MSG_NEWCHAT">Nueva sesión de chat: </entry>
 	<entry key="LBL_OPTIONS">Opciones</entry>
 	<entry key="LBL_CONNDISC">Conectar/desconectar con servidores</entry>	
@@ -160,12 +160,12 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Puerto de control remoto(TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Contraseña de control remoto</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Cliente de control remoto</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">Inicial lphant en local (sin control remoto)</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">Inicial Hathi en local (sin control remoto)</entry>
 	<entry key="LBL_SELECT_CONNECTIONTYPE">Seleccionar el tipo de conexión o el servidor de control remoto al inicial</entry>
-	<entry key="LBL_CONNECTREMOTE">Conectar a este lphant remoto</entry>
-	<entry key="LBL_REMOTEHOST_IP">IP de lphant remoto</entry>
+	<entry key="LBL_CONNECTREMOTE">Conectar a este Hathi remoto</entry>
+	<entry key="LBL_REMOTEHOST_IP">IP de Hathi remoto</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Puerto</entry>
-	<entry key="LBL_REMOTEHOST_PASSWORD">Contraseña de lphant remoto</entry>
+	<entry key="LBL_REMOTEHOST_PASSWORD">Contraseña de Hathi remoto</entry>
 	<entry key="LBL_ENABLEOSIG">Habilitar Online Signature</entry>
 	<entry key="LBL_SECONDS">segundos</entry>
 	<entry key="LBL_MINUTES">minutos</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Descargar lista de servidores</entry>
 	<entry key="LBL_SEARCHINFO">Buscar más información</entry>
 	<entry key="LBL_ABOUT">Acerca de...</entry>
-	<entry key="LBL_LPHANTWEB">Web de lphant</entry>
+	<entry key="LBL_LPHANTWEB">Web de Hathi</entry>
 	<entry key="LBL_SUPPORT">Soporte</entry>
 	<entry key="LBL_HELP">Ayuda</entry>	
 	<entry key="LBL_AVGDOWNLOAD">Tasa media descarga</entry>

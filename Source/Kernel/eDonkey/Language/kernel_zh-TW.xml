@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="zh-TW">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. 核心已初始化。</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. 核心已初始化。</entry>
 	<entry key="HASHING_FILE">正在切細 {0}</entry>
 	<entry key="SRV_CNN_LOST">失去連線</entry>
 	<entry key="SRV_ADDED">已加入{0}個伺服器</entry>
@@ -47,7 +47,7 @@
 	<entry key="SRV_DOWN">可能是掛了…</entry>
 	<entry key="IP_FILTER_LOADED"> {0} IP 範圍已從檔案 {1} 中載入</entry>
 	<entry key="IP_BLOCKED">IP 已封鎖 : {0} - {1}</entry>
-	<entry key="LOW_ID_RETRY">lphant得到低ID，重新嘗試連接伺服器。</entry>
+	<entry key="LOW_ID_RETRY">Hathi得到低ID，重新嘗試連接伺服器。</entry>
 	<entry key="UDP_PORT_NOT_OPEN">警告：UDP連接埠可能沒有開啟</entry>
 	<entry key="UDP_PORT_IS_OPEN">UDP連接埠工作正常</entry>
 	<entry key="TOTAL_IP_BLOCKED">{0} IP 已經被封鎖</entry>

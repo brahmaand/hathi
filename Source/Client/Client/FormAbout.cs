@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,7 +33,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormAbout.
@@ -43,7 +43,7 @@ namespace eLePhant.Client
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.Timer timer1;
-		private eLePhant.Interface.ScrollingCredits scrollingCredits;
+		private Hathi.Interface.ScrollingCredits scrollingCredits;
 		private System.ComponentModel.IContainer components;
 		private double m_dblOpacityIncrement = .1;
 		private double m_dblOpacityDecrement = .1;
@@ -88,7 +88,7 @@ namespace eLePhant.Client
 			this.label5 = new System.Windows.Forms.Label();
 			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			this.timer1 = new System.Windows.Forms.Timer(this.components);
-			this.scrollingCredits = new eLePhant.Interface.ScrollingCredits();
+			this.scrollingCredits = new Hathi.Interface.ScrollingCredits();
 			this.SuspendLayout();
 			// 
 			// label5
@@ -152,7 +152,7 @@ namespace eLePhant.Client
 			this.Opacity = 0;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "About lphant";
+			this.Text = "About Hathi";
 			this.Click += new System.EventHandler(this.FormAbout_Click);
 			this.Load += new System.EventHandler(this.FormAbout_Load);
 			this.ResumeLayout(false);
@@ -167,7 +167,7 @@ namespace eLePhant.Client
 
 		private void linkLabel1_LinkClicked(object sender, System.Windows.Forms.LinkLabelLinkClickedEventArgs e)
 		{
-			System.Diagnostics.Process.Start("http://not.website.yet");
+			System.Diagnostics.Process.Start("http://hathi.sourceforge.net");
 		}
 
 		private void FormAbout_Load(object sender, System.EventArgs e)

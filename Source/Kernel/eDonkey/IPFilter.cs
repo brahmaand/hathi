@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -31,7 +31,7 @@ using System.IO;
 using System.Net;
 using System.Diagnostics;
 using System.Collections;
-using eLePhant.Types;
+using Hathi.Types;
 
 
 /*CIPFilter IPFilter = new CIPFilter();
@@ -45,7 +45,7 @@ Debug.WriteLine(IPFilter.BlockedIPDescription);
 Debug.WriteLine(IPFilter.BlockIP(40151279,128).ToString());
 */
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	public class CIPFilter
 	{	

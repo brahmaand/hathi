@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,7 +34,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Xml;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for CSkin.
@@ -94,7 +94,7 @@ namespace eLePhant.Client
 		{
 			m_CurrentSkin="Default";
 			XmlDocument doc = new XmlDocument();
-			doc.Load(typeof(eLePhantForm).Assembly.GetManifestResourceStream(typeof(eLePhantForm),"Client.Resources.Classic.skin.xml"));
+			doc.Load(typeof(HathiForm).Assembly.GetManifestResourceStream(typeof(HathiForm),"Client.Resources.Classic.skin.xml"));
 			m_XMLDefaultColors=doc.DocumentElement["colors"];
 			m_XMLDefaultPositions=doc.DocumentElement["positions"];
 			m_XMLDefaultSizes=doc.DocumentElement["sizes"];
@@ -135,28 +135,28 @@ namespace eLePhant.Client
 				string resourceName=imageID+".bmp";
 				try
 				{
-					return new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic."+resourceName);
+					return new Bitmap(typeof(HathiForm),"Client.Resources.Classic."+resourceName);
 				}
 				catch
 				{
 					try
 					{
 						resourceName=imageID+".gif";
-						return new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic."+resourceName);
+						return new Bitmap(typeof(HathiForm),"Client.Resources.Classic."+resourceName);
 					}
 					catch 
 					{
 						try
 						{
 							resourceName=imageID+".ico";
-							return new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic."+resourceName);
+							return new Bitmap(typeof(HathiForm),"Client.Resources.Classic."+resourceName);
 						}
 						catch
 						{
 							try
 							{
 								resourceName=imageID+".jpg";
-								return new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic."+resourceName);
+								return new Bitmap(typeof(HathiForm),"Client.Resources.Classic."+resourceName);
 							}
 							catch
 							{

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="hu-HU">
 	<entry key="LBL_DOWNLOADS">Letöltések</entry>
 	<entry key="LBL_UPLOADS">Feltöltések</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Letöltés</entry>
 	<entry key="LBL_UPLOADED">Feltöltés</entry>
 	<entry key="LBL_OPTIONAL">Tetszőleges</entry>
-	<entry key="MSG_EXIT">Biztosan be akarja zárni az lphant-ot?</entry>
+	<entry key="MSG_EXIT">Biztosan be akarja zárni az Hathi-ot?</entry>
 	<entry key="MSG_NEWCHAT">Új csevegés: </entry>
 	<entry key="LBL_OPTIONS">Beállítások</entry>
 	<entry key="LBL_CONNDISC">Kapcsolódás/kapcsolat bontása</entry>
@@ -161,8 +161,8 @@
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Távoli irányítás jelszó</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Távoli irányítás Kliens</entry>
 	<entry key="LBL_START_LPHANT_LOCALLY">lokálisan futtat (nincs távoli irányítás)</entry>
-	<entry key="LBL_SELECT_CONNECTIONTYPE">Kapcsolat típus vagy távoli host kiválasztása lphant indításakor</entry>
-	<entry key="LBL_CONNECTREMOTE">Kapcsolódás ehhez a távoli lphant host-hoz</entry>
+	<entry key="LBL_SELECT_CONNECTIONTYPE">Kapcsolat típus vagy távoli host kiválasztása Hathi indításakor</entry>
+	<entry key="LBL_CONNECTREMOTE">Kapcsolódás ehhez a távoli Hathi host-hoz</entry>
 	<entry key="LBL_REMOTEHOST_IP">Távoli host IP</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Port</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">Távoli host jelszó</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Kiszolgálólista letöltése</entry>
 	<entry key="LBL_SEARCHINFO">További információk keresése</entry>
 	<entry key="LBL_ABOUT">Névjegy...</entry>
-	<entry key="LBL_LPHANTWEB">lphant Web</entry>
+	<entry key="LBL_LPHANTWEB">Hathi Web</entry>
 	<entry key="LBL_SUPPORT">Támogatás</entry>
 	<entry key="LBL_HELP">Súgó</entry>
 	<entry key="LBL_AVGDOWNLOAD">Átl. let.ráta</entry>

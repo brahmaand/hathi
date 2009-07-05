@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -36,25 +36,25 @@ using System.Text;
 using System.Threading;
 using System.IO;
 using System.Globalization;
-using eLePhant.eDonkey;
-using eLePhant.Interface;
-using eLePhant.Classes;
+using Hathi.eDonkey;
+using Hathi.Interface;
+using Hathi.Classes;
 
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
-	/// Summary description for eLePhantForm.
+	/// Summary description for HathiForm.
 	/// </summary>
-	public class eLePhantForm : System.Windows.Forms.Form
+	public class HathiForm : System.Windows.Forms.Form
 	{
-		private eLePhant.Interface.eLePhantToggleButton btnDownloads;
+		private Hathi.Interface.HathiToggleButton btnDownloads;
 		private System.Windows.Forms.Panel panelExtensible;
 		private System.Windows.Forms.Panel panelButtons;
-		private eLePhant.Interface.eLePhantToggleButton btnServers;
-		private eLePhant.Interface.eLePhantToggleButton btnSearch;
-		private eLePhant.Interface.eLePhantToggleButton btnUploads;
-		private eLePhant.Interface.eLePhantButton buttonOptions;
+		private Hathi.Interface.HathiToggleButton btnServers;
+		private Hathi.Interface.HathiToggleButton btnSearch;
+		private Hathi.Interface.HathiToggleButton btnUploads;
+		private Hathi.Interface.HathiButton buttonOptions;
 		private System.Windows.Forms.ImageList imageListOptions;
 		private System.Windows.Forms.ImageList imageListHelp;
 		private System.ComponentModel.IContainer components;
@@ -69,10 +69,10 @@ namespace eLePhant.Client
 		public FormFriends FFriends;
 		private System.Windows.Forms.ToolTip toolTipMain;
 		private System.Windows.Forms.Panel panel1;
-		private eLePhant.Interface.eLePhantButton eLePhantButtonConnect;
+		private Hathi.Interface.HathiButton HathiButtonConnect;
 		private System.Windows.Forms.ImageList imageListServerDiscon;
 		private System.Windows.Forms.ImageList imageListServerCon;
-		private eLePhant.Interface.eLePhantGraphic graphics;
+		private Hathi.Interface.HathiGraphic graphics;
 		private Form activeForm;
 		
 		private bool m_KernelLoaded;
@@ -86,7 +86,7 @@ namespace eLePhant.Client
 		private Mutex m_Mutex; //used to mantain a reference to the mutex to ensure it is not released
 		private Icon m_ico;
 		private FormWindowState m_PreviousState;
-		private eLePhant.Interface.eLePhantToggleButton btnFriends;
+		private Hathi.Interface.HathiToggleButton btnFriends;
 		private System.Windows.Forms.Label labelSessionUP;
 		private System.Windows.Forms.Label labelSessionDO;
 		private string m_LastChatMessage;
@@ -128,7 +128,7 @@ namespace eLePhant.Client
 			CMain doStartJob=new CMain(args);
 		}
 
-		public eLePhantForm(string elink, Mutex in_Mutex)
+		public HathiForm(string elink, Mutex in_Mutex)
 		{
 			m_Mutex=in_Mutex;
 			m_link=elink;
@@ -136,7 +136,7 @@ namespace eLePhant.Client
 			InitializeComponent();
 			Initialize();
 		}
-		public eLePhantForm(string elink,Mutex in_Mutex,CInterfaceGateway remoteGateway)
+		public HathiForm(string elink,Mutex in_Mutex,CInterfaceGateway remoteGateway)
 		{
 			m_Mutex=in_Mutex;
 			m_link=elink;
@@ -170,7 +170,7 @@ namespace eLePhant.Client
 			Skin=new CSkin();
 			m_LastIcon=10;
 
-			preferences = new Config(Application.StartupPath, "configInterface.xml", "0.01", "lphantInterface");
+			preferences = new Config(Application.StartupPath, "configInterface.xml", "0.01", "HathiInterface");
 			preferences.PropertyChanged += new Config.PropertyEventHandler(m_OnPropertyChanged);
 			preferences.PropertyDefaults += new Config.PropertyDefaultHandler(OnGetDefaultProperty);
 			preferences.LoadProperties();
@@ -179,12 +179,12 @@ namespace eLePhant.Client
 			m_Globalize();
 			m_KernelLoaded=false;
 
-			toolTipMain.SetToolTip(eLePhantButtonConnect,Globalization["LBL_CONNDISC"]);
+			toolTipMain.SetToolTip(HathiButtonConnect,Globalization["LBL_CONNDISC"]);
 			toolTipMain.SetToolTip(buttonOptions,Globalization["LBL_OPTIONS"]);
 
 			taskbarNotifier1=new TaskbarNotifier();
 			taskbarNotifier1.SetBackgroundBitmap(new Bitmap(GetType(),"Client.Resources.Classic.PopUpSkin.bmp"),Color.FromArgb(255,0,0));
-			taskbarNotifier1.SetCloseBitmap(new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic.close.bmp"),Color.FromArgb(255,0,255),new Point(127,8));
+			taskbarNotifier1.SetCloseBitmap(new Bitmap(typeof(HathiForm),"Client.Resources.Classic.close.bmp"),Color.FromArgb(255,0,255),new Point(127,8));
 			taskbarNotifier1.TitleRectangle=new Rectangle(50,65,100,70);
 			taskbarNotifier1.ContentRectangle=new Rectangle(8,75,133,100);
 			taskbarNotifier1.NormalContentColor = Color.White;
@@ -331,8 +331,8 @@ namespace eLePhant.Client
 			buttonOptions.Left=x;
 			buttonOptions.Top=y;
 			Skin.GetPosition("BtnConnectionPosition",ref x,ref y);
-			eLePhantButtonConnect.Left=x;
-			eLePhantButtonConnect.Top=y;
+			HathiButtonConnect.Left=x;
+			HathiButtonConnect.Top=y;
 			
 			//sizes
 			Skin.GetSize("BtnOptionsSize",ref x,ref y);
@@ -341,8 +341,8 @@ namespace eLePhant.Client
 			imageListOptions.ImageSize=imageListOptions.Images[0].Size;
 			
 			Skin.GetSize("BtnConnectionSize",ref x,ref y);
-			eLePhantButtonConnect.Width=x;
-			eLePhantButtonConnect.Height=y;
+			HathiButtonConnect.Width=x;
+			HathiButtonConnect.Height=y;
 			imageListServerCon.ImageSize=imageListServerCon.Images[0].Size;
 			imageListServerDiscon.ImageSize=imageListServerDiscon.Images[0].Size;
 
@@ -442,7 +442,7 @@ namespace eLePhant.Client
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(eLePhantForm));
+			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(HathiForm));
 			this.panelStatusBar = new System.Windows.Forms.Panel();
 			this.panelStatusBarExtensible = new System.Windows.Forms.Panel();
 			this.panelStatusBarRight = new System.Windows.Forms.Panel();
@@ -459,18 +459,18 @@ namespace eLePhant.Client
 			this.buttonAbout = new System.Windows.Forms.Button();
 			this.labelSessionDO = new System.Windows.Forms.Label();
 			this.labelSessionUP = new System.Windows.Forms.Label();
-			this.graphics = new eLePhant.Interface.eLePhantGraphic(this.components);
+			this.graphics = new Hathi.Interface.HathiGraphic(this.components);
 			this.panelToolbarRight = new System.Windows.Forms.Panel();
 			this.panelButtons = new System.Windows.Forms.Panel();
-			this.eLePhantButtonConnect = new eLePhant.Interface.eLePhantButton(this.components);
+			this.HathiButtonConnect = new Hathi.Interface.HathiButton(this.components);
 			this.imageListServerCon = new System.Windows.Forms.ImageList(this.components);
-			this.buttonOptions = new eLePhant.Interface.eLePhantButton(this.components);
+			this.buttonOptions = new Hathi.Interface.HathiButton(this.components);
 			this.imageListOptions = new System.Windows.Forms.ImageList(this.components);
-			this.btnFriends = new eLePhant.Interface.eLePhantToggleButton(this.components);
-			this.btnServers = new eLePhant.Interface.eLePhantToggleButton(this.components);
-			this.btnSearch = new eLePhant.Interface.eLePhantToggleButton(this.components);
-			this.btnUploads = new eLePhant.Interface.eLePhantToggleButton(this.components);
-			this.btnDownloads = new eLePhant.Interface.eLePhantToggleButton(this.components);
+			this.btnFriends = new Hathi.Interface.HathiToggleButton(this.components);
+			this.btnServers = new Hathi.Interface.HathiToggleButton(this.components);
+			this.btnSearch = new Hathi.Interface.HathiToggleButton(this.components);
+			this.btnUploads = new Hathi.Interface.HathiToggleButton(this.components);
+			this.btnDownloads = new Hathi.Interface.HathiToggleButton(this.components);
 			this.imageListServerDiscon = new System.Windows.Forms.ImageList(this.components);
 			this.imageListHelp = new System.Windows.Forms.ImageList(this.components);
 			this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
@@ -544,7 +544,7 @@ namespace eLePhant.Client
 			this.labelStatusMsg.Name = "labelStatusMsg";
 			this.labelStatusMsg.Size = new System.Drawing.Size(320, 13);
 			this.labelStatusMsg.TabIndex = 11;
-			this.labelStatusMsg.Text = "lphant v";
+			this.labelStatusMsg.Text = "Hathi v";
 			this.labelStatusMsg.TextChanged += new System.EventHandler(this.labelStatusMsg_TextChanged);
 			// 
 			// labelStatusAvgDOSpeed
@@ -695,7 +695,7 @@ namespace eLePhant.Client
 			// panelButtons
 			// 
 			this.panelButtons.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelButtons.BackgroundImage")));
-			this.panelButtons.Controls.Add(this.eLePhantButtonConnect);
+			this.panelButtons.Controls.Add(this.HathiButtonConnect);
 			this.panelButtons.Controls.Add(this.buttonOptions);
 			this.panelButtons.Controls.Add(this.btnFriends);
 			this.panelButtons.Controls.Add(this.btnServers);
@@ -707,18 +707,18 @@ namespace eLePhant.Client
 			this.panelButtons.Size = new System.Drawing.Size(400, 58);
 			this.panelButtons.TabIndex = 7;
 			// 
-			// eLePhantButtonConnect
+			// HathiButtonConnect
 			// 
-			this.eLePhantButtonConnect.BackColor = System.Drawing.Color.Transparent;
-			this.eLePhantButtonConnect.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.eLePhantButtonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.eLePhantButtonConnect.ImageIndex = 1;
-			this.eLePhantButtonConnect.ImageList = this.imageListServerCon;
-			this.eLePhantButtonConnect.Location = new System.Drawing.Point(360, 8);
-			this.eLePhantButtonConnect.Name = "eLePhantButtonConnect";
-			this.eLePhantButtonConnect.Size = new System.Drawing.Size(40, 40);
-			this.eLePhantButtonConnect.TabIndex = 6;
-			this.eLePhantButtonConnect.Click += new System.EventHandler(this.eLePhantButton1_Click);
+			this.HathiButtonConnect.BackColor = System.Drawing.Color.Transparent;
+			this.HathiButtonConnect.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.HathiButtonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.HathiButtonConnect.ImageIndex = 1;
+			this.HathiButtonConnect.ImageList = this.imageListServerCon;
+			this.HathiButtonConnect.Location = new System.Drawing.Point(360, 8);
+			this.HathiButtonConnect.Name = "HathiButtonConnect";
+			this.HathiButtonConnect.Size = new System.Drawing.Size(40, 40);
+			this.HathiButtonConnect.TabIndex = 6;
+			this.HathiButtonConnect.Click += new System.EventHandler(this.HathiButton1_Click);
 			// 
 			// imageListServerCon
 			// 
@@ -836,7 +836,7 @@ namespace eLePhant.Client
 			// 
 			this.notifyIcon1.ContextMenu = this.contextMenuNotifyIcon;
 			this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-			this.notifyIcon1.Text = "lphant";
+			this.notifyIcon1.Text = "Hathi";
 			this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
 			// 
 			// contextMenuNotifyIcon
@@ -881,22 +881,22 @@ namespace eLePhant.Client
 			// menuItemWeb
 			// 
 			this.menuItemWeb.Index = 0;
-			this.menuItemWeb.Text = "lphant Web";
+			this.menuItemWeb.Text = "Hathi Web";
 			this.menuItemWeb.Click += new System.EventHandler(this.menuItemAbout_click);
 			// 
 			// menuItemSupport
 			// 
 			this.menuItemSupport.Index = 1;
-			this.menuItemSupport.Text = "lphant support";
+			this.menuItemSupport.Text = "Hathi support";
 			this.menuItemSupport.Click += new System.EventHandler(this.menuItemAbout_click);
 			// 
 			// menuItemSkins
 			// 
 			this.menuItemSkins.Index = 2;
-			this.menuItemSkins.Text = "lphant skins";
+			this.menuItemSkins.Text = "Hathi skins";
 			this.menuItemSkins.Click += new System.EventHandler(this.menuItemAbout_click);
 			// 
-			// eLePhantForm
+			// HathiForm
 			// 
 			this.AllowDrop = true;
 			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
@@ -909,14 +909,14 @@ namespace eLePhant.Client
 			this.Controls.Add(this.panelToolbarRight);
 			this.Controls.Add(this.panelButtons);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Name = "eLePhantForm";
-			this.Text = "lphant v";
-			this.Resize += new System.EventHandler(this.eLePhantForm_Resize);
-			this.Closing += new System.ComponentModel.CancelEventHandler(this.eLePhantForm_Closing);
-			this.Load += new System.EventHandler(this.eLePhantForm_Load);
-			this.DragOver += new System.Windows.Forms.DragEventHandler(this.eLePhantForm_DragOver);
-			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.eLePhantForm_DragDrop);
-			this.Activated += new System.EventHandler(this.eLePhantForm_Activated);
+			this.Name = "HathiForm";
+			this.Text = "Hathi v";
+			this.Resize += new System.EventHandler(this.HathiForm_Resize);
+			this.Closing += new System.ComponentModel.CancelEventHandler(this.HathiForm_Closing);
+			this.Load += new System.EventHandler(this.HathiForm_Load);
+			this.DragOver += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragOver);
+			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragDrop);
+			this.Activated += new System.EventHandler(this.HathiForm_Activated);
 			this.panelStatusBar.ResumeLayout(false);
 			this.panelStatusBarLeft.ResumeLayout(false);
 			this.panelExtensible.ResumeLayout(false);
@@ -960,9 +960,9 @@ namespace eLePhant.Client
 			Application.Exit();
 		}
 
-		private void eLePhantForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+		private void HathiForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
 		{
-			if (MessageBox.Show(Globalization["MSG_EXIT"],"lphant",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+			if (MessageBox.Show(Globalization["MSG_EXIT"],"Hathi",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
 			{
 				m_Close_eLephant();
 			}
@@ -1063,10 +1063,10 @@ namespace eLePhant.Client
 			labelStatusUPSpeed.Text=Globalization["LBL_UP"]+status.UploadSpeed.ToString("###0.#");
 			labelStatusDOSpeed.Text=Globalization["LBL_DO"]+status.DowloadSpeed.ToString("###0.#");
 			labelStatusAvgDOSpeed.Text=Globalization["LBL_AVGDO"]+status.AvgDownSpeed.ToString();
-			labelSessionUP.Text=Globalization["LBL_UPLOADED"]+":"+eLePhantListView.SizeToString(status.SessionUpload);
-			labelSessionDO.Text=Globalization["LBL_DOWNLOADED"]+":"+eLePhantListView.SizeToString(status.SessionDownload);
+			labelSessionUP.Text=Globalization["LBL_UPLOADED"]+":"+HathiListView.SizeToString(status.SessionUpload);
+			labelSessionDO.Text=Globalization["LBL_DOWNLOADED"]+":"+HathiListView.SizeToString(status.SessionDownload);
 			notifyIcon1.Text=labelStatusUPSpeed.Text+" "+labelStatusDOSpeed.Text+" "+labelStatusAvgDOSpeed.Text;
-			this.Text= String.Format("lphant v{0} ( {1} )", in_krnGateway.Version, notifyIcon1.Text);
+			this.Text= String.Format("Hathi v{0} ( {1} )", in_krnGateway.Version, notifyIcon1.Text);
 #if DEBUG
 			labelStatusServer.Text="Cnx: "+ status.ActiveConnections.ToString()+" ";
 			labelStatusServer.Text+=status.ServerName;
@@ -1094,12 +1094,12 @@ namespace eLePhant.Client
 				m_DrawNotifyIcon(imageListIcons.Images[IconNumber],status.DowloadSpeed/m_Preferences.maxDownloadRate,status.UploadSpeed/m_Preferences.maxUploadRate);
 			}
 			if (status.UserID!=0)
-				eLePhantButtonConnect.ImageList=this.imageListServerDiscon;
+				HathiButtonConnect.ImageList=this.imageListServerDiscon;
 			else
-				eLePhantButtonConnect.ImageList=this.imageListServerCon;
+				HathiButtonConnect.ImageList=this.imageListServerCon;
 		}
 
-		private void eLePhantButton1_Click(object sender, System.EventArgs e)
+		private void HathiButton1_Click(object sender, System.EventArgs e)
 		{
 			krnGateway.ConnectToaServer();
 		}
@@ -1120,7 +1120,7 @@ namespace eLePhant.Client
 			}
 		}
 
-		private void eLePhantForm_Activated(object sender, System.EventArgs e)
+		private void HathiForm_Activated(object sender, System.EventArgs e)
 		{
 /*			if (!m_KernelLoaded)
 			{
@@ -1135,7 +1135,7 @@ namespace eLePhant.Client
 			}
 */		}
 			
-		private void eLePhantForm_Resize(object sender, System.EventArgs e)
+		private void HathiForm_Resize(object sender, System.EventArgs e)
 		{
 			if (WindowState!=FormWindowState.Minimized) m_PreviousState=WindowState;
 			if (krnGateway!=null) 
@@ -1143,7 +1143,7 @@ namespace eLePhant.Client
 			if ((WindowState==FormWindowState.Minimized)&&(preferences!=null)&&(preferences.GetBool("MinimizeToTray",true)))
 			{
 				FDownloads.HideDetails();
-				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(eLePhantForm));
+				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(HathiForm));
 				notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
 				notifyIcon1.Visible=true;
 				Hide();
@@ -1188,7 +1188,7 @@ namespace eLePhant.Client
 			Win32.DestroyIcon(oldhandle);
 		}
 
-		private void eLePhantForm_Load(object sender, System.EventArgs e)
+		private void HathiForm_Load(object sender, System.EventArgs e)
 		{
 			Win32.SetProp(this.Handle,InterfaceConstants.GUID,1);
 			m_StartKernel();
@@ -1357,7 +1357,7 @@ namespace eLePhant.Client
 
 			if (panelGraphic.Height<100)
 			{
-				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(eLePhantForm));
+				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(HathiForm));
 				panelGraphic.BackgroundImage=Skin.GetBitmap("BigGraphic");
 				panelGraphic.Height=160;
 				int x=0;
@@ -1370,7 +1370,7 @@ namespace eLePhant.Client
 			}
 			else
 			{
-				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(eLePhantForm));
+				System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(HathiForm));
 				panelGraphic.BackgroundImage=Skin.GetBitmap("SmallGraphic");
 				panelGraphic.Height=58;
 				int x=0;
@@ -1402,11 +1402,11 @@ namespace eLePhant.Client
 				int itemNumber=contextMenuAbout.MenuItems.IndexOf((MenuItem)sender);
 				switch(itemNumber)
 				{
-					case 0:System.Diagnostics.Process.Start("http://not.website.yet");
+					case 0:System.Diagnostics.Process.Start("http://hathi.sourceforge.net");
 						break;
-					case 1:System.Diagnostics.Process.Start("http://not.website.yet/forum");
+					case 1:System.Diagnostics.Process.Start("http://hathi.sourceforge.net/forum");
 						break;
-					case 2:System.Diagnostics.Process.Start("http://not.website.yet/skins");
+					case 2:System.Diagnostics.Process.Start("http://hathi.sourceforge.net/skins");
 						break;
 					default:
 						if (itemNumber==this.contextMenuAbout.MenuItems.Count-1)
@@ -1424,7 +1424,7 @@ namespace eLePhant.Client
 
 		private void menuItemQuitNotifyIcon_click(object sender, System.EventArgs e)
 		{
-			if (MessageBox.Show(Globalization["MSG_EXIT"],"lphant",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+			if (MessageBox.Show(Globalization["MSG_EXIT"],"Hathi",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
 			{
 				notifyIcon1.Visible=false;
 				m_Close_eLephant();
@@ -1442,7 +1442,7 @@ namespace eLePhant.Client
 			menuItemNotifyIconQuit.Enabled=true;
 		}
 
-		private void eLePhantForm_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
+		private void HathiForm_DragOver(object sender, System.Windows.Forms.DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.Text))
 			{
@@ -1456,7 +1456,7 @@ namespace eLePhant.Client
 				e.Effect=DragDropEffects.None;
 		}
 
-		private void eLePhantForm_DragDrop(object sender, System.Windows.Forms.DragEventArgs e)
+		private void HathiForm_DragDrop(object sender, System.Windows.Forms.DragEventArgs e)
 		{
 			if (e.Data.GetDataPresent(DataFormats.Text))
 			{

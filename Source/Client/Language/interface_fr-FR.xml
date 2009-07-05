@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="fr-FR">
 	<entry key="LBL_DOWNLOADS">Transfert</entry>
 	<entry key="LBL_UPLOADS">Partage</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Téléchargé</entry>
 	<entry key="LBL_UPLOADED">Envoyé</entry>
 	<entry key="LBL_OPTIONAL">Facultatif</entry>
-	<entry key="MSG_EXIT">Voulez-vous quitter lphant?</entry>
+	<entry key="MSG_EXIT">Voulez-vous quitter Hathi?</entry>
 	<entry key="MSG_NEWCHAT">Nouvelle session Chat: </entry>
 	<entry key="LBL_OPTIONS">Options</entry>
 	<entry key="LBL_CONNDISC">Connecter/déconnecter aux serveurs</entry>
@@ -160,9 +160,9 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Port contrôle distant (TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Mot de passe contrôle distant</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Contrôle Distant Client</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">Démarrer lphant localement (pas de contrôle distant)</entry>
-	<entry key="LBL_SELECT_CONNECTIONTYPE">Sélectionner le type de connexion ou l'hôte quand lphant démarre</entry>
-	<entry key="LBL_CONNECTREMOTE">Se connecter à cet lphant</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">Démarrer Hathi localement (pas de contrôle distant)</entry>
+	<entry key="LBL_SELECT_CONNECTIONTYPE">Sélectionner le type de connexion ou l'hôte quand Hathi démarre</entry>
+	<entry key="LBL_CONNECTREMOTE">Se connecter à cet Hathi</entry>
 	<entry key="LBL_REMOTEHOST_IP">IP de l'hôte</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Port</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">Mot de passe de l'hôte</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Télécharger une liste de serveurs</entry>
 	<entry key="LBL_SEARCHINFO">Rechercher plus d'info</entry>
 	<entry key="LBL_ABOUT">A propos ...</entry>
-	<entry key="LBL_LPHANTWEB">Site lphant</entry>
+	<entry key="LBL_LPHANTWEB">Site Hathi</entry>
 	<entry key="LBL_SUPPORT">Support</entry>
 	<entry key="LBL_HELP">Aide</entry>
 	<entry key="LBL_AVGDOWNLOAD">Taux moy. de téléchargement</entry>

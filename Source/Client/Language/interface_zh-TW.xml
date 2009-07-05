@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="zh-TW">
 	<entry key="LBL_DOWNLOADS">下載</entry>
 	<entry key="LBL_UPLOADS">上傳</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">已下載</entry>
 	<entry key="LBL_UPLOADED">已上傳</entry>
 	<entry key="LBL_OPTIONAL">選擇性</entry>
-	<entry key="MSG_EXIT">您真的要離開lphant?</entry>
+	<entry key="MSG_EXIT">您真的要離開Hathi?</entry>
 	<entry key="MSG_NEWCHAT">新對話進程: </entry>
 	<entry key="LBL_OPTIONS">選項</entry>
 	<entry key="LBL_CONNDISC">連接/中斷伺服器的連線</entry>
@@ -160,9 +160,9 @@
 	<entry key="LBL_REMOTECONTROL_PORT">連接埠</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">密碼</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">遠端控制客戶端</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">只在本地開啟 lphant (沒有遠端控制)</entry>
-	<entry key="LBL_SELECT_CONNECTIONTYPE">在 lphant 起動時選擇連接類型或遠端主機</entry>
-	<entry key="LBL_CONNECTREMOTE">只連接至這個遠端 lphant 主機</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">只在本地開啟 Hathi (沒有遠端控制)</entry>
+	<entry key="LBL_SELECT_CONNECTIONTYPE">在 Hathi 起動時選擇連接類型或遠端主機</entry>
+	<entry key="LBL_CONNECTREMOTE">只連接至這個遠端 Hathi 主機</entry>
 	<entry key="LBL_REMOTEHOST_IP">遠端主機 IP</entry>
 	<entry key="LBL_REMOTEHOST_PORT">連接埠</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">遠端主機密碼</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">下載伺服器清單</entry>
 	<entry key="LBL_SEARCHINFO">搜索更多資訊</entry>
 	<entry key="LBL_ABOUT">關於...</entry>
-	<entry key="LBL_LPHANTWEB">lphant 網站</entry>
+	<entry key="LBL_LPHANTWEB">Hathi 網站</entry>
 	<entry key="LBL_SUPPORT">支援</entry>
 	<entry key="LBL_HELP">Help</entry>
 	<entry key="LBL_AVGDOWNLOAD">平均下載比率</entry>

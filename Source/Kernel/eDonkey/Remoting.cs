@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -41,7 +41,7 @@ using System.Runtime.Remoting.Messaging;
 using System.Diagnostics;
 
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// Descripción breve de CRemoting.
@@ -62,7 +62,7 @@ namespace eLePhant.eDonkey
 			puerto = CKernel.Preferences.GetInt("RemoteControlPort",4670);
 			IPPermitida = CKernel.Preferences.GetStringArray("AllowedIP");
 			Hashtable props = new Hashtable();
-			props.Add("name","eLePhantService");
+			props.Add("name","HathiService");
 			props.Add("priority","10"); //en la ayuda pone que son enteros, pero con ellos da error de conversion.
 			props.Add("port", puerto);
 			props.Add("supressChannelData",true);
@@ -85,8 +85,8 @@ namespace eLePhant.eDonkey
 			Hashtable datasinks = new Hashtable();
 			
 			//2ª Opcion
-			eLePhantServerSinkProvider provider = 
-				new eLePhantServerSinkProvider(propsinks,datasinks);
+			HathiServerSinkProvider provider = 
+				new HathiServerSinkProvider(propsinks,datasinks);
 
 			//Creacion
 			m_lPhantChannel = new TcpServerChannel(props, provider);
@@ -107,7 +107,7 @@ namespace eLePhant.eDonkey
 	}
 
 	[Serializable]
-	internal class eLePhantServerSinkProvider:IServerChannelSinkProvider
+	internal class HathiServerSinkProvider:IServerChannelSinkProvider
 	{
 		private IServerChannelSinkProvider m_nextIServerChannelSink = null;		
 		private Hashtable m_Properties = new Hashtable();
@@ -118,12 +118,12 @@ namespace eLePhant.eDonkey
 		private IChannelDataStore m_ChannelData = null;
 
 		#region constructor
-		public eLePhantServerSinkProvider ()
+		public HathiServerSinkProvider ()
 		{
 			m_Properties.Add("includeVersions",true);
 			this.m_nextIServerChannelSink = new BinaryServerFormatterSinkProvider(m_Properties,m_ProviderData);	
 		}
-		public eLePhantServerSinkProvider (Hashtable Properties, Hashtable ProviderData)
+		public HathiServerSinkProvider (Hashtable Properties, Hashtable ProviderData)
 		{
 			if (Properties != null) m_Properties=Properties;
 			if (ProviderData != null) m_ProviderData=ProviderData;
@@ -156,12 +156,12 @@ namespace eLePhant.eDonkey
 			
 			if (this.m_nextSink == null)
 			{
-				this.m_nextSink = new eLePhantServerChannelSink(this,channel,nextSink);
+				this.m_nextSink = new HathiServerChannelSink(this,channel,nextSink);
 				return this.m_nextSink;
 			}
 			else 
 			{
-				return new eLePhantServerChannelSink(this,channel,nextSink);
+				return new HathiServerChannelSink(this,channel,nextSink);
 			}
 		}
 
@@ -195,10 +195,10 @@ namespace eLePhant.eDonkey
 	}
 	
 	[Serializable]
-	internal class eLePhantServerChannelSink: BaseChannelObjectWithProperties, IServerChannelSink
+	internal class HathiServerChannelSink: BaseChannelObjectWithProperties, IServerChannelSink
 	{
 		private IServerChannelSink m_NextIServerChannelSink = null;
-		private eLePhantServerSinkProvider m_Provider = null;
+		private HathiServerSinkProvider m_Provider = null;
 		private IChannelReceiver m_channel = null;
 		private CompressionType m_CompressionMethod = (CompressionType)
 			Enum.Parse( typeof(CompressionType),
@@ -206,19 +206,19 @@ namespace eLePhant.eDonkey
 
 		#region Constructor
 		
-		public eLePhantServerChannelSink(IServerChannelSinkProvider Provider, IChannelReceiver channel)
+		public HathiServerChannelSink(IServerChannelSinkProvider Provider, IChannelReceiver channel)
 		{
 			IServerChannelSink nextServer=(IServerChannelSink)new BinaryServerFormatterSink(
 				BinaryServerFormatterSink.Protocol.Other,this.NextChannelSink,channel);
 			if (channel != null) m_channel=channel;
-			if (Provider != null) m_Provider=Provider as eLePhantServerSinkProvider;
-			m_NextIServerChannelSink=new eLePhantServerChannelSink(Provider,channel,nextServer);
+			if (Provider != null) m_Provider=Provider as HathiServerSinkProvider;
+			m_NextIServerChannelSink=new HathiServerChannelSink(Provider,channel,nextServer);
 		}
 
-		public eLePhantServerChannelSink(IServerChannelSinkProvider Provider, IChannelReceiver channel, object nextobject)
+		public HathiServerChannelSink(IServerChannelSinkProvider Provider, IChannelReceiver channel, object nextobject)
 		{
 			if (channel != null) m_channel=channel;
-			if (Provider != null) m_Provider=Provider as eLePhantServerSinkProvider;
+			if (Provider != null) m_Provider=Provider as HathiServerSinkProvider;
 			if (nextobject != null) 
 			{
 				m_NextIServerChannelSink=nextobject as IServerChannelSink;

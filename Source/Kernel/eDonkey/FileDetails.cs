@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -30,9 +30,9 @@ using System;
 using System.IO;
 using System.Diagnostics;
 using System.Collections;
-using eLePhant.Types;
+using Hathi.Types;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	[Serializable]
 	public struct sFileDetails

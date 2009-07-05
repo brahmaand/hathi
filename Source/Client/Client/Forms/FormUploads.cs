@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,10 +33,10 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormUploads.
@@ -49,7 +49,7 @@ namespace eLePhant.Client
 		public uploadsListView uploadsList;
 		private System.Windows.Forms.Splitter splitter1;
 		private System.Windows.Forms.Panel panel2;
-		public eLePhant.Client.sharedListView sharedListView;
+		public Hathi.Client.sharedListView sharedListView;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Button buttonReload;
 		private System.Windows.Forms.Panel panel4;
@@ -92,19 +92,19 @@ namespace eLePhant.Client
 		
 		private void m_Globalize()
 		{
-			labelSharedFiles.Text=eLePhantForm.Globalization["LBL_SHAREDFILES"];
-			buttonReload.Text=eLePhantForm.Globalization["LBL_RELOADSHAREDFILES"];
-			tabPageDetails.Title=eLePhantForm.Globalization["LBL_DETAILS"];
-			//tabPageQueue.Title=eLePhantForm.Globalization["LBL_QUEUE"];
-			label6.Text = eLePhantForm.Globalization["LBL_PATH"]+":";
-			label5.Text = eLePhantForm.Globalization["LBL_FILE"]+":";
-			labelSessionDownloaded.Text=eLePhantForm.Globalization["LBL_DOWNLOADED"];
-			labelSessionRequests.Text=eLePhantForm.Globalization["LBL_REQUESTS"];
-			labelSessionUploaded.Text=eLePhantForm.Globalization["LBL_UPLOADED"];
-			labelComment.Text=eLePhantForm.Globalization["LBL_COMMENT"];
-			buttonSetCommet.Text=eLePhantForm.Globalization["LBL_SETCOMMENT"];
-			toolTip1.SetToolTip(this.buttonOpenFolder, eLePhantForm.Globalization["LBL_OPENFOLDER"]);
-			buttonRename.Text=eLePhantForm.Globalization["LBL_RENAME"];
+			labelSharedFiles.Text=HathiForm.Globalization["LBL_SHAREDFILES"];
+			buttonReload.Text=HathiForm.Globalization["LBL_RELOADSHAREDFILES"];
+			tabPageDetails.Title=HathiForm.Globalization["LBL_DETAILS"];
+			//tabPageQueue.Title=HathiForm.Globalization["LBL_QUEUE"];
+			label6.Text = HathiForm.Globalization["LBL_PATH"]+":";
+			label5.Text = HathiForm.Globalization["LBL_FILE"]+":";
+			labelSessionDownloaded.Text=HathiForm.Globalization["LBL_DOWNLOADED"];
+			labelSessionRequests.Text=HathiForm.Globalization["LBL_REQUESTS"];
+			labelSessionUploaded.Text=HathiForm.Globalization["LBL_UPLOADED"];
+			labelComment.Text=HathiForm.Globalization["LBL_COMMENT"];
+			buttonSetCommet.Text=HathiForm.Globalization["LBL_SETCOMMENT"];
+			toolTip1.SetToolTip(this.buttonOpenFolder, HathiForm.Globalization["LBL_OPENFOLDER"]);
+			buttonRename.Text=HathiForm.Globalization["LBL_RENAME"];
 		}
 
 		public void Globalize()
@@ -153,7 +153,7 @@ namespace eLePhant.Client
 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(FormUploads));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.uploadsList = new eLePhant.Client.uploadsListView(this.components);
+			this.uploadsList = new Hathi.Client.uploadsListView(this.components);
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -178,7 +178,7 @@ namespace eLePhant.Client
 			this.labelSessionRequests = new System.Windows.Forms.Label();
 			this.buttonReload = new System.Windows.Forms.Button();
 			this.labelSharedFiles = new System.Windows.Forms.Label();
-			this.sharedListView = new eLePhant.Client.sharedListView(this.components);
+			this.sharedListView = new Hathi.Client.sharedListView(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.buttonRename = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
@@ -575,8 +575,8 @@ namespace eLePhant.Client
 		private void m_RefreshStatistics(InterfaceFile file)
 		{
 			FileStatistics fstatistics=krnGateway.GetFileStatistics(file.strHash);
-			labelSessionDownloadedRes.Text=eLePhantListView.SizeToString((uint)fstatistics.SessionDownload);
-			labelSessionUploadedRes.Text=eLePhantListView.SizeToString((uint)fstatistics.SessionUpload);
+			labelSessionDownloadedRes.Text=HathiListView.SizeToString((uint)fstatistics.SessionDownload);
+			labelSessionUploadedRes.Text=HathiListView.SizeToString((uint)fstatistics.SessionUpload);
 			labelSessionRequestsRes.Text=fstatistics.SessionRequests.ToString();
 			byte rating=0;
 			string comment="";
@@ -618,78 +618,78 @@ namespace eLePhant.Client
 		}
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 			
-			panel1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel2.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel3.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel_fileDetails.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel2.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel3.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel_fileDetails.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 
-			splitter1.BackColor=eLePhantForm.Skin.GetColor("SplittersBackColor");
+			splitter1.BackColor=HathiForm.Skin.GetColor("SplittersBackColor");
 
-			buttonReload.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonReload.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonReload.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonReload.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonSetCommet.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonSetCommet.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonSetCommet.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonSetCommet.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonRename.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonRename.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonRename.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonRename.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 			
-			labelSharedFiles.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelSharedFiles.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelSharedFiles.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelSharedFiles.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			sharedListView.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			sharedListView.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			sharedListView.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			sharedListView.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			sharedListView.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
+			sharedListView.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			sharedListView.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			sharedListView.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			sharedListView.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			sharedListView.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
 
-			uploadsList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			uploadsList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			uploadsList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			uploadsList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			uploadsList.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
+			uploadsList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			uploadsList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			uploadsList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			uploadsList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			uploadsList.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
 
-			tabControlDetails.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabControlDetails.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			tabControlDetails.TextInactiveColor=eLePhantForm.Skin.GetColor("tabsInactiveForeColor");
+			tabControlDetails.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabControlDetails.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			tabControlDetails.TextInactiveColor=HathiForm.Skin.GetColor("tabsInactiveForeColor");
 			
-			label5.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			label5.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			label5.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			label5.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			label6.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			label6.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			label6.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			label6.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			tx_fileName.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
-			tx_fileName.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			tx_fileName.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			tx_fileName.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
 
-			tx_completeName.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
-			tx_completeName.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			tx_completeName.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			tx_completeName.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
 
-			textBoxComment.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxComment.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxComment.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxComment.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			labelSessionRequests.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			labelSessionRequests.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			labelSessionRequests.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			labelSessionRequests.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			labelSessionDownloaded.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			labelSessionDownloaded.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			labelSessionDownloaded.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			labelSessionDownloaded.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			labelSessionUploaded.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			labelSessionUploaded.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			labelSessionUploaded.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			labelSessionUploaded.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			labelComment.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			labelComment.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			labelComment.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			labelComment.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			labelSessionRequestsRes.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
-			labelSessionRequestsRes.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			labelSessionRequestsRes.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			labelSessionRequestsRes.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
 
-			labelSessionDownloadedRes.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
-			labelSessionDownloadedRes.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			labelSessionDownloadedRes.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			labelSessionDownloadedRes.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
 
-			labelSessionUploadedRes.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
-			labelSessionUploadedRes.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			labelSessionUploadedRes.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			labelSessionUploadedRes.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
 
 			FAviDetails.ApplySkin();
 

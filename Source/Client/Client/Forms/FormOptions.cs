@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -35,11 +35,11 @@ using System.Windows.Forms;
 using System.IO;
 using System.Text.RegularExpressions;
 using System.Globalization;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 using Microsoft.Win32;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormOptions.
@@ -189,61 +189,61 @@ namespace eLePhant.Client
 		
 		private void m_Globalize()
 		{
-			this.Text = eLePhantForm.Globalization["LBL_OPTIONS"];
-			tabPageKernel.Title = eLePhantForm.Globalization["LBL_KERNEL"];
-			tabPageInterface.Title = eLePhantForm.Globalization["LBL_INTERFACE"];
-			labelNick.Text = eLePhantForm.Globalization["LBL_NICK"]+":";
-			groupBoxConnection.Text = eLePhantForm.Globalization["LBL_CONNECTION"];
-			labelMaxDownSpeed.Text = eLePhantForm.Globalization["LBL_MAXDOWNSPEED"]+":";
-			labelMaxUpSpeed.Text = eLePhantForm.Globalization["LBL_MAXUPSPEED"]+":";
-			labelMaxConnection.Text = eLePhantForm.Globalization["LBL_MAXCONNECTIONS"]+":";
-			labelMaxSourcesPerFile.Text = eLePhantForm.Globalization["LBL_MAXSOURCESPERFILE"]+":";
-			labelTCPPort.Text = eLePhantForm.Globalization["LBL_TCPPORT"]+":";
-			labelUDPPort.Text = eLePhantForm.Globalization["LBL_UDPPORT"]+":";
-			checkBoxEnableICH.Text = eLePhantForm.Globalization["LBL_ENABLEICH"];
-			checkBoxAutoConnect.Text= eLePhantForm.Globalization["LBL_AUTOCONNECT"];
-			labelTempFolder.Text = eLePhantForm.Globalization["LBL_TEMPFOLDER"]+":";
-			labelDownloadFolder.Text = eLePhantForm.Globalization["LBL_DOWNFOLDER"]+":";
-			labelSharedFolder.Text = eLePhantForm.Globalization["LBL_SHAREDFOLDERS"]+":";
-			buttonExpTemp.Text = eLePhantForm.Globalization["LBL_EXPTEMP"];
-			buttonExpDown.Text = eLePhantForm.Globalization["LBL_EXPDOWN"];
-			buttonExIncomingFolder.Text = eLePhantForm.Globalization["LBL_EXPSHARED"];
-			buttonRemoveTmp.Text = eLePhantForm.Globalization["LBL_REMOVETEMP"];
-			buttonRemoveDown.Text = eLePhantForm.Globalization["LBL_REMOVEDOWN"];
-			groupBoxViewShared.Text = eLePhantForm.Globalization["LBL_VIEWSHARED"];
-			radioSharedAll.Text = eLePhantForm.Globalization["LBL_ALL"];
-			radioSharedFriends.Text = eLePhantForm.Globalization["LBL_FRIENDS"];
-			radioSharedNobody.Text = eLePhantForm.Globalization["LBL_NOBODY"];
-			groupBoxDownloadServerList.Text = eLePhantForm.Globalization["LBL_DOWNSERVERLIST"];
-			checkBoxDownloadServerMet.Text = eLePhantForm.Globalization["LBL_DOWNSERVERMET"];
-			buttonTakeLinks.Text = eLePhantForm.Globalization["LBL_TAKELINKS"];
-			buttonAccept.Text = eLePhantForm.Globalization["LBL_ACCEPT"];
-			buttonCancel.Text = eLePhantForm.Globalization["LBL_CANCEL"];
-			//checkBoxConnectionAsk.Text = eLePhantForm.Globalization["LBL_CONNECTIONASK"];
-			checkBoxMinTray.Text= eLePhantForm.Globalization["LBL_MINIMIZETRAY"];
-			checkBoxNotifications.Text = eLePhantForm.Globalization["LBL_NOTIFICATIONS"];
-			labelVideoPLayer.Text = eLePhantForm.Globalization["LBL_VIDEOPLAYER"]+":";
-			buttonExplorePlayer.Text = eLePhantForm.Globalization["LBL_EXPPLAYER"];
-			tabPageRemote.Title = eLePhantForm.Globalization["LBL_REMOTECONTROL"];
-			groupBoxRemoteServer.Text = eLePhantForm.Globalization["LBL_REMOTECONTROL_SERVER"];
-			groupBoxRemoteClient.Text = eLePhantForm.Globalization["LBL_REMOTECONTROL_CLIENT"];
-			checkBoxRemoteControl.Text = eLePhantForm.Globalization["LBL_ENABLE_REMOTECONTROL"];
-			labelRemoteControlPass.Text = eLePhantForm.Globalization["LBL_REMOTECONTROL_PASSWORD"]+":";
-			labelRemoteControlPort.Text = eLePhantForm.Globalization["LBL_REMOTECONTROL_PORT"]+":";
-			labelRemoteHostIP.Text = eLePhantForm.Globalization["LBL_REMOTEHOST_IP"]+":";
-			labelRemoteHostPassword.Text = eLePhantForm.Globalization["LBL_REMOTEHOST_PASSWORD"]+":";
-			labelRemoteHostPort.Text = eLePhantForm.Globalization["LBL_REMOTEHOST_PORT"]+":";
-			radioButtonStartLocal.Text = eLePhantForm.Globalization["LBL_START_LPHANT_LOCALLY"];
-			radioButtonStartRemote.Text = eLePhantForm.Globalization["LBL_CONNECTREMOTE"];
-			radioButtonStartSelect.Text = eLePhantForm.Globalization["LBL_SELECT_CONNECTIONTYPE"];
-			checkBoxOSig.Text = eLePhantForm.Globalization["LBL_ENABLEOSIG"];
-			checkBoxeLinkFromBrowserStopped.Text = eLePhantForm.Globalization["LBL_ELINK_FROM_BROWSER_STOPPPED"];
-			checkBoxIPFilter.Text=eLePhantForm.Globalization["LBL_ENABLEIPFILTER"];
-			labelLanguage.Text=eLePhantForm.Globalization["LBL_LANGUAGE"]+":";
-			labelskin.Text=eLePhantForm.Globalization["LBL_SKIN"]+":";
-			labelCompressionMethod.Text=eLePhantForm.Globalization["LBL_COMPRESSION"]+":";
-			labelIPAllowed.Text=eLePhantForm.Globalization["LBL_ALLOWEDIP"]+":";
-			checkBoxStartPaused.Text=eLePhantForm.Globalization["LBL_STARTSTOPPEDFILE"];
+			this.Text = HathiForm.Globalization["LBL_OPTIONS"];
+			tabPageKernel.Title = HathiForm.Globalization["LBL_KERNEL"];
+			tabPageInterface.Title = HathiForm.Globalization["LBL_INTERFACE"];
+			labelNick.Text = HathiForm.Globalization["LBL_NICK"]+":";
+			groupBoxConnection.Text = HathiForm.Globalization["LBL_CONNECTION"];
+			labelMaxDownSpeed.Text = HathiForm.Globalization["LBL_MAXDOWNSPEED"]+":";
+			labelMaxUpSpeed.Text = HathiForm.Globalization["LBL_MAXUPSPEED"]+":";
+			labelMaxConnection.Text = HathiForm.Globalization["LBL_MAXCONNECTIONS"]+":";
+			labelMaxSourcesPerFile.Text = HathiForm.Globalization["LBL_MAXSOURCESPERFILE"]+":";
+			labelTCPPort.Text = HathiForm.Globalization["LBL_TCPPORT"]+":";
+			labelUDPPort.Text = HathiForm.Globalization["LBL_UDPPORT"]+":";
+			checkBoxEnableICH.Text = HathiForm.Globalization["LBL_ENABLEICH"];
+			checkBoxAutoConnect.Text= HathiForm.Globalization["LBL_AUTOCONNECT"];
+			labelTempFolder.Text = HathiForm.Globalization["LBL_TEMPFOLDER"]+":";
+			labelDownloadFolder.Text = HathiForm.Globalization["LBL_DOWNFOLDER"]+":";
+			labelSharedFolder.Text = HathiForm.Globalization["LBL_SHAREDFOLDERS"]+":";
+			buttonExpTemp.Text = HathiForm.Globalization["LBL_EXPTEMP"];
+			buttonExpDown.Text = HathiForm.Globalization["LBL_EXPDOWN"];
+			buttonExIncomingFolder.Text = HathiForm.Globalization["LBL_EXPSHARED"];
+			buttonRemoveTmp.Text = HathiForm.Globalization["LBL_REMOVETEMP"];
+			buttonRemoveDown.Text = HathiForm.Globalization["LBL_REMOVEDOWN"];
+			groupBoxViewShared.Text = HathiForm.Globalization["LBL_VIEWSHARED"];
+			radioSharedAll.Text = HathiForm.Globalization["LBL_ALL"];
+			radioSharedFriends.Text = HathiForm.Globalization["LBL_FRIENDS"];
+			radioSharedNobody.Text = HathiForm.Globalization["LBL_NOBODY"];
+			groupBoxDownloadServerList.Text = HathiForm.Globalization["LBL_DOWNSERVERLIST"];
+			checkBoxDownloadServerMet.Text = HathiForm.Globalization["LBL_DOWNSERVERMET"];
+			buttonTakeLinks.Text = HathiForm.Globalization["LBL_TAKELINKS"];
+			buttonAccept.Text = HathiForm.Globalization["LBL_ACCEPT"];
+			buttonCancel.Text = HathiForm.Globalization["LBL_CANCEL"];
+			//checkBoxConnectionAsk.Text = HathiForm.Globalization["LBL_CONNECTIONASK"];
+			checkBoxMinTray.Text= HathiForm.Globalization["LBL_MINIMIZETRAY"];
+			checkBoxNotifications.Text = HathiForm.Globalization["LBL_NOTIFICATIONS"];
+			labelVideoPLayer.Text = HathiForm.Globalization["LBL_VIDEOPLAYER"]+":";
+			buttonExplorePlayer.Text = HathiForm.Globalization["LBL_EXPPLAYER"];
+			tabPageRemote.Title = HathiForm.Globalization["LBL_REMOTECONTROL"];
+			groupBoxRemoteServer.Text = HathiForm.Globalization["LBL_REMOTECONTROL_SERVER"];
+			groupBoxRemoteClient.Text = HathiForm.Globalization["LBL_REMOTECONTROL_CLIENT"];
+			checkBoxRemoteControl.Text = HathiForm.Globalization["LBL_ENABLE_REMOTECONTROL"];
+			labelRemoteControlPass.Text = HathiForm.Globalization["LBL_REMOTECONTROL_PASSWORD"]+":";
+			labelRemoteControlPort.Text = HathiForm.Globalization["LBL_REMOTECONTROL_PORT"]+":";
+			labelRemoteHostIP.Text = HathiForm.Globalization["LBL_REMOTEHOST_IP"]+":";
+			labelRemoteHostPassword.Text = HathiForm.Globalization["LBL_REMOTEHOST_PASSWORD"]+":";
+			labelRemoteHostPort.Text = HathiForm.Globalization["LBL_REMOTEHOST_PORT"]+":";
+			radioButtonStartLocal.Text = HathiForm.Globalization["LBL_START_LPHANT_LOCALLY"];
+			radioButtonStartRemote.Text = HathiForm.Globalization["LBL_CONNECTREMOTE"];
+			radioButtonStartSelect.Text = HathiForm.Globalization["LBL_SELECT_CONNECTIONTYPE"];
+			checkBoxOSig.Text = HathiForm.Globalization["LBL_ENABLEOSIG"];
+			checkBoxeLinkFromBrowserStopped.Text = HathiForm.Globalization["LBL_ELINK_FROM_BROWSER_STOPPPED"];
+			checkBoxIPFilter.Text=HathiForm.Globalization["LBL_ENABLEIPFILTER"];
+			labelLanguage.Text=HathiForm.Globalization["LBL_LANGUAGE"]+":";
+			labelskin.Text=HathiForm.Globalization["LBL_SKIN"]+":";
+			labelCompressionMethod.Text=HathiForm.Globalization["LBL_COMPRESSION"]+":";
+			labelIPAllowed.Text=HathiForm.Globalization["LBL_ALLOWEDIP"]+":";
+			checkBoxStartPaused.Text=HathiForm.Globalization["LBL_STARTSTOPPEDFILE"];
 		}
 
 		public void Globalize()
@@ -253,50 +253,50 @@ namespace eLePhant.Client
 		
 		private void m_AddToolTip()
 		{
-			toolTipOptions.SetToolTip(this.buttonTakeLinks, eLePhantForm.Globalization["LBL_TAKELINKS"]);
-			toolTipOptions.SetToolTip(this.checkBoxAutoConnect, eLePhantForm.Globalization["LBL_AUTOCONNECT"]);
-			toolTipOptions.SetToolTip(this.checkBoxDownloadServerMet, eLePhantForm.Globalization["LBL_DOWNSERVERMET"]);
-			toolTipOptions.SetToolTip(this.checkBoxeLinkFromBrowserStopped, eLePhantForm.Globalization["LBL_ELINK_FROM_BROWSER_STOPPPED"]);
-			toolTipOptions.SetToolTip(this.checkBoxEnableICH, eLePhantForm.Globalization["LBL_ENABLEICH"]);
-			toolTipOptions.SetToolTip(this.checkBoxIPFilter, eLePhantForm.Globalization["LBL_ENABLEIPFILTER"]);
-			toolTipOptions.SetToolTip(this.checkBoxMinTray, eLePhantForm.Globalization["LBL_MINIMIZETRAY"]);
-			toolTipOptions.SetToolTip(this.checkBoxNotifications, eLePhantForm.Globalization["LBL_NOTIFICATIONS"]);
-			toolTipOptions.SetToolTip(this.checkBoxOSig, eLePhantForm.Globalization["LBL_ENABLEOSIG"]);
-			toolTipOptions.SetToolTip(this.checkBoxRemoteControl, eLePhantForm.Globalization["LBL_ENABLE_REMOTECONTROL"]);
-			toolTipOptions.SetToolTip(this.groupBoxConnection, eLePhantForm.Globalization["LBL_CONNECTION"]);
-			toolTipOptions.SetToolTip(this.groupBoxRemoteServer, eLePhantForm.Globalization["LBL_REMOTECONTROL_SERVER"]);
-			toolTipOptions.SetToolTip(this.groupBoxRemoteClient, eLePhantForm.Globalization["LBL_REMOTECONTROL_CLIENT"]);
-			toolTipOptions.SetToolTip(this.groupBoxDownloadServerList, eLePhantForm.Globalization["LBL_DOWNSERVERLIST"]);
-			toolTipOptions.SetToolTip(this.groupBoxViewShared, eLePhantForm.Globalization["LBL_VIEWSHARED"]);
-			toolTipOptions.SetToolTip(this.labelDownloadFolder, eLePhantForm.Globalization["LBL_DOWNFOLDER"]);
-			toolTipOptions.SetToolTip(this.labelLanguage, eLePhantForm.Globalization["LBL_LANGUAGE"]);
-			toolTipOptions.SetToolTip(this.labelMaxConnection, eLePhantForm.Globalization["LBL_MAXCONNECTIONS"]);
-			toolTipOptions.SetToolTip(this.labelMaxDownSpeed, eLePhantForm.Globalization["LBL_MAXDOWNSPEED"]);
-			toolTipOptions.SetToolTip(this.labelMaxSourcesPerFile, eLePhantForm.Globalization["LBL_MAXSOURCESPERFILE"]);
-			toolTipOptions.SetToolTip(this.labelMaxUpSpeed, eLePhantForm.Globalization["LBL_MAXUPSPEED"]);
-			toolTipOptions.SetToolTip(this.labelNick, eLePhantForm.Globalization["LBL_NICK"]);
-			toolTipOptions.SetToolTip(this.labelRemoteControlPass, eLePhantForm.Globalization["LBL_REMOTECONTROL_PASSWORD"]);
-			toolTipOptions.SetToolTip(this.labelRemoteControlPort, eLePhantForm.Globalization["LBL_REMOTECONTROL_PORT"]);
-			toolTipOptions.SetToolTip(this.labelRemoteHostIP, eLePhantForm.Globalization["LBL_REMOTEHOST_IP"]);
-			toolTipOptions.SetToolTip(this.labelRemoteHostPassword, eLePhantForm.Globalization["LBL_REMOTEHOST_PASSWORD"]);
-			toolTipOptions.SetToolTip(this.labelRemoteHostPort, eLePhantForm.Globalization["LBL_REMOTEHOST_PORT"]);
-			toolTipOptions.SetToolTip(this.labelSharedFolder, eLePhantForm.Globalization["LBL_SHAREDFOLDERS"]);
-			toolTipOptions.SetToolTip(this.labelskin, eLePhantForm.Globalization["LBL_SKIN"]);
-			toolTipOptions.SetToolTip(this.labelTCPPort, eLePhantForm.Globalization["LBL_TCPPORT"]);
-			toolTipOptions.SetToolTip(this.labelTempFolder, eLePhantForm.Globalization["LBL_TEMPFOLDER"]);
-			toolTipOptions.SetToolTip(this.labelUDPPort, eLePhantForm.Globalization["LBL_UDPPORT"]);
-			toolTipOptions.SetToolTip(this.labelVideoPLayer, eLePhantForm.Globalization["LBL_VIDEOPLAYER"]);
-			toolTipOptions.SetToolTip(this.radioButtonStartLocal, eLePhantForm.Globalization["LBL_START_LPHANT_LOCALLY"]);
-			toolTipOptions.SetToolTip(this.radioButtonStartRemote, eLePhantForm.Globalization["LBL_CONNECTREMOTE"]);
-			toolTipOptions.SetToolTip(this.radioButtonStartSelect, eLePhantForm.Globalization["LBL_SELECT_CONNECTIONTYPE"]);
-			toolTipOptions.SetToolTip(this.radioSharedAll, eLePhantForm.Globalization["LBL_ALL"]);
-			toolTipOptions.SetToolTip(this.radioSharedFriends, eLePhantForm.Globalization["LBL_FRIENDS"]);
-			toolTipOptions.SetToolTip(this.radioSharedNobody, eLePhantForm.Globalization["LBL_NOBODY"]);
+			toolTipOptions.SetToolTip(this.buttonTakeLinks, HathiForm.Globalization["LBL_TAKELINKS"]);
+			toolTipOptions.SetToolTip(this.checkBoxAutoConnect, HathiForm.Globalization["LBL_AUTOCONNECT"]);
+			toolTipOptions.SetToolTip(this.checkBoxDownloadServerMet, HathiForm.Globalization["LBL_DOWNSERVERMET"]);
+			toolTipOptions.SetToolTip(this.checkBoxeLinkFromBrowserStopped, HathiForm.Globalization["LBL_ELINK_FROM_BROWSER_STOPPPED"]);
+			toolTipOptions.SetToolTip(this.checkBoxEnableICH, HathiForm.Globalization["LBL_ENABLEICH"]);
+			toolTipOptions.SetToolTip(this.checkBoxIPFilter, HathiForm.Globalization["LBL_ENABLEIPFILTER"]);
+			toolTipOptions.SetToolTip(this.checkBoxMinTray, HathiForm.Globalization["LBL_MINIMIZETRAY"]);
+			toolTipOptions.SetToolTip(this.checkBoxNotifications, HathiForm.Globalization["LBL_NOTIFICATIONS"]);
+			toolTipOptions.SetToolTip(this.checkBoxOSig, HathiForm.Globalization["LBL_ENABLEOSIG"]);
+			toolTipOptions.SetToolTip(this.checkBoxRemoteControl, HathiForm.Globalization["LBL_ENABLE_REMOTECONTROL"]);
+			toolTipOptions.SetToolTip(this.groupBoxConnection, HathiForm.Globalization["LBL_CONNECTION"]);
+			toolTipOptions.SetToolTip(this.groupBoxRemoteServer, HathiForm.Globalization["LBL_REMOTECONTROL_SERVER"]);
+			toolTipOptions.SetToolTip(this.groupBoxRemoteClient, HathiForm.Globalization["LBL_REMOTECONTROL_CLIENT"]);
+			toolTipOptions.SetToolTip(this.groupBoxDownloadServerList, HathiForm.Globalization["LBL_DOWNSERVERLIST"]);
+			toolTipOptions.SetToolTip(this.groupBoxViewShared, HathiForm.Globalization["LBL_VIEWSHARED"]);
+			toolTipOptions.SetToolTip(this.labelDownloadFolder, HathiForm.Globalization["LBL_DOWNFOLDER"]);
+			toolTipOptions.SetToolTip(this.labelLanguage, HathiForm.Globalization["LBL_LANGUAGE"]);
+			toolTipOptions.SetToolTip(this.labelMaxConnection, HathiForm.Globalization["LBL_MAXCONNECTIONS"]);
+			toolTipOptions.SetToolTip(this.labelMaxDownSpeed, HathiForm.Globalization["LBL_MAXDOWNSPEED"]);
+			toolTipOptions.SetToolTip(this.labelMaxSourcesPerFile, HathiForm.Globalization["LBL_MAXSOURCESPERFILE"]);
+			toolTipOptions.SetToolTip(this.labelMaxUpSpeed, HathiForm.Globalization["LBL_MAXUPSPEED"]);
+			toolTipOptions.SetToolTip(this.labelNick, HathiForm.Globalization["LBL_NICK"]);
+			toolTipOptions.SetToolTip(this.labelRemoteControlPass, HathiForm.Globalization["LBL_REMOTECONTROL_PASSWORD"]);
+			toolTipOptions.SetToolTip(this.labelRemoteControlPort, HathiForm.Globalization["LBL_REMOTECONTROL_PORT"]);
+			toolTipOptions.SetToolTip(this.labelRemoteHostIP, HathiForm.Globalization["LBL_REMOTEHOST_IP"]);
+			toolTipOptions.SetToolTip(this.labelRemoteHostPassword, HathiForm.Globalization["LBL_REMOTEHOST_PASSWORD"]);
+			toolTipOptions.SetToolTip(this.labelRemoteHostPort, HathiForm.Globalization["LBL_REMOTEHOST_PORT"]);
+			toolTipOptions.SetToolTip(this.labelSharedFolder, HathiForm.Globalization["LBL_SHAREDFOLDERS"]);
+			toolTipOptions.SetToolTip(this.labelskin, HathiForm.Globalization["LBL_SKIN"]);
+			toolTipOptions.SetToolTip(this.labelTCPPort, HathiForm.Globalization["LBL_TCPPORT"]);
+			toolTipOptions.SetToolTip(this.labelTempFolder, HathiForm.Globalization["LBL_TEMPFOLDER"]);
+			toolTipOptions.SetToolTip(this.labelUDPPort, HathiForm.Globalization["LBL_UDPPORT"]);
+			toolTipOptions.SetToolTip(this.labelVideoPLayer, HathiForm.Globalization["LBL_VIDEOPLAYER"]);
+			toolTipOptions.SetToolTip(this.radioButtonStartLocal, HathiForm.Globalization["LBL_START_LPHANT_LOCALLY"]);
+			toolTipOptions.SetToolTip(this.radioButtonStartRemote, HathiForm.Globalization["LBL_CONNECTREMOTE"]);
+			toolTipOptions.SetToolTip(this.radioButtonStartSelect, HathiForm.Globalization["LBL_SELECT_CONNECTIONTYPE"]);
+			toolTipOptions.SetToolTip(this.radioSharedAll, HathiForm.Globalization["LBL_ALL"]);
+			toolTipOptions.SetToolTip(this.radioSharedFriends, HathiForm.Globalization["LBL_FRIENDS"]);
+			toolTipOptions.SetToolTip(this.radioSharedNobody, HathiForm.Globalization["LBL_NOBODY"]);
 			
 			//The diplay is not well displayed
-			//toolTipOptions.SetToolTip(this.tabPageKernel, eLePhantForm.Globalization["LBL_KERNEL"]);
-			//toolTipOptions.SetToolTip(this.tabPageInterface, eLePhantForm.Globalization["LBL_INTERFACE"]);
-			//toolTipOptions.SetToolTip(this.tabPageRemote, eLePhantForm.Globalization["LBL_REMOTECONTROL"]);
+			//toolTipOptions.SetToolTip(this.tabPageKernel, HathiForm.Globalization["LBL_KERNEL"]);
+			//toolTipOptions.SetToolTip(this.tabPageInterface, HathiForm.Globalization["LBL_INTERFACE"]);
+			//toolTipOptions.SetToolTip(this.tabPageRemote, HathiForm.Globalization["LBL_REMOTECONTROL"]);
 		}
 
 		/// <summary>
@@ -352,9 +352,9 @@ namespace eLePhant.Client
 			m_CurrentLanguage = m_GetCompatibleLangage(preferences.Language);
 			this.comboBoxLanguage.SelectedValue = m_CurrentLanguage;
 			
-			radioSharedAll.Checked=(preferences.AllowViewShared==eLePhant.Types.Constants.AllowViewShared.All);
-			radioSharedFriends.Checked=(preferences.AllowViewShared==eLePhant.Types.Constants.AllowViewShared.Friends);
-			radioSharedNobody.Checked=(preferences.AllowViewShared==eLePhant.Types.Constants.AllowViewShared.Nobody);
+			radioSharedAll.Checked=(preferences.AllowViewShared==Hathi.Types.Constants.AllowViewShared.All);
+			radioSharedFriends.Checked=(preferences.AllowViewShared==Hathi.Types.Constants.AllowViewShared.Friends);
+			radioSharedNobody.Checked=(preferences.AllowViewShared==Hathi.Types.Constants.AllowViewShared.Nobody);
 
 			RegistryKey root = Registry.ClassesRoot;
 			RegistryKey key=root.OpenSubKey("ed2k\\shell\\open\\command",true);
@@ -453,9 +453,9 @@ namespace eLePhant.Client
 			
 			preferences.Language=m_SelectedLanguage;
 
-			if (radioSharedAll.Checked) preferences.AllowViewShared=eLePhant.Types.Constants.AllowViewShared.All;
-			else if (radioSharedFriends.Checked) preferences.AllowViewShared=eLePhant.Types.Constants.AllowViewShared.Friends;
-			else if (radioSharedNobody.Checked) preferences.AllowViewShared=eLePhant.Types.Constants.AllowViewShared.Nobody;
+			if (radioSharedAll.Checked) preferences.AllowViewShared=Hathi.Types.Constants.AllowViewShared.All;
+			else if (radioSharedFriends.Checked) preferences.AllowViewShared=Hathi.Types.Constants.AllowViewShared.Friends;
+			else if (radioSharedNobody.Checked) preferences.AllowViewShared=Hathi.Types.Constants.AllowViewShared.Nobody;
 			
 			preferences.OSigEnabled=this.checkBoxOSig.Checked;
 			preferences.IPFilterEnabled=this.checkBoxIPFilter.Checked;
@@ -470,8 +470,8 @@ namespace eLePhant.Client
 		
 		private void m_DisplayInterfacePreferences()
 		{
-			this.checkBoxMinTray.Checked=eLePhantForm.preferences.GetBool("MinimizeToTray",true);
-			this.checkBoxNotifications.Checked=eLePhantForm.preferences.GetBool("TaskBarNotifier",true);
+			this.checkBoxMinTray.Checked=HathiForm.preferences.GetBool("MinimizeToTray",true);
+			this.checkBoxNotifications.Checked=HathiForm.preferences.GetBool("TaskBarNotifier",true);
 			string defaultplayer="";
 			RegistryKey root = Registry.ClassesRoot;
 			RegistryKey key=root.OpenSubKey("divxfile\\shell\\open\\command",false);
@@ -486,34 +486,34 @@ namespace eLePhant.Client
 				else defaultplayer="";
 			}
 			
-			this.textBoxPreview.Text=eLePhantForm.preferences.GetString("PreviewPlayer",defaultplayer);
+			this.textBoxPreview.Text=HathiForm.preferences.GetString("PreviewPlayer",defaultplayer);
 			//remote control
-			this.radioButtonStartRemote.Checked=eLePhantForm.preferences.GetBool("StartupRemote",false);
-			this.radioButtonStartLocal.Checked=eLePhantForm.preferences.GetBool("StartupLocal",true);
-			this.radioButtonStartSelect.Checked=eLePhantForm.preferences.GetBool("StartupSelect",false);
-			this.textBoxRemoteIP.Text=eLePhantForm.preferences.GetString("RemoteIP","");
-			this.textBoxRemotePort.Text=eLePhantForm.preferences.GetInt("RemotePort",Convert.ToInt32(textBoxRemoteControlPort.Text)).ToString();
-			this.textBoxRemotePassword.Text=eLePhantForm.preferences.GetString("RemotePassword",textBoxRemoteControlPort.Text);
-			comboBoxSkin.Text=eLePhantForm.preferences.GetString("Skin","default");
+			this.radioButtonStartRemote.Checked=HathiForm.preferences.GetBool("StartupRemote",false);
+			this.radioButtonStartLocal.Checked=HathiForm.preferences.GetBool("StartupLocal",true);
+			this.radioButtonStartSelect.Checked=HathiForm.preferences.GetBool("StartupSelect",false);
+			this.textBoxRemoteIP.Text=HathiForm.preferences.GetString("RemoteIP","");
+			this.textBoxRemotePort.Text=HathiForm.preferences.GetInt("RemotePort",Convert.ToInt32(textBoxRemoteControlPort.Text)).ToString();
+			this.textBoxRemotePassword.Text=HathiForm.preferences.GetString("RemotePassword",textBoxRemoteControlPort.Text);
+			comboBoxSkin.Text=HathiForm.preferences.GetString("Skin","default");
 			comboBoxSkin_SelectedIndexChanged(this,null);
-			this.checkBoxeLinkFromBrowserStopped.Checked=eLePhantForm.preferences.GetBool("eLinkFromBrowserStopped",false);
+			this.checkBoxeLinkFromBrowserStopped.Checked=HathiForm.preferences.GetBool("eLinkFromBrowserStopped",false);
 
 		}
 		private void m_SaveInterfacePreferences()
 		{
-			eLePhantForm.preferences.SetProperty("MinimizeToTray",this.checkBoxMinTray.Checked);
-			eLePhantForm.preferences.SetProperty("TaskBarNotifier",this.checkBoxNotifications.Checked);
-			eLePhantForm.preferences.SetProperty("PreviewPlayer",this.textBoxPreview.Text);
-			eLePhantForm.preferences.SetProperty("Language",m_SelectedLanguage);
+			HathiForm.preferences.SetProperty("MinimizeToTray",this.checkBoxMinTray.Checked);
+			HathiForm.preferences.SetProperty("TaskBarNotifier",this.checkBoxNotifications.Checked);
+			HathiForm.preferences.SetProperty("PreviewPlayer",this.textBoxPreview.Text);
+			HathiForm.preferences.SetProperty("Language",m_SelectedLanguage);
 			//remote control
-			eLePhantForm.preferences.SetProperty("StartupSelect",this.radioButtonStartSelect.Checked);
-			eLePhantForm.preferences.SetProperty("StartupRemote",this.radioButtonStartRemote.Checked);
-			eLePhantForm.preferences.SetProperty("StartupLocal",this.radioButtonStartLocal.Checked);
-			eLePhantForm.preferences.SetProperty("RemoteIP",this.textBoxRemoteIP.Text);
-			eLePhantForm.preferences.SetProperty("RemotePort",Convert.ToInt32(textBoxRemotePort.Text));
-			eLePhantForm.preferences.SetProperty("RemotePassword",textBoxRemotePassword.Text);
-			eLePhantForm.preferences.SetProperty("Skin",comboBoxSkin.Text);
-			eLePhantForm.preferences.SetProperty("eLinkFromBrowserStopped",this.checkBoxeLinkFromBrowserStopped.Checked);
+			HathiForm.preferences.SetProperty("StartupSelect",this.radioButtonStartSelect.Checked);
+			HathiForm.preferences.SetProperty("StartupRemote",this.radioButtonStartRemote.Checked);
+			HathiForm.preferences.SetProperty("StartupLocal",this.radioButtonStartLocal.Checked);
+			HathiForm.preferences.SetProperty("RemoteIP",this.textBoxRemoteIP.Text);
+			HathiForm.preferences.SetProperty("RemotePort",Convert.ToInt32(textBoxRemotePort.Text));
+			HathiForm.preferences.SetProperty("RemotePassword",textBoxRemotePassword.Text);
+			HathiForm.preferences.SetProperty("Skin",comboBoxSkin.Text);
+			HathiForm.preferences.SetProperty("eLinkFromBrowserStopped",this.checkBoxeLinkFromBrowserStopped.Checked);
 		}
 		#region Windows Form Designer generated code
 		/// <summary>
@@ -1260,7 +1260,7 @@ namespace eLePhant.Client
 			this.radioButtonStartSelect.Name = "radioButtonStartSelect";
 			this.radioButtonStartSelect.Size = new System.Drawing.Size(386, 20);
 			this.radioButtonStartSelect.TabIndex = 28;
-			this.radioButtonStartSelect.Text = "Select connection type or remote  host when lphant starts";
+			this.radioButtonStartSelect.Text = "Select connection type or remote  host when Hathi starts";
 			// 
 			// radioButtonStartRemote
 			// 
@@ -1269,7 +1269,7 @@ namespace eLePhant.Client
 			this.radioButtonStartRemote.Name = "radioButtonStartRemote";
 			this.radioButtonStartRemote.Size = new System.Drawing.Size(385, 20);
 			this.radioButtonStartRemote.TabIndex = 27;
-			this.radioButtonStartRemote.Text = "Connect to this remote lphant host:";
+			this.radioButtonStartRemote.Text = "Connect to this remote Hathi host:";
 			// 
 			// radioButtonStartLocal
 			// 
@@ -1278,7 +1278,7 @@ namespace eLePhant.Client
 			this.radioButtonStartLocal.Name = "radioButtonStartLocal";
 			this.radioButtonStartLocal.Size = new System.Drawing.Size(385, 18);
 			this.radioButtonStartLocal.TabIndex = 26;
-			this.radioButtonStartLocal.Text = "Start lphant locally (not remote control)";
+			this.radioButtonStartLocal.Text = "Start Hathi locally (not remote control)";
 			// 
 			// groupBoxRemoteServer
 			// 
@@ -1616,51 +1616,51 @@ namespace eLePhant.Client
 
 		private void m_DoSkin(Control parentControl)
 		{
-			tabControl1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabControl1.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			tabControl1.TextInactiveColor=eLePhantForm.Skin.GetColor("tabsInactiveForeColor");
+			tabControl1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabControl1.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			tabControl1.TextInactiveColor=HathiForm.Skin.GetColor("tabsInactiveForeColor");
 
 			foreach (Control c in parentControl.Controls)
 			{
 				if (c.GetType()==typeof(Label))
 				{
-						((Label)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-						((Label)c).BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+						((Label)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+						((Label)c).BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 				}
 				else if (c.GetType()==typeof(Button))
 				{
-					((Button)c).BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-					((Button)c).ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+					((Button)c).BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+					((Button)c).ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 				}
 				else if	(c.GetType()==typeof(TextBox))
 				{
-					((TextBox)c).ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-					((TextBox)c).BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+					((TextBox)c).ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+					((TextBox)c).BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				}
 				else if	(c.GetType()==typeof(ListBox))
 				{
-					((ListBox)c).ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-					((ListBox)c).BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+					((ListBox)c).ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+					((ListBox)c).BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				}
 				else if	(c.GetType()==typeof(ComboBox))
 				{
-					((ComboBox)c).ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-					((ComboBox)c).BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+					((ComboBox)c).ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+					((ComboBox)c).BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				}
 				else if	(c.GetType()==typeof(RadioButton))
 				{
-					((RadioButton)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-					((RadioButton)c).BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+					((RadioButton)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+					((RadioButton)c).BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 				}
 				else if	(c.GetType()==typeof(GroupBox))
 				{
-					((GroupBox)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
+					((GroupBox)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
 					if ((c.Controls!=null)&&(c.Controls.Count>0)) m_DoSkin(c);
 				}
 				else if (c.GetType()==typeof(CheckBox))
 				{
-						((CheckBox)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-						((CheckBox)c).BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+						((CheckBox)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+						((CheckBox)c).BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 				}
 				else if ((c.Controls!=null)&&(c.Controls.Count>0)) m_DoSkin(c);
 			}
@@ -1669,8 +1669,8 @@ namespace eLePhant.Client
 		
 		private void m_ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
-			this.tabControl1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
+			this.tabControl1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 			m_DoSkin(this);
 		}
 
@@ -1678,7 +1678,7 @@ namespace eLePhant.Client
 		{
 			if (comboBoxSkin.SelectedIndex==0)
 			{
-				pictureBoxPreview.Image=new Bitmap(typeof(eLePhantForm),"Client.Resources.Classic.preview.JPG");
+				pictureBoxPreview.Image=new Bitmap(typeof(HathiForm),"Client.Resources.Classic.preview.JPG");
 			}
 			else
 			{

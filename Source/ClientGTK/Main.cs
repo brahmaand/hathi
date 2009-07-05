@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -30,13 +30,13 @@ using System;
 using Gtk;
 using Glade;
 using Gdk;
-using eLePhant.eDonkey;
-using eLePhant.Classes;
+using Hathi.eDonkey;
+using Hathi.Classes;
 using System.Collections;
 
-namespace eLePhantGTK
+namespace HathiGTK
 {
-	public class eLePhantGTK
+	public class HathiGTK
 	{
 		[Glade.Widget("mainwindow")] Gtk.Window mainwindow;
 	
@@ -87,8 +87,8 @@ namespace eLePhantGTK
 		[Glade.Widget] Gtk.HBox hboxSearch;
 		[Glade.Widget] Gtk.ProgressBar progressbar;
 					
-		public eLePhant.eDonkey.CKernel lphantKernel;
-		public eLePhant.eDonkey.CInterfaceGateway krnGateway;
+		public Hathi.eDonkey.CKernel HathiKernel;
+		public Hathi.eDonkey.CInterfaceGateway krnGateway;
 		internal static Config preferences;	
 		private Gtk.Menu menu;
 		public Glade.XML gxml;
@@ -162,24 +162,24 @@ namespace eLePhantGTK
 
 		public static void Main (string[] args)
 		{		
-			new eLePhantGTK (args);
+			new HathiGTK (args);
    	}
    	
-   	public eLePhantGTK (string[] args)
+   	public HathiGTK (string[] args)
    	{
    				
    		Application.Init();
    	   gxml = new Glade.XML (null, "elephant.glade", "mainwindow", null);
    	   gxml.Autoconnect (this);
   	   
-   	   lphantKernel=new CKernel(); //creates and starts the kernel 
+   	   HathiKernel=new CKernel(); //creates and starts the kernel 
  			krnGateway=CKernel.InterfaceGateway[0]; //gateway to talk with the kernel
 
    	   InitInterface();
-     		//preferences = new Config(CKernel.DllDirectory, "configInterface.xml", "0.01", "lphantInterface");
+     		//preferences = new Config(CKernel.DllDirectory, "configInterface.xml", "0.01", "HathiInterface");
      		//m_Preferences=krnGateway.GetConfig(); //do I need it?
 	
-	  	   mainwindow.Title = "eLePhantGTK " + CKernel.Version.ToString();  
+	  	   mainwindow.Title = "HathiGTK " + CKernel.Version.ToString();  
    	   mainwindow.Show();       
      
    	   Application.Run();   		

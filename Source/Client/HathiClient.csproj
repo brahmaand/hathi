@@ -9,7 +9,7 @@
     <ApplicationIcon>Client\App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>eLePhantClient</AssemblyName>
+    <AssemblyName>Hathi.Client</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -17,9 +17,9 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>eLePhant.Client</RootNamespace>
+    <RootNamespace>Hathi.Client</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
-    <StartupObject>eLePhant.Client.eLePhantForm</StartupObject>
+    <StartupObject>Hathi.Client.HathiForm</StartupObject>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <UpgradeBackupLocation>
@@ -102,13 +102,13 @@
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
-    <ProjectReference Include="..\Interface\eLePhantInterface.csproj">
-      <Name>eLePhantInterface</Name>
+    <ProjectReference Include="..\Interface\HathiInterface.csproj">
+      <Name>HathiInterface</Name>
       <Project>{68817627-41F1-43C9-A912-20906FD7E5CC}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
-    <ProjectReference Include="..\Kernel\eLePhant.csproj">
-      <Name>eLePhant</Name>
+    <ProjectReference Include="..\Kernel\Hathi.csproj">
+      <Name>Hathi</Name>
       <Project>{3DFF64F5-7EE6-4AA9-9D5D-A4CF8F648C37}</Project>
       <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
     </ProjectReference>
@@ -117,7 +117,7 @@
     <Compile Include="AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Client\eLePhantForm.cs">
+    <Compile Include="Client\HathiForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Client\FormAbout.cs">
@@ -156,7 +156,7 @@
     <Compile Include="Client\Lists\downloadsListView.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Client\Lists\eLePhantListView.cs">
+    <Compile Include="Client\Lists\HathiListView.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Client\Lists\fileNamesListView.cs">
@@ -232,8 +232,8 @@
     <Content Include="Language\interface_ru-RU.xml" />
     <Content Include="Language\interface_zh-TW.xml" />
     <Content Include="MagicLibrary.dll" />
-    <EmbeddedResource Include="Client\eLePhantForm.resx">
-      <DependentUpon>eLePhantForm.cs</DependentUpon>
+    <EmbeddedResource Include="Client\HathiForm.resx">
+      <DependentUpon>HathiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\FormAbout.resx">
       <DependentUpon>FormAbout.cs</DependentUpon>
@@ -268,8 +268,8 @@
     <EmbeddedResource Include="Client\Lists\downloadsListView.resx">
       <DependentUpon>downloadsListView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Client\Lists\eLePhantListView.resx">
-      <DependentUpon>eLePhantListView.cs</DependentUpon>
+    <EmbeddedResource Include="Client\Lists\HathiListView.resx">
+      <DependentUpon>HathiListView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Client\Lists\fileNamesListView.resx">
       <DependentUpon>fileNamesListView.cs</DependentUpon>

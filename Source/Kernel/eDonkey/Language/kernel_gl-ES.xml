@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="gl-ES">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. Núcleo iniciado</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. Núcleo iniciado</entry>
 	<entry key="HASHING_FILE">Facendo hash do {0}</entry>
 	<entry key="SRV_CNN_LOST">Perdeu se a conexión co servidor</entry>
 	<entry key="SRV_ADDED">{0} servidores engadidos</entry>
@@ -47,7 +47,7 @@
 	<entry key="SRV_DOWN">Caido</entry>
 	<entry key="IP_FILTER_LOADED">{0} rangos de IP no ficheiro {1} cargados</entry>
 	<entry key="IP_BLOCKED">IP bloqueada : {0} - {1}</entry>
-	<entry key="LOW_ID_RETRY">lphant obtivo IDE baixa cando agardaba ide alta, tentando de novo</entry>
+	<entry key="LOW_ID_RETRY">Hathi obtivo IDE baixa cando agardaba ide alta, tentando de novo</entry>
 	<entry key="UDP_PORT_NOT_OPEN">Aviso: É posible que o porto UDP non estea aberto</entry>	
 	<entry key="UDP_PORT_IS_OPEN">O Porto UDP funcionando correctamente</entry>
 </language>

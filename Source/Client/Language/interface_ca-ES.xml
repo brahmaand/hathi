@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?> 
+<?xml version="1.0" encoding="UTF-8" ?> 
  <language lang="ca-ES">
   <entry key="LBL_DOWNLOADS">Baixades</entry> 
   <entry key="LBL_UPLOADS">Pujades</entry> 
@@ -11,7 +11,7 @@
   <entry key="LBL_DOWNLOADED">Descarregat</entry> 
   <entry key="LBL_UPLOADED">Enviat</entry> 
   <entry key="LBL_OPTIONAL">Opcional</entry> 
-  <entry key="MSG_EXIT">Estàs segur de que vols sortir de lphant?</entry> 
+  <entry key="MSG_EXIT">Estàs segur de que vols sortir de Hathi?</entry> 
   <entry key="MSG_NEWCHAT">Nova sesió de xat:</entry> 
   <entry key="LBL_OPTIONS">Opcions</entry> 
   <entry key="LBL_CONNDISC">Conectar/ Desconectar amb Servidors</entry> 
@@ -160,12 +160,12 @@
   <entry key="LBL_REMOTECONTROL_PORT">Port de control remot(TCP)</entry>
   <entry key="LBL_REMOTECONTROL_PASSWORD">Contrasenya de control remot</entry>
   <entry key="LBL_REMOTECONTROL_CLIENT">Client de control remot</entry>
-  <entry key="LBL_START_LPHANT_LOCALLY">Iniciar lphant en local (sense control remot)</entry>
+  <entry key="LBL_START_LPHANT_LOCALLY">Iniciar Hathi en local (sense control remot)</entry>
   <entry key="LBL_SELECT_CONNECTIONTYPE">Sel·leccionar el tipus de conexió o el servidor de control remot al iniciar</entry>
-  <entry key="LBL_CONNECTREMOTE">Conectar a aquest lphant remot</entry>
-  <entry key="LBL_REMOTEHOST_IP">IP de lphant remot</entry>
+  <entry key="LBL_CONNECTREMOTE">Conectar a aquest Hathi remot</entry>
+  <entry key="LBL_REMOTEHOST_IP">IP de Hathi remot</entry>
   <entry key="LBL_REMOTEHOST_PORT">Port</entry>
-  <entry key="LBL_REMOTEHOST_PASSWORD">Contrasenya de lphant remot</entry>
+  <entry key="LBL_REMOTEHOST_PASSWORD">Contrasenya de Hathi remot</entry>
   <entry key="LBL_ENABLEOSIG">Habilitar Online Signature</entry>
   <entry key="LBL_SECONDS">segons</entry>
   <entry key="LBL_MINUTES">minuts</entry>
@@ -180,7 +180,7 @@
   <entry key="LBL_DOWNLOAD_SERVERLIST">Descarregar llista de servidors</entry>
   <entry key="LBL_SEARCHINFO">Cercar més informació</entry>
   <entry key="LBL_ABOUT">Quant a ...</entry>
-  <entry key="LBL_LPHANTWEB">Web d'lphant</entry>
+  <entry key="LBL_LPHANTWEB">Web d'Hathi</entry>
   <entry key="LBL_SUPPORT">Soport</entry>
   <entry key="LBL_HELP">Ajuda</entry>
   <entry key="LBL_AVGDOWNLOAD">Tasa mitja descàrrega</entry>

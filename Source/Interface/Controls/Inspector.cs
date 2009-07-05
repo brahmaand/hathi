@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,15 +34,15 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 
-namespace eLePhant.Interface
+namespace Hathi.Interface
 {
 	// use BackColor for background of bar
 	// use ForeColor for border around bars
 	
-	/// <summary>eLePhantInspector displays a zoom of file chunks</summary>
-	public class eLePhantInspector : Control
+	/// <summary>HathiInspector displays a zoom of file chunks</summary>
+	public class HathiInspector : Control
 	{
 		#region Instance fields
 		/// <summary>Store for the BorderWidth property</summary>
@@ -61,7 +61,7 @@ namespace eLePhant.Interface
 
 		#region Constructors
 		/// <summary>Create and initialize the zoom bar control</summary>
-		public eLePhantInspector()
+		public HathiInspector()
 		{
 			// Prevent flicker with double buffering and all painting inside WM_PAINT
 			SetStyle(ControlStyles.DoubleBuffer | 

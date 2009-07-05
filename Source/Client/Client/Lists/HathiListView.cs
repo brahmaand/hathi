@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -35,7 +35,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	//The delegate for the HeaderEventArgs class
 	public delegate void HeaderEventHandler(object sender, HeaderEventArgs e);
@@ -44,7 +44,7 @@ namespace eLePhant.Client
 	//The delegate for click the header
 	public delegate void ClickHeaderEventHandler(ColumnClickEventHandler e);
 
-	public class eLePhantListView : ListView
+	public class HathiListView : ListView
 	{
 		public int SortColumnIndex;
 		//The event for drawing columns
@@ -101,7 +101,7 @@ namespace eLePhant.Client
 			}
 		}
 
-		public eLePhantListView()
+		public HathiListView()
 		{
 			InitializeComponent();
 			
@@ -169,8 +169,8 @@ namespace eLePhant.Client
 		{
 			for (int i=0;i<Columns.Count;i++)
 			{
-				eLePhantForm.preferences.SetProperty(Name+"ColumnWidth-"+i.ToString(),GetColumnsWidth(i));
-				eLePhantForm.preferences.SetProperty(Name+"ColumnPosition-"+i.ToString(),this.GetColumnPosition(i));
+				HathiForm.preferences.SetProperty(Name+"ColumnWidth-"+i.ToString(),GetColumnsWidth(i));
+				HathiForm.preferences.SetProperty(Name+"ColumnPosition-"+i.ToString(),this.GetColumnPosition(i));
 			}
 		}
 		protected override void OnVisibleChanged(EventArgs e)
@@ -187,7 +187,7 @@ namespace eLePhant.Client
 					def=60;
 				else 
 					def=m_DefaultWidths[i];
-				Columns[i].Width=eLePhantForm.preferences.GetInt(Name+"ColumnWidth-"+i.ToString(),def);
+				Columns[i].Width=HathiForm.preferences.GetInt(Name+"ColumnWidth-"+i.ToString(),def);
 			}
 		}
 		private void m_LoadPreferences()
@@ -197,7 +197,7 @@ namespace eLePhant.Client
 			int newPosition;
 			for (int i=0;i<Columns.Count;i++)
 			{
-				newPosition=eLePhantForm.preferences.GetInt(Name+"ColumnPosition-"+i.ToString(),i);
+				newPosition=HathiForm.preferences.GetInt(Name+"ColumnPosition-"+i.ToString(),i);
 				this.SetColumnPosition(i,newPosition);
 			}
 		}
@@ -739,9 +739,9 @@ namespace eLePhant.Client
 
 		internal class HeaderControl : NativeWindow
 		{
-			eLePhantListView parent;
+			HathiListView parent;
 			bool mouseDown;
-			public HeaderControl(eLePhantListView m)
+			public HeaderControl(HathiListView m)
 			{
 				parent = m;
 				//Get the header control handle
@@ -895,22 +895,22 @@ namespace eLePhant.Client
 			if (size<1024) 
 			{ 
 				strB.Append(size);
-				strB.Append(" "+eLePhantForm.Globalization["LBL_BYTE"]);
+				strB.Append(" "+HathiForm.Globalization["LBL_BYTE"]);
 			}
 			else if ((size>=1024)&&(size<1048576)) 
 			{
 				strB.Append(size/1024);
-				strB.Append(" "+eLePhantForm.Globalization["LBL_KBYTE"]);
+				strB.Append(" "+HathiForm.Globalization["LBL_KBYTE"]);
 			}
 			else if ((size>=1048576)&&(size<1073741824))
 			{
 				strB.Append(((float)size/1048576F).ToString("###0.##"));
-				strB.Append(" "+eLePhantForm.Globalization["LBL_MBYTE"]);
+				strB.Append(" "+HathiForm.Globalization["LBL_MBYTE"]);
 			}
 			else if (size>=1073741824) 
 			{
 				strB.Append(((float)size/1073741824F).ToString("###0.##"));
-				strB.Append(" "+eLePhantForm.Globalization["LBL_GBYTE"]);
+				strB.Append(" "+HathiForm.Globalization["LBL_GBYTE"]);
 			}
 			return strB.ToString();
 		}
@@ -925,12 +925,12 @@ namespace eLePhant.Client
 			if (speed<10240) 
 			{
 				strB.Append(speed);
-				strB.Append(" "+eLePhantForm.Globalization["LBL_KBYTE"]+"/s");
+				strB.Append(" "+HathiForm.Globalization["LBL_KBYTE"]+"/s");
 			}
 			else 
 			{
 				strB.Append(speed/1024);
-				strB.Append(" "+eLePhantForm.Globalization["LBL_MBYTE"]+"/s");
+				strB.Append(" "+HathiForm.Globalization["LBL_MBYTE"]+"/s");
 			}
 			return strB.ToString();
 		}
@@ -938,11 +938,11 @@ namespace eLePhant.Client
 		{
 			switch (priority)
 			{
-				case Types.Constants.Priority.VeryHigh: return eLePhantForm.Globalization["LBL_VERYHIGH"];
-				case Types.Constants.Priority.High: return eLePhantForm.Globalization["LBL_HIGH"];
-				case Types.Constants.Priority.Normal: return eLePhantForm.Globalization["LBL_NORMAL"];
-				case Types.Constants.Priority.Low: return eLePhantForm.Globalization["LBL_LOW"];
-				case Types.Constants.Priority.VeryLow: return eLePhantForm.Globalization["LBL_VERYLOW"];
+				case Types.Constants.Priority.VeryHigh: return HathiForm.Globalization["LBL_VERYHIGH"];
+				case Types.Constants.Priority.High: return HathiForm.Globalization["LBL_HIGH"];
+				case Types.Constants.Priority.Normal: return HathiForm.Globalization["LBL_NORMAL"];
+				case Types.Constants.Priority.Low: return HathiForm.Globalization["LBL_LOW"];
+				case Types.Constants.Priority.VeryLow: return HathiForm.Globalization["LBL_VERYLOW"];
 			}
 			return "";
 		}
@@ -950,9 +950,9 @@ namespace eLePhant.Client
 		{
 			switch (priority)
 			{
-				case Types.Constants.ServerPriority.High: return eLePhantForm.Globalization["LBL_HIGH"]; 
-				case Types.Constants.ServerPriority.Normal: return eLePhantForm.Globalization["LBL_NORMAL"];
-				case Types.Constants.ServerPriority.Low: return eLePhantForm.Globalization["LBL_LOW"];
+				case Types.Constants.ServerPriority.High: return HathiForm.Globalization["LBL_HIGH"]; 
+				case Types.Constants.ServerPriority.Normal: return HathiForm.Globalization["LBL_NORMAL"];
+				case Types.Constants.ServerPriority.Low: return HathiForm.Globalization["LBL_LOW"];
 			}
 			return "";
 		}

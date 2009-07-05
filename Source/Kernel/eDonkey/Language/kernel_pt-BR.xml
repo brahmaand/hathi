@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="pt-BR">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. Kernel Inicializado</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. Kernel Inicializado</entry>
 	<entry key="HASHING_FILE">Hasheando {0}</entry>
 	<entry key="SRV_CNN_LOST">Conexão com o servidor perdida</entry>
 	<entry key="SRV_ADDED">{0} Servidores adicinados</entry>

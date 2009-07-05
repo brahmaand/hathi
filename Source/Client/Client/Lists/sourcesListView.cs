@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,14 +33,14 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for sourcesListView.
 	/// </summary>
-	public class sourcesListView : eLePhantListView// baseListView
+	public class sourcesListView : HathiListView// baseListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -93,29 +93,29 @@ namespace eLePhant.Client
 
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_NAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_FILENAME"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_SPEED"];
-			Columns[3].Text=eLePhantForm.Globalization["LBL_STATUS"];
-			Columns[4].Text=eLePhantForm.Globalization["LBL_POSITION"];
-			Columns[5].Text=eLePhantForm.Globalization["LBL_DOWNLOADED"];
-			Columns[6].Text=eLePhantForm.Globalization["LBL_UPLOADED"];
-			Columns[7].Text=eLePhantForm.Globalization["LBL_PROGRESS"];
-			Columns[8].Text=eLePhantForm.Globalization["LBL_SOFTWARE"];
-			Columns[9].Text=eLePhantForm.Globalization["LBL_VERSION"];
-			ContextMenuSources.MenuItems[0].Text=eLePhantForm.Globalization["LBL_SENDMESSAGE"];
-			ContextMenuSources.MenuItems[1].Text=eLePhantForm.Globalization["LBL_VIEWFILES"];
-			ContextMenuSources.MenuItems[2].Text=eLePhantForm.Globalization["LBL_ADDFRIEND"];
+			Columns[0].Text=HathiForm.Globalization["LBL_NAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_FILENAME"];
+			Columns[2].Text=HathiForm.Globalization["LBL_SPEED"];
+			Columns[3].Text=HathiForm.Globalization["LBL_STATUS"];
+			Columns[4].Text=HathiForm.Globalization["LBL_POSITION"];
+			Columns[5].Text=HathiForm.Globalization["LBL_DOWNLOADED"];
+			Columns[6].Text=HathiForm.Globalization["LBL_UPLOADED"];
+			Columns[7].Text=HathiForm.Globalization["LBL_PROGRESS"];
+			Columns[8].Text=HathiForm.Globalization["LBL_SOFTWARE"];
+			Columns[9].Text=HathiForm.Globalization["LBL_VERSION"];
+			ContextMenuSources.MenuItems[0].Text=HathiForm.Globalization["LBL_SENDMESSAGE"];
+			ContextMenuSources.MenuItems[1].Text=HathiForm.Globalization["LBL_VIEWFILES"];
+			ContextMenuSources.MenuItems[2].Text=HathiForm.Globalization["LBL_ADDFRIEND"];
 			m_States=new string[] {
-									  eLePhantForm.Globalization["LBL_PENDING"],
-									  eLePhantForm.Globalization["LBL_DOWNLOADING"],
-									  eLePhantForm.Globalization["LBL_ONQUEUE"],
-									  eLePhantForm.Globalization["LBL_CONNECTING"],
-									  eLePhantForm.Globalization["LBL_CONNECTING_LOWID"],
-									  eLePhantForm.Globalization["LBL_NONEEDEDPARTS"],
-									  eLePhantForm.Globalization["LBL_LOWIDTOLOWID"],
+									  HathiForm.Globalization["LBL_PENDING"],
+									  HathiForm.Globalization["LBL_DOWNLOADING"],
+									  HathiForm.Globalization["LBL_ONQUEUE"],
+									  HathiForm.Globalization["LBL_CONNECTING"],
+									  HathiForm.Globalization["LBL_CONNECTING_LOWID"],
+									  HathiForm.Globalization["LBL_NONEEDEDPARTS"],
+									  HathiForm.Globalization["LBL_LOWIDTOLOWID"],
 									  "","",
-									  eLePhantForm.Globalization["LBL_ASKING"],
+									  HathiForm.Globalization["LBL_ASKING"],
 								  };
 		}
 

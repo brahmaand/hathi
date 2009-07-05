@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="fi-FI">
 	<entry key="LBL_DOWNLOADS">Lataukset</entry>
 	<entry key="LBL_UPLOADS">Lähetykset</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Sisään</entry>
 	<entry key="LBL_UPLOADED">Ulos</entry>
 	<entry key="LBL_OPTIONAL">Optional</entry>
-	<entry key="MSG_EXIT">Haluatko varmasti sulkea lphantin?</entry>
+	<entry key="MSG_EXIT">Haluatko varmasti sulkea Hathiin?</entry>
 	<entry key="MSG_NEWCHAT">Uusi chat sessio: </entry>
 	<entry key="LBL_OPTIONS">Valinnat</entry>
 	<entry key="LBL_CONNDISC">Yhdistä/katkaise yhteys</entry>
@@ -160,9 +160,9 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Palvelin portti(TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Etäkäyttö palvelimen salasana</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Etäkäyttö käyttäjä</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">Käynnistä lphant paikallisesti (ei etäkäyttöä)</entry>
-	<entry key="LBL_SELECT_CONNECTIONTYPE">Valitse yhteystapa tai etäpalvelin kun lphant käynnistyy</entry>
-	<entry key="LBL_CONNECTREMOTE">Yhdistä tälle lphant palvelimelle</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">Käynnistä Hathi paikallisesti (ei etäkäyttöä)</entry>
+	<entry key="LBL_SELECT_CONNECTIONTYPE">Valitse yhteystapa tai etäpalvelin kun Hathi käynnistyy</entry>
+	<entry key="LBL_CONNECTREMOTE">Yhdistä tälle Hathi palvelimelle</entry>
 	<entry key="LBL_REMOTEHOST_IP">Palvelimen IP</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Portti</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">Etäpalvelimen salasana</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Lataa palvelin lista</entry>
 	<entry key="LBL_SEARCHINFO">Etsi lisää tietoa</entry>
 	<entry key="LBL_ABOUT">Tietoja ...</entry>
-	<entry key="LBL_LPHANTWEB">lphant Web</entry>
+	<entry key="LBL_LPHANTWEB">Hathi Web</entry>
 	<entry key="LBL_SUPPORT">Tuki</entry>
 	<entry key="LBL_HELP">Apua</entry>
 	<entry key="LBL_AVGDOWNLOAD">Keskiverto lataus arvo</entry>

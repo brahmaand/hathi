@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,12 +34,12 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("lphant")]
-[assembly: AssemblyDescription("lphant Kernel")]
+[assembly: AssemblyTitle("Hathi")]
+[assembly: AssemblyDescription("Hathi Core")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("not.website.yet")]
-[assembly: AssemblyProduct("lphant")]
-[assembly: AssemblyCopyright("Copyright Juanjo 2003")]
+[assembly: AssemblyCompany("hathi.sourceforge.net")]
+[assembly: AssemblyProduct("Hathi")]
+[assembly: AssemblyCopyright("Copyright (C)2009 Hathi Project http://hathi.sourceforge.net")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
@@ -54,7 +54,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0")]
+[assembly: AssemblyVersion("0.1.00")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

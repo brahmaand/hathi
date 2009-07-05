@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -35,16 +35,16 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.IO;
 using Microsoft.Win32;
-using eLePhant.eDonkey;
-using eLePhant.Interface;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Interface;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for downloadsListView.
 	/// </summary>
-	public class downloadsListView : eLePhantListView
+	public class downloadsListView : HathiListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -142,55 +142,55 @@ namespace eLePhant.Client
 			ContextMenuDownloads.Popup+=new System.EventHandler(myContextMenuPopup);
 			m_DefaultWidths=new int[] {190,60,60,60,60,60,60,60,60,190,60,70,70};
 			m_LoadWidths();
-			SmallImageList=eLePhantForm.SystemIconsList.list;
+			SmallImageList=HathiForm.SystemIconsList.list;
 			m_Globalize();
 		}
 
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_FILENAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_SIZE"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_SPEED"];
-			Columns[3].Text=eLePhantForm.Globalization["LBL_COMPLETED"];
-			Columns[4].Text=eLePhantForm.Globalization["LBL_REMAINING"];
-			Columns[5].Text=eLePhantForm.Globalization["LBL_SOURCES"];
-			Columns[6].Text=eLePhantForm.Globalization["LBL_USEFULLSOURCES"];
-			Columns[7].Text=eLePhantForm.Globalization["LBL_TRANSFERS"];
-			Columns[8].Text=eLePhantForm.Globalization["LBL_STATUS"];
-			Columns[9].Text=eLePhantForm.Globalization["LBL_PROGRESS"];
-			Columns[10].Text=eLePhantForm.Globalization["LBL_PRIORITY"];
-			Columns[11].Text=eLePhantForm.Globalization["LBL_ESTIMATED"];
-			Columns[12].Text=eLePhantForm.Globalization["LBL_CATEGORY"];
-			ContextMenuDownloads.MenuItems[0].Text=eLePhantForm.Globalization["LBL_START"];
-			ContextMenuDownloads.MenuItems[1].Text=eLePhantForm.Globalization["LBL_STOP"];
-			ContextMenuDownloads.MenuItems[2].Text=eLePhantForm.Globalization["LBL_CANCEL"];
-			ContextMenuDownloads.MenuItems[4].Text=eLePhantForm.Globalization["LBL_PREVIEW"];
-			ContextMenuDownloads.MenuItems[5].Text=eLePhantForm.Globalization["LBL_OPENFILE"];
-			ContextMenuDownloads.MenuItems[7].Text=eLePhantForm.Globalization["LBL_COPYLINK"];
-			ContextMenuDownloads.MenuItems[8].Text=eLePhantForm.Globalization["LBL_COPYLINK"]+" (HTML)";
-			ContextMenuDownloads.MenuItems[10].Text=eLePhantForm.Globalization["LBL_PRIORITY"];
-			ContextMenuDownloads.MenuItems[11].Text=eLePhantForm.Globalization["LBL_CATEGORY"];
+			Columns[0].Text=HathiForm.Globalization["LBL_FILENAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_SIZE"];
+			Columns[2].Text=HathiForm.Globalization["LBL_SPEED"];
+			Columns[3].Text=HathiForm.Globalization["LBL_COMPLETED"];
+			Columns[4].Text=HathiForm.Globalization["LBL_REMAINING"];
+			Columns[5].Text=HathiForm.Globalization["LBL_SOURCES"];
+			Columns[6].Text=HathiForm.Globalization["LBL_USEFULLSOURCES"];
+			Columns[7].Text=HathiForm.Globalization["LBL_TRANSFERS"];
+			Columns[8].Text=HathiForm.Globalization["LBL_STATUS"];
+			Columns[9].Text=HathiForm.Globalization["LBL_PROGRESS"];
+			Columns[10].Text=HathiForm.Globalization["LBL_PRIORITY"];
+			Columns[11].Text=HathiForm.Globalization["LBL_ESTIMATED"];
+			Columns[12].Text=HathiForm.Globalization["LBL_CATEGORY"];
+			ContextMenuDownloads.MenuItems[0].Text=HathiForm.Globalization["LBL_START"];
+			ContextMenuDownloads.MenuItems[1].Text=HathiForm.Globalization["LBL_STOP"];
+			ContextMenuDownloads.MenuItems[2].Text=HathiForm.Globalization["LBL_CANCEL"];
+			ContextMenuDownloads.MenuItems[4].Text=HathiForm.Globalization["LBL_PREVIEW"];
+			ContextMenuDownloads.MenuItems[5].Text=HathiForm.Globalization["LBL_OPENFILE"];
+			ContextMenuDownloads.MenuItems[7].Text=HathiForm.Globalization["LBL_COPYLINK"];
+			ContextMenuDownloads.MenuItems[8].Text=HathiForm.Globalization["LBL_COPYLINK"]+" (HTML)";
+			ContextMenuDownloads.MenuItems[10].Text=HathiForm.Globalization["LBL_PRIORITY"];
+			ContextMenuDownloads.MenuItems[11].Text=HathiForm.Globalization["LBL_CATEGORY"];
 
-			ContextMenuDownloads.MenuItems[13].Text=eLePhantForm.Globalization["LBL_SHOWHIDEDETAILS"];
-			ContextMenuDownloads.MenuItems[15].Text=eLePhantForm.Globalization["LBL_SEARCHINFO"];
-			ContextMenuDownloads.MenuItems[17].Text=eLePhantForm.Globalization["LBL_CLEARCOMPLETED"];
+			ContextMenuDownloads.MenuItems[13].Text=HathiForm.Globalization["LBL_SHOWHIDEDETAILS"];
+			ContextMenuDownloads.MenuItems[15].Text=HathiForm.Globalization["LBL_SEARCHINFO"];
+			ContextMenuDownloads.MenuItems[17].Text=HathiForm.Globalization["LBL_CLEARCOMPLETED"];
 			
-			PriorityMenu.MenuItems[0].Text=eLePhantForm.Globalization["LBL_HIGH"];
-			PriorityMenu.MenuItems[1].Text=eLePhantForm.Globalization["LBL_NORMAL"];
-			PriorityMenu.MenuItems[2].Text=eLePhantForm.Globalization["LBL_LOW"];
+			PriorityMenu.MenuItems[0].Text=HathiForm.Globalization["LBL_HIGH"];
+			PriorityMenu.MenuItems[1].Text=HathiForm.Globalization["LBL_NORMAL"];
+			PriorityMenu.MenuItems[2].Text=HathiForm.Globalization["LBL_LOW"];
 			m_States=new string[] {
-				eLePhantForm.Globalization["LBL_READY"],
-				eLePhantForm.Globalization["LBL_PAUSED"],
-				eLePhantForm.Globalization["LBL_STOPPED"],
+				HathiForm.Globalization["LBL_READY"],
+				HathiForm.Globalization["LBL_PAUSED"],
+				HathiForm.Globalization["LBL_STOPPED"],
 				"","","","","",
-				eLePhantForm.Globalization["LBL_COMPLETING"],
-				eLePhantForm.Globalization["LBL_COMPLETE"],
+				HathiForm.Globalization["LBL_COMPLETING"],
+				HathiForm.Globalization["LBL_COMPLETE"],
 			};
 			m_Priorities=new string[] {
-				eLePhantForm.Globalization["LBL_LOW"],
-				eLePhantForm.Globalization["LBL_NORMAL"],
-				eLePhantForm.Globalization["LBL_HIGH"],
-				eLePhantForm.Globalization["LBL_AUTO"],
+				HathiForm.Globalization["LBL_LOW"],
+				HathiForm.Globalization["LBL_NORMAL"],
+				HathiForm.Globalization["LBL_HIGH"],
+				HathiForm.Globalization["LBL_AUTO"],
 			};
 		}
 		
@@ -301,10 +301,10 @@ namespace eLePhant.Client
 			
 			if (CUtils.IsVideo(FileInfo.FileName))
 			{
-				string player=eLePhantForm.preferences.GetString("PreviewPlayer");
+				string player=HathiForm.preferences.GetString("PreviewPlayer");
 				if ((player==null)||(player==""))
 				{
-					MessageBox.Show(eLePhantForm.Globalization["LBL_NOPLAYER"],"lphant",MessageBoxButtons.OK,MessageBoxIcon.Information);
+					MessageBox.Show(HathiForm.Globalization["LBL_NOPLAYER"],"Hathi",MessageBoxButtons.OK,MessageBoxIcon.Information);
 					return;
 				}
 				try
@@ -406,8 +406,8 @@ namespace eLePhant.Client
 
 				for(int i=0;i!=SelectedItem;i++)
 				{
-					string message = String.Format(eLePhantForm.Globalization["MSG_DELETEFILE"],(Items[i].Name));
-					if (MessageBox.Show(message,"lphant",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+					string message = String.Format(HathiForm.Globalization["MSG_DELETEFILE"],(Items[i].Name));
+					if (MessageBox.Show(message,"Hathi",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
 					{						
 						krnGateway.CancelFile(Items[i].strHash);
 					}
@@ -476,7 +476,7 @@ namespace eLePhant.Client
 				InterfaceFile file = (InterfaceFile)(Items[item].Tag);
 				Bitmap bar=new Bitmap(rec.Width,rec.Height,g);
 				Graphics g2=Graphics.FromImage(bar);
-				eLePhantInspector.DrawBar(file, g2, new Rectangle(0,0,rec.Width,rec.Height), true, true);
+				HathiInspector.DrawBar(file, g2, new Rectangle(0,0,rec.Width,rec.Height), true, true);
 				g2.FillRectangle(new SolidBrush(this.BackColor),0,rec.Height-1,rec.Width,1);
 				g.DrawImageUnscaled(bar, rec.Left, rec.Top);
 				bar.Dispose();
@@ -528,7 +528,7 @@ namespace eLePhant.Client
 
 			if (itemFile.SubItems[12].Text!=file.Category) itemFile.SubItems[12].Text=file.Category;
 
-			itemFile.ImageIndex=eLePhantForm.SystemIconsList.GetIconIndexOf(file.Name);
+			itemFile.ImageIndex=HathiForm.SystemIconsList.GetIconIndexOf(file.Name);
 			itemFile.Tag=file;
 		}
 
@@ -572,7 +572,7 @@ namespace eLePhant.Client
 				else FileToItem(file,Item);
 			}
 			//enable this to autosort the list
-			if (eLePhantForm.preferences.GetBool("AutoSort"))
+			if (HathiForm.preferences.GetBool("AutoSort"))
 			{
 				this.ListViewItemSorter = TheColumnSorter;	
 				this.Sort();
@@ -701,7 +701,7 @@ namespace eLePhant.Client
 		{
 			ArrayList categories=krnGateway.GetCategories();
 			CategoryMenu.MenuItems.Clear();
-			MenuItem noneItem=CategoryMenu.MenuItems.Add(eLePhantForm.Globalization["LBL_NONE"], new EventHandler(OnSelectCategory));
+			MenuItem noneItem=CategoryMenu.MenuItems.Add(HathiForm.Globalization["LBL_NONE"], new EventHandler(OnSelectCategory));
 			CategoryMenu.MenuItems.Add("-");
 			MenuItem catItem;
 			InterfaceFile file=null;
@@ -718,7 +718,7 @@ namespace eLePhant.Client
 			}
 
 			if (categories.Count>0) CategoryMenu.MenuItems.Add("-");
-			CategoryMenu.MenuItems.Add(eLePhantForm.Globalization["LBL_MANAGECATEGORIES"], new EventHandler(OnAddCategory));
+			CategoryMenu.MenuItems.Add(HathiForm.Globalization["LBL_MANAGECATEGORIES"], new EventHandler(OnAddCategory));
 
 		}
 

@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -28,13 +28,13 @@
 
 using System;
 using System.Threading;
-using eLePhant.Classes;
+using Hathi.Classes;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Diagnostics;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Provides the program entry point
@@ -46,7 +46,7 @@ namespace eLePhant.Client
 		private static Config m_Preferences;
 		public CMain(string[] args)
 		{
-			m_Preferences = new Config(Application.StartupPath, "configInterface.xml", "0.01", "lphantInterface");
+			m_Preferences = new Config(Application.StartupPath, "configInterface.xml", "0.01", "HathiInterface");
 			m_Preferences.LoadProperties();
 			
 			if (args.Length>0)
@@ -62,7 +62,7 @@ namespace eLePhant.Client
 
 				if (m_Preferences.GetBool("StartupLocal",true))
 				{
-					Application.Run(new eLePhantForm(m_elink,m_Mutex));
+					Application.Run(new HathiForm(m_elink,m_Mutex));
 				}
 				else if (m_Preferences.GetBool("StartupRemote",false))
 				{
@@ -74,11 +74,11 @@ namespace eLePhant.Client
 						CedonkeyCRemoto CRemoto=new CedonkeyCRemoto();
 						if (CRemoto.Connect(remoteIP,remotePass,remotePort))
 						{
-							Application.Run(new eLePhantForm(m_elink,m_Mutex,CRemoto.interfazremota));
+							Application.Run(new HathiForm(m_elink,m_Mutex,CRemoto.interfazremota));
 						}
 						else
 						{
-							MessageBox.Show("Can not connect with the host specified in preferences","lphant",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+							MessageBox.Show("Can not connect with the host specified in preferences","Hathi",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
 							Application.Run(new StartForm(m_elink,m_Mutex));
 						}
 					}

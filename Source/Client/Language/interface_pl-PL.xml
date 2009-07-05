@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="pl-PL">
 	<entry key="LBL_DOWNLOADS">Pobieranie</entry>
 	<entry key="LBL_UPLOADS">Wysyłanie</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Pobrane</entry>
 	<entry key="LBL_UPLOADED">Wysłane</entry>
 	<entry key="LBL_OPTIONAL">Opcjonalnie</entry>
-	<entry key="MSG_EXIT">Chcesz zamknąć lphant?</entry>
+	<entry key="MSG_EXIT">Chcesz zamknąć Hathi?</entry>
 	<entry key="MSG_NEWCHAT">Nowa sesja rozmowy: </entry>
 	<entry key="LBL_OPTIONS">Opcje</entry>
 	<entry key="LBL_CONNDISC">Połącz/rozłącz z serwerami</entry>

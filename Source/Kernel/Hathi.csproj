@@ -6,11 +6,10 @@
     <ProjectGuid>{3DFF64F5-7EE6-4AA9-9D5D-A4CF8F648C37}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>App.ico</ApplicationIcon>
     <AssemblyKeyContainerName>
     </AssemblyKeyContainerName>
-    <AssemblyName>eLePhant</AssemblyName>
+    <AssemblyName>Hathi</AssemblyName>
     <AssemblyOriginatorKeyFile>
     </AssemblyOriginatorKeyFile>
     <DefaultClientScript>JScript</DefaultClientScript>
@@ -18,7 +17,7 @@
     <DefaultTargetSchema>IE50</DefaultTargetSchema>
     <DelaySign>false</DelaySign>
     <OutputType>Library</OutputType>
-    <RootNamespace>eLePhant</RootNamespace>
+    <RootNamespace>Hathi</RootNamespace>
     <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
     <StartupObject>
     </StartupObject>
@@ -221,6 +220,7 @@
     <Compile Include="Types\Types.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Content Include="App.ico" />
     <Content Include="eDonkey\Language\kernel_ca-ES.xml" />
     <Content Include="eDonkey\Language\kernel_de-DE.xml" />
     <Content Include="eDonkey\Language\kernel_en-US.xml" />

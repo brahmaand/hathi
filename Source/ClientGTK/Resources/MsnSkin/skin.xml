@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<lphantSkin version="0.01">
+<HathiSkin version="0.01">
   <colors>
     <color key="defaultBackColor" value="FFDEE7F7" />
     <color key="defaultForeColor" value="FF444597" />
@@ -61,4 +61,4 @@
 	<size key="BigGraphicSize" width="296" height="148" />
 	<size key="GraphicLinesWidth" width="1" height="0" />
   </sizes>
-</lphantSkin>
+</HathiSkin>

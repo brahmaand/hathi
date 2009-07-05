@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,10 +33,10 @@ using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
 
-namespace eLePhant.Interface
+namespace Hathi.Interface
 {
 	/// <summary>
-	/// ScrollingCredits is a control to display lphant members.
+	/// ScrollingCredits is a control to display Hathi members.
 	/// </summary>
 	public class ScrollingCredits : System.Windows.Forms.Control
 	{
@@ -45,7 +45,7 @@ namespace eLePhant.Interface
 		/// </summary>
 		private System.ComponentModel.Container components = null;
 		private Timer m_Timer;
-		private ArrayList m_lphantTeam;
+		private ArrayList m_HathiTeam;
 		private float Step=0F;
 		private ScrollingCredits.CStyle Header1Style;
 		private ScrollingCredits.CStyle Header2Style;
@@ -80,9 +80,9 @@ namespace eLePhant.Interface
 			
 			this.BackColor=Color.Transparent;
 
-			m_lphantTeam = new ArrayList();
+			m_HathiTeam = new ArrayList();
 			m_CreateStyle();
-			m_CreatelphantTeam();
+			m_CreateHathiTeam();
 			m_Timer = new Timer();
 			m_Timer.Interval = 30;
 			m_Timer.Enabled = true;
@@ -125,7 +125,7 @@ namespace eLePhant.Interface
 			// TODO : personnalized painting
 			RectangleF textRect = new RectangleF();
 			
-			foreach(CTeamInfo ti in m_lphantTeam)
+			foreach(CTeamInfo ti in m_HathiTeam)
 			{
 				
 				switch(ti.Style)
@@ -181,37 +181,37 @@ namespace eLePhant.Interface
 			this.Invalidate();
 		}
 		
-		private void m_CreatelphantTeam()
+		private void m_CreateHathiTeam()
 		{			
-			m_lphantTeam.Add(new CTeamInfo("lphant",Role.None,Style.Header1));
-			m_lphantTeam.Add(new CTeamInfo("Copyright (C)2003 Juanjo",Role.None,Style.Header2));
-			m_lphantTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Hathi",Role.None,Style.Header1));
+			m_HathiTeam.Add(new CTeamInfo("Copyright (C)2003 Juanjo",Role.None,Style.Header2));
+			m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
 						
-			m_lphantTeam.Add(new CTeamInfo("Developers",Role.None,Style.Header3));
-			m_lphantTeam.Add(new CTeamInfo("Juanjo",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("70n1",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("toertchn",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("FeuerFrei",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Developers",Role.None,Style.Header3));
+			m_HathiTeam.Add(new CTeamInfo("Juanjo",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("70n1",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("toertchn",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("FeuerFrei",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
 						
-			m_lphantTeam.Add(new CTeamInfo("Other contributors",Role.None,Style.Header3));
-			m_lphantTeam.Add(new CTeamInfo("mimontyf",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("finrold",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("jicxicmic",Role.Developer,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Other contributors",Role.None,Style.Header3));
+			m_HathiTeam.Add(new CTeamInfo("mimontyf",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("finrold",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("jicxicmic",Role.Developer,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
 						
-			m_lphantTeam.Add(new CTeamInfo("Translators",Role.None,Style.Header3));
-			m_lphantTeam.Add(new CTeamInfo("bladmorv : German",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("andrerib : Brazilian",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("arcange| : Galizian",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("montagu : Catalan",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("wins : Polish",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("RangO : Italian",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("FAV : Russian",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("roytam1 : Traditional chinese ",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("Jesse : Finnish",Role.Translator,Style.Header4));
-			m_lphantTeam.Add(new CTeamInfo("Decayer-9 : Hungarian",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Translators",Role.None,Style.Header3));
+			m_HathiTeam.Add(new CTeamInfo("bladmorv : German",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("andrerib : Brazilian",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("arcange| : Galizian",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("montagu : Catalan",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("wins : Polish",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("RangO : Italian",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("FAV : Russian",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("roytam1 : Traditional chinese ",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Jesse : Finnish",Role.Translator,Style.Header4));
+			m_HathiTeam.Add(new CTeamInfo("Decayer-9 : Hungarian",Role.Translator,Style.Header4));
 		
 		}
 

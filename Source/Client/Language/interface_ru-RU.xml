@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="ru-RU">
 	<entry key="LBL_DOWNLOADS">Загрузки</entry>
 	<entry key="LBL_UPLOADS">Выгрузки</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Загруженный</entry>
 	<entry key="LBL_UPLOADED">Выгруженный</entry>
 	<entry key="LBL_OPTIONAL">Дополнительный</entry>
-	<entry key="MSG_EXIT">Вы действительно хотите выйти из lphant?</entry>
+	<entry key="MSG_EXIT">Вы действительно хотите выйти из Hathi?</entry>
 	<entry key="MSG_NEWCHAT">Новая чат сессия: </entry>
 	<entry key="LBL_OPTIONS">Свойства</entry>
 	<entry key="LBL_CONNDISC">Соединитесь/разъедините с серверами</entry>
@@ -160,9 +160,9 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Порт удаленного управления(TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Пароль удаленного управления</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Клиент Удаленного управления</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">Запустить lphant локально (нет удаленного управления)</entry>
-	<entry key="LBL_SELECT_CONNECTIONTYPE">Выбрать тип соединения или удаленный хост, когда lphant запускается</entry>
-	<entry key="LBL_CONNECTREMOTE">Соединиться с этим удаленным хостом lphant</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">Запустить Hathi локально (нет удаленного управления)</entry>
+	<entry key="LBL_SELECT_CONNECTIONTYPE">Выбрать тип соединения или удаленный хост, когда Hathi запускается</entry>
+	<entry key="LBL_CONNECTREMOTE">Соединиться с этим удаленным хостом Hathi</entry>
 	<entry key="LBL_REMOTEHOST_IP">IP удаленного хоста</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Порт</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">Пароль удаленного хоста</entry>

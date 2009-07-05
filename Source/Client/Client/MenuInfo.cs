@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,7 +33,7 @@ using System.IO;
 using System.Collections;
 using System.Xml;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for MenuInfo.
@@ -116,8 +116,8 @@ namespace eLePhant.Client
 
 		private void m_CreateMenuInfo(Menu owner)
 		{
-			m_Language = m_GetLanguageFromCulture(eLePhantForm.preferences.GetString("Language"));
-			m_ShowAllLanguage = eLePhantForm.preferences.GetBool("ShowAllLanguages",true);
+			m_Language = m_GetLanguageFromCulture(HathiForm.preferences.GetString("Language"));
+			m_ShowAllLanguage = HathiForm.preferences.GetBool("ShowAllLanguages",true);
 			m_Owner = owner;
 			Actions=new Hashtable();
 			MenuItems=new Menu.MenuItemCollection(owner);
@@ -125,7 +125,7 @@ namespace eLePhant.Client
 			
 			try
             {
-				ShowAllLanguageMenuItem = new MenuItem(eLePhantForm.Globalization["LBL_SHOW_ALL_LANGUAGES"],new EventHandler(ShowAllLanguageMenuItem_Click));
+				ShowAllLanguageMenuItem = new MenuItem(HathiForm.Globalization["LBL_SHOW_ALL_LANGUAGES"],new EventHandler(ShowAllLanguageMenuItem_Click));
 				ShowAllLanguageMenuItem.DefaultItem = true;
 				ShowAllLanguageMenuItem.Checked = m_ShowAllLanguage;
 				MenuItems.Add(ShowAllLanguageMenuItem);
@@ -192,7 +192,7 @@ namespace eLePhant.Client
 		private void ShowAllLanguageMenuItem_Click(object sender, EventArgs e)
 		{
 			m_ShowAllLanguage=!ShowAllLanguageMenuItem.Checked;
-			eLePhantForm.preferences.SetProperty("ShowAllLanguages",m_ShowAllLanguage);
+			HathiForm.preferences.SetProperty("ShowAllLanguages",m_ShowAllLanguage);
 			ShowAllLanguageMenuItem.Click-=new EventHandler(ShowAllLanguageMenuItem_Click);
 			MenuItems.Clear();
 			m_CreateMenuInfo(m_Owner);
@@ -200,7 +200,7 @@ namespace eLePhant.Client
 		
 		public void OnMenuInfoChange()
 		{
-			if(m_ShowAllLanguage!=eLePhantForm.preferences.GetBool("ShowAllLanguages",true))
+			if(m_ShowAllLanguage!=HathiForm.preferences.GetBool("ShowAllLanguages",true))
 			{
 				ShowAllLanguageMenuItem.Click-=new EventHandler(ShowAllLanguageMenuItem_Click);
 				MenuItems.Clear();
@@ -208,7 +208,7 @@ namespace eLePhant.Client
 				return;
 			}
 
-			if(m_Language!=m_GetLanguageFromCulture(eLePhantForm.preferences.GetString("Language")))
+			if(m_Language!=m_GetLanguageFromCulture(HathiForm.preferences.GetString("Language")))
 			{
 				ShowAllLanguageMenuItem.Click-=new EventHandler(ShowAllLanguageMenuItem_Click);
 				MenuItems.Clear();

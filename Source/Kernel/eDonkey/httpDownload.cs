@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,9 +34,9 @@ using System.IO;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
-using eLePhant.Types;
+using Hathi.Types;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// You can download a file from a WebSite.
@@ -206,7 +206,7 @@ namespace eLePhant.eDonkey
 
 		
 		/// <summary>
-		/// Get informations from a web site. You can receive lphant news.
+		/// Get informations from a web site. You can receive Hathi news.
 		/// </summary>
 		/// <param name="remoteUri">
 		/// The Uri of the information file.
@@ -238,27 +238,27 @@ namespace eLePhant.eDonkey
 		/*XML example file.
 		<?xml version="1.0" encoding="UTF-8"?>
 		<info> 
-		<version>lphant-v0.01-pré5</version> 
+		<version>Hathi-v0.01-pré5</version> 
 		<log>
 		-----------
-		*lphant-v0.01-pre5
-		*lphant-v0.01-pre5
-		*lphant-v0.01-pre5
-		*lphant-v0.01-pre5
+		*Hathi-v0.01-pre5
+		*Hathi-v0.01-pre5
+		*Hathi-v0.01-pre5
+		*Hathi-v0.01-pre5
 		-----------
-		http://not.website.yet
+		http://hathi.sourceforge.net
 		</log>
-		<statusbar>lphant-v0.01-pre5</statusbar> 
+		<statusbar>Hathi-v0.01-pre5</statusbar> 
 		<messagebox>xxx xxx xx xxxxxx</messagebox> 
 		</info>
 		
 		string[] myLog = new string[] {"log","version"};
-		httpDownload.GetInfoXML(@"http://localhost/lphant/xml.xml",mylog,true);
+		httpDownload.GetInfoXML(@"http://localhost/Hathi/xml.xml",mylog,true);
 		CLog.Log(Constants.Log.Info,httpDownload.getReadInfoFromXML("log"));
 		 */
 
 		/// <summary>
-		/// Get informations from a web site. You can receive lphant news.
+		/// Get informations from a web site. You can receive Hathi news.
 		/// </summary>
 		/// <param name="remoteUri">
 		/// The Uri of the information file.

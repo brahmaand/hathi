@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -28,7 +28,7 @@
 
 using System;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// Protocol includes the eDonkey network protocol
@@ -186,7 +186,7 @@ namespace eLePhant.eDonkey
 			lMule						= 2,
 			aMule						= 3,
 			Shareaza					= 4,
-			eLePhant					= 20,
+			Hathi					= 20,
 			eDonkeyHybrid				= 50,
 			eDonkey						= 51,
 			mlDonkey					= 10,
@@ -202,7 +202,7 @@ namespace eLePhant.eDonkey
 		public const uint EMULE_VERSION_MIN = ELEPHANT_VERSION;
 		public const uint EMULE_VERSION_REVISON = 0;
 		public const uint EMULE_VERSION_COMPLEX=(uint)(
-			(int)Protocol.Client.eLePhant<<24)|
+			(int)Protocol.Client.Hathi<<24)|
 			(Protocol.EMULE_VERSION_MAJOR<<17)|
 			(Protocol.EMULE_VERSION_MIN<<10)|
 			(Protocol.EMULE_VERSION_REVISON<<7);
@@ -332,7 +332,7 @@ namespace eLePhant.eDonkey
 			Sources						= 0x15,
 			Permissions					= 0x16,
 			UploadPriority				= 0x17,
-			// eLePhant CFile
+			// Hathi CFile
 			Comment						= 0x50,
 			Rating						= 0x51,
 			Category					= 0x53,

@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,9 +33,9 @@ using System.Windows.Forms;
 using System.IO;
 using System.Xml;
 using System.Text;
-using eLePhant.Types;
+using Hathi.Types;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	[Serializable]
 	public struct SFriend
@@ -66,7 +66,7 @@ namespace eLePhant.eDonkey
 
 		public CFriendsList()
 		{
-			_xmlRootNode		= "lphantFriendsList";
+			_xmlRootNode		= "HathiFriendsList";
 			_version			= "0.2";
 			_configDirectory	= Application.StartupPath;
 			_fileName			= "friends.xml";

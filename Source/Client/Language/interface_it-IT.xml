@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="it-IT">
 	<entry key="LBL_DOWNLOADS">Downloads</entry>
 	<entry key="LBL_UPLOADS">Uploads</entry>
@@ -11,7 +11,7 @@
 	<entry key="LBL_DOWNLOADED">Scaricati</entry>
 	<entry key="LBL_UPLOADED">Inviati</entry>
 	<entry key="LBL_OPTIONAL">Opzioni</entry>
-	<entry key="MSG_EXIT">Sei sicuro di voler uscire da lphant?</entry>
+	<entry key="MSG_EXIT">Sei sicuro di voler uscire da Hathi?</entry>
 	<entry key="MSG_NEWCHAT">Nuova sessione di chat: </entry>
 	<entry key="LBL_OPTIONS">Opzioni</entry>
 	<entry key="LBL_CONNDISC">Connetti/Disconnetti al server</entry>
@@ -160,9 +160,9 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Porta remote control (TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Remote control password</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Remote Control Client</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">start lphant Localmente (no controllo remoto)</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">start Hathi Localmente (no controllo remoto)</entry>
 	<entry key="LBL_SELECT_CONNECTIONTYPE">Scegli in tipo di controllo </entry>
-	<entry key="LBL_CONNECTREMOTE">Connetti a questo lphant host remoto</entry>
+	<entry key="LBL_CONNECTREMOTE">Connetti a questo Hathi host remoto</entry>
 	<entry key="LBL_REMOTEHOST_IP">Remote host IP</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Port</entry>
 	<entry key="LBL_REMOTEHOST_PASSWORD">Remote host password</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Scarica lista server</entry>
 	<entry key="LBL_SEARCHINFO">Cerca informazioni</entry>
 	<entry key="LBL_ABOUT">About ...</entry>
-	<entry key="LBL_LPHANTWEB">lphant Web</entry>
+	<entry key="LBL_LPHANTWEB">Hathi Web</entry>
 	<entry key="LBL_SUPPORT">Supporto</entry>
 	<entry key="LBL_HELP">Help</entry>
 	<entry key="LBL_AVGDOWNLOAD">Media download</entry>

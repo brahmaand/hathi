@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -36,7 +36,7 @@ using System.Net;
 using ICSharpCode.SharpZipLib.Zip.Compression;
 using ICSharpCode.SharpZipLib.Zip.Compression.Streams;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// Summary description for edonkeyCommands.
@@ -412,7 +412,7 @@ namespace eLePhant.eDonkey
 					software=(byte)Protocol.Client.mlDonkey;
 			}
 			
-			if ((IDClientCompatible==(byte)Protocol.Client.eLePhant)&&(VersioneMuleMajor>0)) VersioneMuleMajor--;
+			if ((IDClientCompatible==(byte)Protocol.Client.Hathi)&&(VersioneMuleMajor>0)) VersioneMuleMajor--;
 
 			if (Version > 10000 && Version < 100000)
 				Version = Version - (Version/10000)*10000;
@@ -918,8 +918,8 @@ namespace eLePhant.eDonkey
 			// version extended requests
 			new ParameterWriter(Protocol.ET_EXTENDEDREQUEST,(uint)Protocol.EMULE_VERSION_EXTENDEDREQUEST,writer);
 			// client compatible
-			new ParameterWriter(Protocol.ET_COMPATIBLECLIENT,(byte)Protocol.Client.eLePhant,writer);
-			// version lphant
+			new ParameterWriter(Protocol.ET_COMPATIBLECLIENT,(byte)Protocol.Client.Hathi,writer);
+			// version Hathi
 			new ParameterWriter(Protocol.ET_ELEPHANTVERSION,Protocol.ELEPHANT_VERSION,writer);
 
 			header.Packetlength=(uint)writer.BaseStream.Length-header.Packetlength+1;

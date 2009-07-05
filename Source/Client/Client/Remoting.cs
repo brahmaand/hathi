@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -31,10 +31,10 @@ using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Messaging;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 //dos clases para obtener acceso a las preferecias de la aplicacion.
 //y todo por no existir todavia el formulario principal.
-using eLePhant.Classes;
+using Hathi.Classes;
 using System.Windows.Forms;
 
 using System.Diagnostics;
@@ -44,7 +44,7 @@ using System.IO;
 using System.Net;
 using ICSharpCode.SharpZipLib;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Descripción breve de edonkeyCRemoto.
@@ -72,7 +72,7 @@ namespace eLePhant.Client
 		public CedonkeyCRemoto()
 		{	
 			props = new Hashtable();
-			props.Add("name","eLePhantClient");
+			props.Add("name","HathiClient");
 			props.Add("priority","10");
 			props.Add("port",0);
 
@@ -90,7 +90,7 @@ namespace eLePhant.Client
 			Hashtable datasinks = new Hashtable();
 			
 			//2ª Opcion			
-			provider = new eLePhantClientSinkProvider(propsinks,datasinks);	
+			provider = new HathiClientSinkProvider(propsinks,datasinks);	
 				
 #endif
 		}
@@ -136,7 +136,7 @@ namespace eLePhant.Client
 				else
 					m_lPhantChannel = new TcpClientChannel(props, provider);	
 			}
-			interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(eLePhant.eDonkey.CInterfaceGateway),
+			interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
 				this.m_url);
 			
 			if (interfazremota == null)
@@ -179,7 +179,7 @@ namespace eLePhant.Client
 				else
 					m_lPhantChannel = new TcpClientChannel(props, provider);
 			}
-			interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(eLePhant.eDonkey.CInterfaceGateway),
+			interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
 				this.m_url);
 			
 			if (interfazremota == null)
@@ -205,7 +205,7 @@ namespace eLePhant.Client
 	}
 
 	[Serializable]
-	public class eLePhantClientSinkProvider : IClientChannelSinkProvider, IClientFormatterSinkProvider
+	public class HathiClientSinkProvider : IClientChannelSinkProvider, IClientFormatterSinkProvider
 	{
 		private IClientChannelSinkProvider m_NextChannelSinkProvider=null;
 		private IClientChannelSink m_NextChannelSink=null;
@@ -213,12 +213,12 @@ namespace eLePhant.Client
 		private Hashtable m_ProviderData=new Hashtable();
 
 		#region Constructor
-		public eLePhantClientSinkProvider()
+		public HathiClientSinkProvider()
 		{
 			m_Properties.Add("includeVersions",true);
 			//this.Next=new BinaryClientFormatterSinkProvider(m_Properties,m_ProviderData);
 		}
-		public eLePhantClientSinkProvider(Hashtable Properties, Hashtable ProviderData)
+		public HathiClientSinkProvider(Hashtable Properties, Hashtable ProviderData)
 		{
 			this.m_Properties=Properties;
 			this.m_ProviderData=ProviderData;
@@ -238,12 +238,12 @@ namespace eLePhant.Client
 
 			if (this.m_NextChannelSink==null)
 			{
-				this.m_NextChannelSink=new eLePhantClientSink(this,url,NextSink);
+				this.m_NextChannelSink=new HathiClientSink(this,url,NextSink);
 				return this.m_NextChannelSink;
 			} 
 			else 
 			{
-				return new eLePhantClientSink(this,url,NextSink);
+				return new HathiClientSink(this,url,NextSink);
 			}
 
 			
@@ -260,32 +260,32 @@ namespace eLePhant.Client
 	}
 
 	[Serializable]
-	public class eLePhantClientSink:BaseChannelObjectWithProperties,IClientChannelSink,IMessageSink
+	public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,IMessageSink
 	{
 		private string m_url=null;
 		private IClientChannelSink m_NextChannelSink=null;
 		private IMessageSink m_NextMessageSink=null;
-		private eLePhantClientSinkProvider m_Provider=null;
+		private HathiClientSinkProvider m_Provider=null;
 		private Hashtable m_properties = new Hashtable();
-		private eLePhant.Classes.Config m_preferences;
+		private Hathi.Classes.Config m_preferences;
 		private CompressionType m_CompressionMethod;
 
 		#region Constructor
-		public eLePhantClientSink(IClientChannelSinkProvider Provider, string url)
+		public HathiClientSink(IClientChannelSinkProvider Provider, string url)
 		{
 			object nextobject=new BinaryClientFormatterSink(this);			
 			this.m_url=url;
-			this.m_Provider=Provider as eLePhantClientSinkProvider;
+			this.m_Provider=Provider as HathiClientSinkProvider;
 			this.m_NextChannelSink = nextobject as IClientChannelSink;
 			this.m_NextMessageSink = nextobject as IMessageSink;
-			m_preferences = new Config(Application.StartupPath, "config.xml", "0.02", "lphantKernel");
+			m_preferences = new Config(Application.StartupPath, "config.xml", "0.02", "HathiKernel");
 			this.m_CompressionMethod=(CompressionType)m_preferences.GetEnum("CompressionMethod",CompressionType.Zip);
 		}
 
-		public eLePhantClientSink(IClientChannelSinkProvider Provider, string url, object nextobject)
+		public HathiClientSink(IClientChannelSinkProvider Provider, string url, object nextobject)
 		{
 			this.m_url=url;
-			this.m_Provider=Provider as eLePhantClientSinkProvider;
+			this.m_Provider=Provider as HathiClientSinkProvider;
 			if (nextobject != null)
 			{
 				this.m_NextChannelSink = nextobject as IClientChannelSink;
@@ -297,7 +297,7 @@ namespace eLePhant.Client
 					this.m_NextMessageSink = (IMessageSink)new BinaryClientFormatterSink(this);
 					
 			}
-			m_preferences = new Config(Application.StartupPath, "config.xml", "0.02", "lphantKernel");
+			m_preferences = new Config(Application.StartupPath, "config.xml", "0.02", "HathiKernel");
 			this.m_CompressionMethod=(CompressionType)m_preferences.GetEnum("CompressionMethod",CompressionType.Zip);
 		}
 		#endregion

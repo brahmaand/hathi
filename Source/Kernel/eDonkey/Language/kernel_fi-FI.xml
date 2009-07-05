@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="fi-FI">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. Kernel Initialized</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. Kernel Initialized</entry>
 	<entry key="HASHING_FILE">Luon hashia tiedostolle {0}</entry>
 	<entry key="SRV_CNN_LOST">Yhteys palvelimeen katkesi</entry>
 	<entry key="SRV_ADDED">{0} Palvelinta lisätty</entry>

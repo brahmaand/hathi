@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -31,11 +31,11 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 using Crownwood.Magic.Controls;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Descripción breve de FormAviDetails.
@@ -84,18 +84,18 @@ namespace eLePhant.Client
 		
 		private void m_Globalize()
 		{
-			labelVideoInfo.Text = eLePhantForm.Globalization["LBL_VIDEOINFO"];
-			labelVideoCodec.Text = eLePhantForm.Globalization["LBL_VIDEOCODEC"]+":";
-			labelVideoBitrate.Text = eLePhantForm.Globalization["LBL_VIDEOBITRATE"]+":";
-			labelVideoWidth.Text = eLePhantForm.Globalization["LBL_VIDEOWIDTH"]+":";
-			labelVideoHeight.Text = eLePhantForm.Globalization["LBL_VIDEOHEIGHT"]+":";
-			labelVideoLength.Text = eLePhantForm.Globalization["LBL_VIDEOLENGTH"]+":";
-			labelVideoFPS.Text = eLePhantForm.Globalization["LBL_VIDEOFPS"]+":";
-			labelAudioBitrate.Text = eLePhantForm.Globalization["LBL_AUDIOBITRATE"]+":";
-			labelAudioChannels.Text = eLePhantForm.Globalization["LBL_AUDIOCHANNELS"]+":";
-			labelAudioCodec.Text = eLePhantForm.Globalization["LBL_AUDIOCODEC"]+":";
-			labelAudioInfo.Text = eLePhantForm.Globalization["LBL_AUDIOINFO"];
-			labelAudioSampleRate.Text = eLePhantForm.Globalization["LBL_AUDIOSAMPLERATE"]+":";
+			labelVideoInfo.Text = HathiForm.Globalization["LBL_VIDEOINFO"];
+			labelVideoCodec.Text = HathiForm.Globalization["LBL_VIDEOCODEC"]+":";
+			labelVideoBitrate.Text = HathiForm.Globalization["LBL_VIDEOBITRATE"]+":";
+			labelVideoWidth.Text = HathiForm.Globalization["LBL_VIDEOWIDTH"]+":";
+			labelVideoHeight.Text = HathiForm.Globalization["LBL_VIDEOHEIGHT"]+":";
+			labelVideoLength.Text = HathiForm.Globalization["LBL_VIDEOLENGTH"]+":";
+			labelVideoFPS.Text = HathiForm.Globalization["LBL_VIDEOFPS"]+":";
+			labelAudioBitrate.Text = HathiForm.Globalization["LBL_AUDIOBITRATE"]+":";
+			labelAudioChannels.Text = HathiForm.Globalization["LBL_AUDIOCHANNELS"]+":";
+			labelAudioCodec.Text = HathiForm.Globalization["LBL_AUDIOCODEC"]+":";
+			labelAudioInfo.Text = HathiForm.Globalization["LBL_AUDIOINFO"];
+			labelAudioSampleRate.Text = HathiForm.Globalization["LBL_AUDIOSAMPLERATE"]+":";
 		}
 
 		public void Globalize()
@@ -473,18 +473,18 @@ namespace eLePhant.Client
 
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 			foreach (Control c in this.Controls)
 			{
 				if (c.GetType()==typeof(Label))
 				{
-					((Label)c).ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-					((Label)c).BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+					((Label)c).ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+					((Label)c).BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 				}
 				else if	(c.GetType()==typeof(TextBox))
 				{
-					((TextBox)c).ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
-					((TextBox)c).BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
+					((TextBox)c).ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
+					((TextBox)c).BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
 				}
 			}
 		}

@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -32,14 +32,14 @@ using System.Collections;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Drawing;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for searchListView.
 	/// </summary>
-	public class searchListView : eLePhantListView
+	public class searchListView : HathiListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -125,18 +125,18 @@ namespace eLePhant.Client
 
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_FILENAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_SIZE"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_SOURCES"];
-			Columns[6].Text=eLePhantForm.Globalization["LBL_FILETYPE"];
-			Columns[3].Text=eLePhantForm.Globalization["LBL_CODEC"];
-			Columns[4].Text=eLePhantForm.Globalization["LBL_LENGTH"];
-			Columns[5].Text=eLePhantForm.Globalization["LBL_BITRATE"];
-			ContextMenuSearch.MenuItems[0].Text=eLePhantForm.Globalization["LBL_DOWNLOAD"];
-			ContextMenuSearch.MenuItems[1].Text=eLePhantForm.Globalization["LBL_DOWNLOAD"]+" ("+eLePhantForm.Globalization["LBL_STOPPED"]+")";
-			ContextMenuSearch.MenuItems[3].Text=eLePhantForm.Globalization["LBL_COPYLINK"];
-			ContextMenuSearch.MenuItems[4].Text=eLePhantForm.Globalization["LBL_COPYLINK"]+" (HTML)";
-			ContextMenuSearch.MenuItems[6].Text=eLePhantForm.Globalization["LBL_SEARCHINFO"];
+			Columns[0].Text=HathiForm.Globalization["LBL_FILENAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_SIZE"];
+			Columns[2].Text=HathiForm.Globalization["LBL_SOURCES"];
+			Columns[6].Text=HathiForm.Globalization["LBL_FILETYPE"];
+			Columns[3].Text=HathiForm.Globalization["LBL_CODEC"];
+			Columns[4].Text=HathiForm.Globalization["LBL_LENGTH"];
+			Columns[5].Text=HathiForm.Globalization["LBL_BITRATE"];
+			ContextMenuSearch.MenuItems[0].Text=HathiForm.Globalization["LBL_DOWNLOAD"];
+			ContextMenuSearch.MenuItems[1].Text=HathiForm.Globalization["LBL_DOWNLOAD"]+" ("+HathiForm.Globalization["LBL_STOPPED"]+")";
+			ContextMenuSearch.MenuItems[3].Text=HathiForm.Globalization["LBL_COPYLINK"];
+			ContextMenuSearch.MenuItems[4].Text=HathiForm.Globalization["LBL_COPYLINK"]+" (HTML)";
+			ContextMenuSearch.MenuItems[6].Text=HathiForm.Globalization["LBL_SEARCHINFO"];
 		}
 
 		public void Globalize()
@@ -181,13 +181,13 @@ namespace eLePhant.Client
 			else
 				switch(file.ResultState)
 				{
-					case eLePhant.Types.Constants.SearchResultState.AlreadyDownloaded:
+					case Hathi.Types.Constants.SearchResultState.AlreadyDownloaded:
 						g.DrawString(itemFile.SubItems[column].Text,this.Font,new SolidBrush(AlreadyDownloadedItemColor),barRect,new StringFormat(StringFormatFlags.NoWrap));
 						break;
-					case eLePhant.Types.Constants.SearchResultState.AlreadyDownloading:
+					case Hathi.Types.Constants.SearchResultState.AlreadyDownloading:
 						g.DrawString(itemFile.SubItems[column].Text,this.Font,new SolidBrush(AlreadyDownloadingItemColor),barRect,new StringFormat(StringFormatFlags.NoWrap));
 						break;
-					case eLePhant.Types.Constants.SearchResultState.New:
+					case Hathi.Types.Constants.SearchResultState.New:
 						if (file.Avaibility<40)
 							g.DrawString(itemFile.SubItems[column].Text,Font,textBrush,barRect,new StringFormat(StringFormatFlags.NoWrap));
 						else
@@ -202,7 +202,7 @@ namespace eLePhant.Client
 				}
 			if (column==0)
 			{
-				Image icon=eLePhantForm.SystemIconsList.GetIconImageOf(file.Name);
+				Image icon=HathiForm.SystemIconsList.GetIconImageOf(file.Name);
 				if (icon!=null)
 				{
 					g.FillRectangle(white, barRect.Left-barRect.Height-4,barRect.Top,barRect.Height+4,barRect.Height);

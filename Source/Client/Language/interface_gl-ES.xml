@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="gl-ES">
 	<entry key="LBL_DOWNLOADS">Baixadas</entry>
 	<entry key="LBL_UPLOADS">Subidas</entry>
@@ -160,12 +160,12 @@
 	<entry key="LBL_REMOTECONTROL_PORT">Porto de control remoto(TCP)</entry>
 	<entry key="LBL_REMOTECONTROL_PASSWORD">Contrasinal de control remoto</entry>
 	<entry key="LBL_REMOTECONTROL_CLIENT">Cliente de control remoto</entry>
-	<entry key="LBL_START_LPHANT_LOCALLY">Iniciar lphant en local (sen control remoto)</entry>
+	<entry key="LBL_START_LPHANT_LOCALLY">Iniciar Hathi en local (sen control remoto)</entry>
 	<entry key="LBL_SELECT_CONNECTIONTYPE">Seleccionar o tipo de conexión ou o servidor de control remoto inicial</entry>
-	<entry key="LBL_CONNECTREMOTE">Conectar a este lphant de forma remota</entry>
-	<entry key="LBL_REMOTEHOST_IP">IP de lphant remoto</entry>
+	<entry key="LBL_CONNECTREMOTE">Conectar a este Hathi de forma remota</entry>
+	<entry key="LBL_REMOTEHOST_IP">IP de Hathi remoto</entry>
 	<entry key="LBL_REMOTEHOST_PORT">Porto</entry>
-	<entry key="LBL_REMOTEHOST_PASSWORD">Contrasinal de lphant remoto</entry>
+	<entry key="LBL_REMOTEHOST_PASSWORD">Contrasinal de Hathi remoto</entry>
 	<entry key="LBL_ENABLEOSIG">Habilitar Online Signature</entry>
 	<entry key="LBL_SECONDS">segundos</entry>
 	<entry key="LBL_MINUTES">minutos</entry>
@@ -180,7 +180,7 @@
 	<entry key="LBL_DOWNLOAD_SERVERLIST">Bixar lista de servidores</entry>
 	<entry key="LBL_SEARCHINFO">Procurar máis información</entry>
 	<entry key="LBL_ABOUT">Achega de...</entry>
-	<entry key="LBL_LPHANTWEB">Web de lphant</entry>
+	<entry key="LBL_LPHANTWEB">Web de Hathi</entry>
 	<entry key="LBL_SUPPORT">Soporte</entry>
 	<entry key="LBL_HELP">Axuda</entry>	
 	<entry key="LBL_AVGDOWNLOAD">Taxa media Baixada</entry>

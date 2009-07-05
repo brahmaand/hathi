@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -35,10 +35,10 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-using eLePhant.Types;
-using eLePhant.Classes;
+using Hathi.Types;
+using Hathi.Classes;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// Open source eDonkey client for the .NET platform, it supports the eMule extended protocol
@@ -82,7 +82,7 @@ namespace eLePhant.eDonkey
 			m_PortChanged=false;
 			m_Version=(Protocol.ELEPHANT_VERSION_MAJOR-1).ToString()+"."+Protocol.ELEPHANT_VERSION.ToString("00");
 
-			Preferences=new Config(DllDirectory, "config.xml", "0.02", "lphantKernel");
+			Preferences=new Config(DllDirectory, "config.xml", "0.02", "HathiKernel");
 			Preferences.PropertyChanged+=new Config.PropertyEventHandler(OnPropertyChanged);
 			Preferences.PropertyDefaults+=new Config.PropertyDefaultHandler(OnGetDefaultProperty);
 			Preferences.PropertyLoaded+=new Config.PropertyLoadedHandler(OnPropertyLoaded);
@@ -142,12 +142,12 @@ namespace eLePhant.eDonkey
 				CKernel.ServersList.Load("",true);
 
 			//currently for fun only, should be removed
-			//httpDownload.GetInfo(@"http://not.website.yet/Messages/TestVersions-pre5-test2.txt");
+			//httpDownload.GetInfo(@"http://hathi.sourceforge.net/Messages/TestVersions-pre5-test2.txt");
 
 			// TODO: Version
 			//Xml example :
 			string[] myLog=new string[] {"version","log"};
-			httpDownload.GetInfoXML(@"http://not.website.yet/Messages/v1.00.xml?lang="+Globalization.Language,myLog,true);
+			httpDownload.GetInfoXML(@"http://hathi.sourceforge.net/Messages/v1.00.xml?lang="+Globalization.Language,myLog,true);
 
 			//if threaded = true, it returns "", else can be used later to get
 			//CLog.Log(Constants.Log.Info,httpDownload.getReadInfoFromXML("log"));
@@ -168,14 +168,14 @@ namespace eLePhant.eDonkey
 		}
 
 		/// <summary>
-		/// DoReportBug sends an exception message to the lphant webpage.
+		/// DoReportBug sends an exception message to the Hathi webpage.
 		/// </summary>
 		/// <param name="exception">Exception details.</param>
 		public void DoReportBug(string exception)
 		{
 			try
 			{
-				string uriString = "http://not.website.yet/report/bugs.php";
+				string uriString = "http://hathi.sourceforge.net/report/bugs.php";
 
 				// Create a new WebClient instance.
 				WebClient webClient = new WebClient();
@@ -198,7 +198,7 @@ namespace eLePhant.eDonkey
 		}
 
 		/// <summary>
-		/// Return the lphant kernel version as string.
+		/// Return the Hathi kernel version as string.
 		/// See: AssemblyInfo.cs - AssemblyVersion
 		/// </summary>
 		public static string Version
@@ -206,14 +206,14 @@ namespace eLePhant.eDonkey
 			get
 			{
 				//return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-				//current version is 0.07 not 0.7.0.0 so assemply version does not reflect lphant version
+				//current version is 0.07 not 0.7.0.0 so assemply version does not reflect Hathi version
 				//this is called continuously so we cach the version value to not to have to build it each time
 				return m_Version;
 			}
 		}
 
 		/// <summary>
-		/// Return the directory of the lphant kernel.
+		/// Return the directory of the Hathi kernel.
 		/// </summary>
 		public static string DllDirectory
 		{
@@ -264,7 +264,7 @@ namespace eLePhant.eDonkey
 					e.Value=(short)2;
 					break;
 				case "UserName":
-					e.Value="http://not.website.yet";
+					e.Value="http://hathi.sourceforge.net";
 					break;
 				case "AutoReconnect":
 					e.Value=true;
@@ -738,8 +738,8 @@ namespace eLePhant.eDonkey
 					return "lMule";
 				case (uint)Protocol.Client.aMule:
 					return "aMule";
-				case (uint)Protocol.Client.eLePhant:
-					return "lphant";
+				case (uint)Protocol.Client.Hathi:
+					return "Hathi";
 				case (uint)Protocol.Client.eDonkeyHybrid:
 					return "eDonkeyHybrid";
 				case (uint)Protocol.Client.eDonkey:

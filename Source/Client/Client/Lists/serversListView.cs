@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,16 +33,16 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Net;
 using System.Drawing;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for serversList.
 	/// </summary>
 
-	public class serversListView : eLePhantListView
+	public class serversListView : HathiListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -140,20 +140,20 @@ namespace eLePhant.Client
 		
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_SERVERNAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_ADDRESS"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_FAILED"];
-			Columns[3].Text=eLePhantForm.Globalization["LBL_FILES"];
-			Columns[4].Text=eLePhantForm.Globalization["LBL_USERS"];
-			Columns[5].Text=eLePhantForm.Globalization["LBL_PRIORITY"];
-			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(ConnectMenu)].Text = eLePhantForm.Globalization["LBL_CONNECT"]; 
-			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(DeleteMenu)].Text = eLePhantForm.Globalization["LBL_DELETE"]; 
-			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(CopyLinkMenu)].Text = eLePhantForm.Globalization["LBL_COPYLINK"]; 
-			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(CopyLinkHTMLMenu)].Text = eLePhantForm.Globalization["LBL_COPYLINK"]+" (HTML)";
-			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(PriorityMenu)].Text = eLePhantForm.Globalization["LBL_PRIORITY"]; 
-			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(HighPriorityMenu)].Text = eLePhantForm.Globalization["LBL_HIGH"]; 
-			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(NormalPriorityMenu)].Text = eLePhantForm.Globalization["LBL_NORMAL"]; 
-			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(LowPriorityMenu)].Text = eLePhantForm.Globalization["LBL_LOW"]; 
+			Columns[0].Text=HathiForm.Globalization["LBL_SERVERNAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_ADDRESS"];
+			Columns[2].Text=HathiForm.Globalization["LBL_FAILED"];
+			Columns[3].Text=HathiForm.Globalization["LBL_FILES"];
+			Columns[4].Text=HathiForm.Globalization["LBL_USERS"];
+			Columns[5].Text=HathiForm.Globalization["LBL_PRIORITY"];
+			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(ConnectMenu)].Text = HathiForm.Globalization["LBL_CONNECT"]; 
+			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(DeleteMenu)].Text = HathiForm.Globalization["LBL_DELETE"]; 
+			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(CopyLinkMenu)].Text = HathiForm.Globalization["LBL_COPYLINK"]; 
+			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(CopyLinkHTMLMenu)].Text = HathiForm.Globalization["LBL_COPYLINK"]+" (HTML)";
+			ContextMenu.MenuItems[ContextMenuServers.MenuItems.IndexOf(PriorityMenu)].Text = HathiForm.Globalization["LBL_PRIORITY"]; 
+			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(HighPriorityMenu)].Text = HathiForm.Globalization["LBL_HIGH"]; 
+			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(NormalPriorityMenu)].Text = HathiForm.Globalization["LBL_NORMAL"]; 
+			PriorityMenu.MenuItems[PriorityMenu.MenuItems.IndexOf(LowPriorityMenu)].Text = HathiForm.Globalization["LBL_LOW"]; 
 		}
 
 		public void Globalize()

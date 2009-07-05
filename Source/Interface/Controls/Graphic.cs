@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,12 +34,12 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 
-namespace eLePhant.Interface
+namespace Hathi.Interface
 {
 	/// <summary>
 	/// Class to display up/down speed graphic use SetMinValue and SetMaxValue to set the limits and AddValue to add new values to the graphic
 	/// </summary>
-	public class eLePhantGraphic : PictureBox
+	public class HathiGraphic : PictureBox
 	{
 		private float maxvalue;
 		private float minvalue;
@@ -164,7 +164,7 @@ namespace eLePhant.Interface
 				upPen.Width=value;
 			}
 		}
-		public eLePhantGraphic(System.ComponentModel.IContainer container)
+		public HathiGraphic(System.ComponentModel.IContainer container)
 		{
 			/// <summary>
 			/// 
@@ -198,7 +198,7 @@ namespace eLePhant.Interface
 			m_auto="auto";
 		}
 
-		~eLePhantGraphic()
+		~HathiGraphic()
 		{
 			if (m_ReScaleThread!=null)
 				if (m_ReScaleThread.IsAlive) m_ReScaleThread.Abort();
@@ -482,7 +482,7 @@ namespace eLePhant.Interface
 		public void UpdateGraphic()
 		{
 		}
-		public eLePhantGraphic()
+		public HathiGraphic()
 		{
 			InitializeComponent();
 		}

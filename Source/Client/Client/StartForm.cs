@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -34,9 +34,9 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Text;
-using eLePhant.Classes;
+using Hathi.Classes;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Starting form
@@ -218,7 +218,7 @@ namespace eLePhant.Client
 			this.ConectarRemoto.Name = "ConectarRemoto";
 			this.ConectarRemoto.Size = new System.Drawing.Size(264, 16);
 			this.ConectarRemoto.TabIndex = 3;
-			this.ConectarRemoto.Text = "Remote (Connect to a remote lphant)";
+			this.ConectarRemoto.Text = "Remote (Connect to a remote Hathi)";
 			this.ConectarRemoto.CheckedChanged += new System.EventHandler(this.ConectarRemoto_CheckedChanged);
 			// 
 			// IniciarServicio
@@ -228,7 +228,7 @@ namespace eLePhant.Client
 			this.IniciarServicio.Name = "IniciarServicio";
 			this.IniciarServicio.Size = new System.Drawing.Size(184, 16);
 			this.IniciarServicio.TabIndex = 2;
-			this.IniciarServicio.Text = "Local (Start lphant service";
+			this.IniciarServicio.Text = "Local (Start Hathi service";
 			// 
 			// IniciarLocal
 			// 
@@ -238,7 +238,7 @@ namespace eLePhant.Client
 			this.IniciarLocal.Size = new System.Drawing.Size(184, 16);
 			this.IniciarLocal.TabIndex = 1;
 			this.IniciarLocal.TabStop = true;
-			this.IniciarLocal.Text = "Local (Start lphant).";
+			this.IniciarLocal.Text = "Local (Start Hathi).";
 			this.IniciarLocal.CheckedChanged += new System.EventHandler(this.IniciarLocal_CheckedChanged);
 			// 
 			// button1
@@ -267,7 +267,7 @@ namespace eLePhant.Client
 			this.Controls.Add(this.button1);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "StartForm";
-			this.Text = "Start lphant";
+			this.Text = "Start Hathi";
 			this.groupBox1.ResumeLayout(false);
 			this.ResumeLayout(false);
 
@@ -296,18 +296,18 @@ namespace eLePhant.Client
 				CRemoto.DisConnect();
 				if (CRemoto.Connect(IP,pw.Text,puertor)) 
 				{
-					eLePhant.Client.eLePhantForm FormeLePhant=new eLePhantForm(m_elink,m_Mutex,CRemoto.interfazremota);
-					FormeLePhant.Show();
+					Hathi.Client.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex,CRemoto.interfazremota);
+					FormHathi.Show();
 					this.Hide();
 				}
 				else
-					MessageBox.Show("Can not connect or invalid password","lphant remote connection",MessageBoxButtons.OK,MessageBoxIcon.Error);
+					MessageBox.Show("Can not connect or invalid password","Hathi remote connection",MessageBoxButtons.OK,MessageBoxIcon.Error);
 			}
 			if (this.IniciarLocal.Checked) 
 			{
-				eLePhant.Client.eLePhantForm FormeLePhant=new eLePhantForm(m_elink,m_Mutex);
+				Hathi.Client.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex);
 				this.Hide();
-				FormeLePhant.Show();
+				FormHathi.Show();
 			}
 		}
 

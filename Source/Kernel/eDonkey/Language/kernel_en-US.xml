@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="en-US">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. Kernel Initialized</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. Kernel Initialized</entry>
 	<entry key="HASHING_FILE">Hashing {0}</entry>
 	<entry key="SRV_CNN_LOST">Server connection lost</entry>
 	<entry key="SRV_ADDED">{0} Servers added</entry>
@@ -47,7 +47,7 @@
 	<entry key="SRV_DOWN">Down</entry>
 	<entry key="IP_FILTER_LOADED">{0} IP ranges in the file {1} loaded</entry>
 	<entry key="IP_BLOCKED">IP blocked : {0} - {1}</entry>
-	<entry key="LOW_ID_RETRY">lphant got low id when high id was expected, trying again</entry>
+	<entry key="LOW_ID_RETRY">Hathi got low id when high id was expected, trying again</entry>
 	<entry key="UDP_PORT_NOT_OPEN">Warning: it is possible that UDP port is not open</entry>
 	<entry key="UDP_PORT_IS_OPEN">UDP port working ok</entry>
 	<entry key="TOTAL_IP_BLOCKED">{0} IP have already been blocked</entry>

@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <language lang="hu-HU">
-	<entry key="INIT_KRN">eLePhant v{0} Copyright (c) Juanjo. Kernel Initialized</entry>
+	<entry key="INIT_KRN">Hathi v{0} Copyright (c) 2009 Hathi Project. Kernel Initialized</entry>
 	<entry key="HASHING_FILE">{0} Hash-elése</entry>
 	<entry key="SRV_CNN_LOST">A kapcsolat megszűnt a kiszolgálóval</entry>
 	<entry key="SRV_ADDED">{0} kiszolgáló hozzáadva</entry>
@@ -47,7 +47,7 @@
 	<entry key="SRV_DOWN">Le</entry>
 	<entry key="IP_FILTER_LOADED">{0} IP tartomány betöltve a {1} fájlból</entry>
 	<entry key="IP_BLOCKED">IP blokkolva: {0} - {1}</entry>
-	<entry key="LOW_ID_RETRY">lphant alacsony ID-t kapott, de magas ID-t várt, újrapóbál</entry>
+	<entry key="LOW_ID_RETRY">Hathi alacsony ID-t kapott, de magas ID-t várt, újrapóbál</entry>
 	<entry key="UDP_PORT_NOT_OPEN">Figyelmeztetés: lehetséges, hogy az UDP port nincs nyitva!</entry>
 	<entry key="UDP_PORT_IS_OPEN">UDP port megfelelően működik</entry>
 	<entry key="TOTAL_IP_BLOCKED">{0} IP már blokkolva van</entry>

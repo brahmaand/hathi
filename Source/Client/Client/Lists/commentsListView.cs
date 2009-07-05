@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -32,13 +32,13 @@ using System.Collections;
 using System.Diagnostics;
 using System.Threading;
 using System.Windows.Forms;
-using eLePhant.eDonkey;
-namespace eLePhant.Client
+using Hathi.eDonkey;
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for commentsListView.
 	/// </summary>
-	public class commentsListView : eLePhantListView
+	public class commentsListView : HathiListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -93,9 +93,9 @@ namespace eLePhant.Client
 		
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_NAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_RATING"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_COMMENT"];
+			Columns[0].Text=HathiForm.Globalization["LBL_NAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_RATING"];
+			Columns[2].Text=HathiForm.Globalization["LBL_COMMENT"];
 		}
 
 		public void Globalize()

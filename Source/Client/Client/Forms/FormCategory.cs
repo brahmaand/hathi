@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -31,9 +31,9 @@ using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormCategory.
@@ -79,12 +79,12 @@ namespace eLePhant.Client
 			RefreshList();
 			labelID.Visible=false;
 			labelID.Text="0";
-			buttonRemove.Text=eLePhantForm.Globalization["LBL_REMOVECATEGORY"];
-			buttonAccept.Text=eLePhantForm.Globalization["LBL_ACCEPT"];
-			buttonCancel.Text=eLePhantForm.Globalization["LBL_CANCEL"];
-			labelName.Text=eLePhantForm.Globalization["LBL_NAME"]+":";
-			labelAutoSelect.Text=eLePhantForm.Globalization["LBL_AUTOSELECTCAT"]+":";
-			label1.Text=eLePhantForm.Globalization["LBL_COLOR"]+":";
+			buttonRemove.Text=HathiForm.Globalization["LBL_REMOVECATEGORY"];
+			buttonAccept.Text=HathiForm.Globalization["LBL_ACCEPT"];
+			buttonCancel.Text=HathiForm.Globalization["LBL_CANCEL"];
+			labelName.Text=HathiForm.Globalization["LBL_NAME"]+":";
+			labelAutoSelect.Text=HathiForm.Globalization["LBL_AUTOSELECTCAT"]+":";
+			label1.Text=HathiForm.Globalization["LBL_COLOR"]+":";
 			m_ApplySkin();
 		}
 
@@ -93,7 +93,7 @@ namespace eLePhant.Client
 			listBoxCategories.Items.Clear();
 			ArrayList categories=krnGateway.GetCategories();
 	
-			listBoxCategories.Items.Add("*"+eLePhantForm.Globalization["LBL_NEWCATEGORY"]);
+			listBoxCategories.Items.Add("*"+HathiForm.Globalization["LBL_NEWCATEGORY"]);
 
 			foreach (CCategory category in categories)
 			{
@@ -106,41 +106,41 @@ namespace eLePhant.Client
 
 		private void m_ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 			m_DoSkin(this);
 		}
 
 		private void m_DoSkin(Control parentControl)
 		{
-//			tabControl1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-//			tabControl1.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-//			tabControl1.TextInactiveColor=eLePhantForm.Skin.GetColor("tabsInactiveForeColor");
-			groupBox1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+//			tabControl1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+//			tabControl1.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+//			tabControl1.TextInactiveColor=HathiForm.Skin.GetColor("tabsInactiveForeColor");
+			groupBox1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 			foreach (Control c in parentControl.Controls)
 			{
 				if (c.GetType()==typeof(Label))
 				{
-						((Label)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-						((Label)c).BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+						((Label)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+						((Label)c).BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 				}
 				else if (c.GetType()==typeof(Button))
 				{
-					((Button)c).BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-					((Button)c).ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+					((Button)c).BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+					((Button)c).ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 				}
 				else if	(c.GetType()==typeof(TextBox))
 				{
-					((TextBox)c).ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-					((TextBox)c).BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+					((TextBox)c).ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+					((TextBox)c).BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				}
 				else if	(c.GetType()==typeof(ListBox))
 				{
-					((ListBox)c).ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-					((ListBox)c).BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+					((ListBox)c).ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+					((ListBox)c).BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 				}
 				else if	(c.GetType()==typeof(GroupBox))
 				{
-					((GroupBox)c).ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
+					((GroupBox)c).ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
 					if ((c.Controls!=null)&&(c.Controls.Count>0)) m_DoSkin(c);
 				}
 				else if ((c.Controls!=null)&&(c.Controls.Count>0)) m_DoSkin(c);

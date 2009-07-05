@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -30,11 +30,11 @@ using System;
 using Gtk;
 using Glade;
 using Gdk;
-using eLePhant.Types;
-using eLePhant.eDonkey;
-using eLePhant.Classes;
+using Hathi.Types;
+using Hathi.eDonkey;
+using Hathi.Classes;
 
-namespace eLePhantGTK
+namespace HathiGTK
 {
 	public class OptionsDialog
 	{
@@ -70,7 +70,7 @@ namespace eLePhantGTK
 		[Glade.Widget] Gtk.TreeView tvSharedFolders;
 		[Glade.Widget] Gtk.TreeView tvTempFolders;
 		
-		public eLePhant.eDonkey.CInterfaceGateway krnGateway;
+		public Hathi.eDonkey.CInterfaceGateway krnGateway;
 		public Gtk.TreeStore stSharedFolders;
 		public Gtk.TreeStore stTempFolders;
 		

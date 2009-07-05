@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,15 +33,15 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for sharedListView.
 	/// </summary>
-	public class sharedListView : eLePhantListView
+	public class sharedListView : HathiListView
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -130,29 +130,29 @@ namespace eLePhant.Client
 			m_DefaultWidths=new int[] {190,75,60,60};
 			m_Globalize();
 			m_LoadWidths();
-			SmallImageList=eLePhantForm.SystemIconsList.list;
+			SmallImageList=HathiForm.SystemIconsList.list;
 			SelectedIndexChanged+=new EventHandler(sharedListView_SelectedIndexChanged);
 			ReloadList(false);
 		}
 		
 		private void m_Globalize()
 		{
-			Columns[0].Text=eLePhantForm.Globalization["LBL_FILENAME"];
-			Columns[1].Text=eLePhantForm.Globalization["LBL_SIZE"];
-			Columns[2].Text=eLePhantForm.Globalization["LBL_PRIORITY"];
-			Columns[3].Text=eLePhantForm.Globalization["LBL_PROGRESS"];
-			ContextMenuShared.MenuItems[0].Text=eLePhantForm.Globalization["LBL_OPENFILE"];
-			ContextMenuShared.MenuItems[1].Text=eLePhantForm.Globalization["LBL_DELETEFILE"];
-			ContextMenuShared.MenuItems[3].Text=eLePhantForm.Globalization["LBL_COPYLINK"];
-			ContextMenuShared.MenuItems[4].Text=eLePhantForm.Globalization["LBL_COPYLINK"] + " (HTML)";
-			ContextMenuShared.MenuItems[5].Text=eLePhantForm.Globalization["LBL_COPYLINK"] + " ("+eLePhantForm.Globalization["LBL_SOURCES"]+")";
-			ContextMenuShared.MenuItems[7].Text=eLePhantForm.Globalization["LBL_PRIORITY"];
-			ContextMenuShared.MenuItems[9].Text=eLePhantForm.Globalization["LBL_SEARCHINFO"];
-			PriorityMenu.MenuItems[0].Text=eLePhantForm.Globalization["LBL_VERYHIGH"];
-			PriorityMenu.MenuItems[1].Text=eLePhantForm.Globalization["LBL_HIGH"];
-			PriorityMenu.MenuItems[2].Text=eLePhantForm.Globalization["LBL_NORMAL"];
-			PriorityMenu.MenuItems[3].Text=eLePhantForm.Globalization["LBL_LOW"];
-			PriorityMenu.MenuItems[4].Text=eLePhantForm.Globalization["LBL_VERYLOW"];
+			Columns[0].Text=HathiForm.Globalization["LBL_FILENAME"];
+			Columns[1].Text=HathiForm.Globalization["LBL_SIZE"];
+			Columns[2].Text=HathiForm.Globalization["LBL_PRIORITY"];
+			Columns[3].Text=HathiForm.Globalization["LBL_PROGRESS"];
+			ContextMenuShared.MenuItems[0].Text=HathiForm.Globalization["LBL_OPENFILE"];
+			ContextMenuShared.MenuItems[1].Text=HathiForm.Globalization["LBL_DELETEFILE"];
+			ContextMenuShared.MenuItems[3].Text=HathiForm.Globalization["LBL_COPYLINK"];
+			ContextMenuShared.MenuItems[4].Text=HathiForm.Globalization["LBL_COPYLINK"] + " (HTML)";
+			ContextMenuShared.MenuItems[5].Text=HathiForm.Globalization["LBL_COPYLINK"] + " ("+HathiForm.Globalization["LBL_SOURCES"]+")";
+			ContextMenuShared.MenuItems[7].Text=HathiForm.Globalization["LBL_PRIORITY"];
+			ContextMenuShared.MenuItems[9].Text=HathiForm.Globalization["LBL_SEARCHINFO"];
+			PriorityMenu.MenuItems[0].Text=HathiForm.Globalization["LBL_VERYHIGH"];
+			PriorityMenu.MenuItems[1].Text=HathiForm.Globalization["LBL_HIGH"];
+			PriorityMenu.MenuItems[2].Text=HathiForm.Globalization["LBL_NORMAL"];
+			PriorityMenu.MenuItems[3].Text=HathiForm.Globalization["LBL_LOW"];
+			PriorityMenu.MenuItems[4].Text=HathiForm.Globalization["LBL_VERYLOW"];
 		}
 
 		public void Globalize()
@@ -267,8 +267,8 @@ namespace eLePhant.Client
 				for(int i=0;i!=SelectedItem;i++)
 				{
 					if(Items[i].Status!=9) continue;
-					string message = String.Format(eLePhantForm.Globalization["MSG_DELETEFILE"],Items[i].Name);
-					if (MessageBox.Show(message,"lphant",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
+					string message = String.Format(HathiForm.Globalization["MSG_DELETEFILE"],Items[i].Name);
+					if (MessageBox.Show(message,"Hathi",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)==DialogResult.Yes)
 					{						
 						krnGateway.DeleteFile(Items[i].strHash);
 						ReloadList(true);
@@ -409,7 +409,7 @@ namespace eLePhant.Client
 			if (ItemShared.SubItems[1].Text!=SizeToString(shared.Size)) ItemShared.SubItems[1].Text=SizeToString(shared.Size);
 			if (ItemShared.SubItems[2].Text!=PriorityToString(shared.UploadPriority)) ItemShared.SubItems[2].Text=PriorityToString(shared.UploadPriority);
 			ItemShared.Tag=shared;
-			ItemShared.ImageIndex=eLePhantForm.SystemIconsList.GetIconIndexOf(shared.Name);
+			ItemShared.ImageIndex=HathiForm.SystemIconsList.GetIconIndexOf(shared.Name);
 		}
 
 		private void m_InvokeOnRefreshShared(CkernelGateway krnGateway)

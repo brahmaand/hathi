@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -35,12 +35,12 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 
 
-namespace eLePhant.Interface
+namespace Hathi.Interface
 {
 	/// <summary>
-	/// Descripción breve de eLePhantButton.
+	/// Descripción breve de HathiButton.
 	/// </summary>
-	public class eLePhantToggleButton : System.Windows.Forms.RadioButton
+	public class HathiToggleButton : System.Windows.Forms.RadioButton
 	{
 		/// <summary>
 		/// Variable del diseñador requerida.
@@ -87,7 +87,7 @@ namespace eLePhant.Interface
 			}
 		}
 
-		public eLePhantToggleButton(System.ComponentModel.IContainer container)
+		public HathiToggleButton(System.ComponentModel.IContainer container)
 		{
 			/// <summary>
 			/// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms
@@ -109,7 +109,7 @@ namespace eLePhant.Interface
 
 		}
 
-		public eLePhantToggleButton()
+		public HathiToggleButton()
 		{
 			/// <summary>
 			/// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms

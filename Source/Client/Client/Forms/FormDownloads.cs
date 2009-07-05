@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,11 +33,11 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.IO;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 using Crownwood.Magic.Controls;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormDownloads.
@@ -54,7 +54,7 @@ namespace eLePhant.Client
 		private FormAviDetails FAviDetails;
 		private CkernelGateway krnGateway;
 		private System.Windows.Forms.Splitter splitter1;
-		private eLePhant.Interface.eLePhantButton eLePhantButton1;
+		private Hathi.Interface.HathiButton HathiButton1;
 		private System.Windows.Forms.ImageList imageListMaximize;
 		private System.Windows.Forms.ImageList imageListMinimize;
 		private System.Windows.Forms.Label label1;
@@ -102,7 +102,7 @@ namespace eLePhant.Client
 		private System.Windows.Forms.MenuItem menuItemAutoSort;
 		private System.Windows.Forms.Button buttonOpenFolder;
 		private System.Windows.Forms.MenuItem menuItem1;
-		private eLePhant.Interface.eLePhantInspector FileInspector;
+		private Hathi.Interface.HathiInspector FileInspector;
 
 		private ComboBox comboBoxCategories;
 		private MenuItem manageCategories;
@@ -124,7 +124,7 @@ namespace eLePhant.Client
 				this.tabControlFilter.Appearance = Crownwood.Magic.Controls.TabControl.VisualAppearance.MultiBox;
 				this.tabControlDetails.Appearance = Crownwood.Magic.Controls.TabControl.VisualAppearance.MultiBox;
 				this.tabControlDetails.PositionTop = true;
-				eLePhantButton1_Click(this,null);
+				HathiButton1_Click(this,null);
 			
 				m_selectedTabControlDetails = 0;
 				
@@ -171,7 +171,7 @@ namespace eLePhant.Client
 		public void HideDetails()
 		{
 				splitter1.SplitPosition=this.Height-10;
-				eLePhantButton1.ImageList=imageListMinimize;
+				HathiButton1.ImageList=imageListMinimize;
 				m_selectedTabControlDetails=tabControlDetails.SelectedIndex;
 		}
 
@@ -218,7 +218,7 @@ namespace eLePhant.Client
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.buttonAdd = new System.Windows.Forms.Button();
 			this.textBoxeLink = new System.Windows.Forms.TextBox();
-			this.downloadList = new eLePhant.Client.downloadsListView();
+			this.downloadList = new Hathi.Client.downloadsListView();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.buttonPasteeLink = new System.Windows.Forms.Button();
 			this.buttonAddeLink = new System.Windows.Forms.Button();
@@ -233,7 +233,7 @@ namespace eLePhant.Client
 			this.tabPageStarted = new Crownwood.Magic.Controls.TabPage();
 			this.tabPageStopped = new Crownwood.Magic.Controls.TabPage();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.eLePhantButton1 = new eLePhant.Interface.eLePhantButton(this.components);
+			this.HathiButton1 = new Hathi.Interface.HathiButton(this.components);
 			this.imageListMaximize = new System.Windows.Forms.ImageList(this.components);
 			this.panel9 = new System.Windows.Forms.Panel();
 			this.tabControlDetails = new Crownwood.Magic.Controls.TabControl();
@@ -251,18 +251,18 @@ namespace eLePhant.Client
 			this.labelSessionFileRateUP = new System.Windows.Forms.Label();
 			this.labelSessionFileDO = new System.Windows.Forms.Label();
 			this.labelSessionFileUP = new System.Windows.Forms.Label();
-			this.FileInspector = new eLePhant.Interface.eLePhantInspector();
+			this.FileInspector = new Hathi.Interface.HathiInspector();
 			this.tabPageLists = new Crownwood.Magic.Controls.TabPage();
-			this.listViewNames = new eLePhant.Client.fileNamesListView(this.components);
+			this.listViewNames = new Hathi.Client.fileNamesListView(this.components);
 			this.buttonSetCommet = new System.Windows.Forms.Button();
 			this.textBoxComment = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.listViewComments = new eLePhant.Client.commentsListView(this.components);
+			this.listViewComments = new Hathi.Client.commentsListView(this.components);
 			this.buttonRename = new System.Windows.Forms.Button();
 			this.textBoxName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPageSources = new Crownwood.Magic.Controls.TabPage();
-			this.sourcesList = new eLePhant.Client.sourcesListView(this.components);
+			this.sourcesList = new Hathi.Client.sourcesListView(this.components);
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.imageListMinimize = new System.Windows.Forms.ImageList(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -488,7 +488,7 @@ namespace eLePhant.Client
 			// 
 			// panel6
 			// 
-			this.panel6.Controls.Add(this.eLePhantButton1);
+			this.panel6.Controls.Add(this.HathiButton1);
 			this.panel6.Controls.Add(this.panel9);
 			this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel6.Location = new System.Drawing.Point(0, 192);
@@ -496,18 +496,18 @@ namespace eLePhant.Client
 			this.panel6.Size = new System.Drawing.Size(720, 248);
 			this.panel6.TabIndex = 5;
 			// 
-			// eLePhantButton1
+			// HathiButton1
 			// 
-			this.eLePhantButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.eLePhantButton1.BackColor = System.Drawing.Color.Transparent;
-			this.eLePhantButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.eLePhantButton1.ImageIndex = 0;
-			this.eLePhantButton1.ImageList = this.imageListMaximize;
-			this.eLePhantButton1.Location = new System.Drawing.Point(672, -5);
-			this.eLePhantButton1.Name = "eLePhantButton1";
-			this.eLePhantButton1.Size = new System.Drawing.Size(34, 13);
-			this.eLePhantButton1.TabIndex = 7;
-			this.eLePhantButton1.Click += new System.EventHandler(this.eLePhantButton1_Click);
+			this.HathiButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+			this.HathiButton1.BackColor = System.Drawing.Color.Transparent;
+			this.HathiButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.HathiButton1.ImageIndex = 0;
+			this.HathiButton1.ImageList = this.imageListMaximize;
+			this.HathiButton1.Location = new System.Drawing.Point(672, -5);
+			this.HathiButton1.Name = "HathiButton1";
+			this.HathiButton1.Size = new System.Drawing.Size(34, 13);
+			this.HathiButton1.TabIndex = 7;
+			this.HathiButton1.Click += new System.EventHandler(this.HathiButton1_Click);
 			// 
 			// imageListMaximize
 			// 
@@ -946,10 +946,10 @@ namespace eLePhant.Client
 		private void UpdateFileInfo(string strHash)
 		{
 			FileStatistics fileStats=krnGateway.GetFileStatistics(strHash);
-			labelSessionFileDO.Text=eLePhantForm.Globalization["LBL_DOWNLOADED"]+":"+eLePhantListView.SizeToString(fileStats.SessionDownload);
-			labelSessionFileUP.Text=eLePhantForm.Globalization["LBL_UPLOADED"]+":"+eLePhantListView.SizeToString(fileStats.SessionUpload);
-			labelSessionFileRateDO.Text=eLePhantForm.Globalization["LBL_AVGDOWNLOAD"]+":"+eLePhantListView.SpeedToString(fileStats.AvgDownSpeed);
-			labelSessionFileRateUP.Text=eLePhantForm.Globalization["LBL_AVGUPLOAD"]+":"+eLePhantListView.SpeedToString(fileStats.AvgUpSpeed);
+			labelSessionFileDO.Text=HathiForm.Globalization["LBL_DOWNLOADED"]+":"+HathiListView.SizeToString(fileStats.SessionDownload);
+			labelSessionFileUP.Text=HathiForm.Globalization["LBL_UPLOADED"]+":"+HathiListView.SizeToString(fileStats.SessionUpload);
+			labelSessionFileRateDO.Text=HathiForm.Globalization["LBL_AVGDOWNLOAD"]+":"+HathiListView.SpeedToString(fileStats.AvgDownSpeed);
+			labelSessionFileRateUP.Text=HathiForm.Globalization["LBL_AVGUPLOAD"]+":"+HathiListView.SpeedToString(fileStats.AvgUpSpeed);
 			if (fileStats.CompletedTime!=DateTime.MinValue)
 				textBoxCompletedAt.Text=fileStats.CompletedTime.ToString();
 			else
@@ -996,19 +996,19 @@ namespace eLePhant.Client
 			}
 		}
 
-		private void eLePhantButton1_Click(object sender, System.EventArgs e)
+		private void HathiButton1_Click(object sender, System.EventArgs e)
 		{
 			if (splitter1.SplitPosition<=this.Height-20)
 			{
 				splitter1.SplitPosition=this.Height-10;
-				eLePhantButton1.ImageList=imageListMinimize;
+				HathiButton1.ImageList=imageListMinimize;
 				m_selectedTabControlDetails=tabControlDetails.SelectedIndex;
 			}
 			else
 			{
 				tabControlDetails.SelectedIndex=m_selectedTabControlDetails;
 				splitter1.SplitPosition=this.Height/2-10;
-				eLePhantButton1.ImageList=imageListMaximize;
+				HathiButton1.ImageList=imageListMaximize;
 			}
 			if (downloadList.SelectedItems.Count>0)
 			{
@@ -1028,27 +1028,27 @@ namespace eLePhant.Client
 		{
 			if (splitter1.SplitPosition<=this.Height-20)
 			{
-				eLePhantButton1.ImageList=imageListMaximize;
+				HathiButton1.ImageList=imageListMaximize;
 				m_DetailsSize=this.Height-splitter1.SplitPosition;
 			}
 			else
 			{
-				eLePhantButton1.ImageList=imageListMinimize;
+				HathiButton1.ImageList=imageListMinimize;
 			}		
 		}
 
 		private void FormDownloads_SizeChanged(object sender, System.EventArgs e)
 		{
 			if (this.Height==0) return;
-			if ((splitter1.SplitPosition>this.Height-20)||(eLePhantButton1.ImageList==imageListMinimize))
+			if ((splitter1.SplitPosition>this.Height-20)||(HathiButton1.ImageList==imageListMinimize))
 			{
 				splitter1.SplitPosition=this.Height-18;
-				eLePhantButton1.ImageList=imageListMinimize;
+				HathiButton1.ImageList=imageListMinimize;
 			}
 			else 
 			{
 				splitter1.SplitPosition=this.Height-m_DetailsSize;
-				eLePhantButton1.ImageList=imageListMaximize;
+				HathiButton1.ImageList=imageListMaximize;
 			}
 		}
 
@@ -1113,16 +1113,16 @@ namespace eLePhant.Client
 
 		private void downloadList_DoubleClick(object sender, System.EventArgs e)
 		{
-			eLePhantButton1_Click(this,null);
+			HathiButton1_Click(this,null);
 
 		}
 
 		private string SizeMBtoGB(ulong size)
 		{
 			if (size>102)
-				return ((float)size/1024F).ToString("####0.#")+" "+eLePhantForm.Globalization["LBL_GBYTE"];
+				return ((float)size/1024F).ToString("####0.#")+" "+HathiForm.Globalization["LBL_GBYTE"];
 			else
-				return size.ToString()+" "+eLePhantForm.Globalization["LBL_MBYTE"];
+				return size.ToString()+" "+HathiForm.Globalization["LBL_MBYTE"];
 		}
 		
 		private void m_UpdateCategoryLabels()
@@ -1130,10 +1130,10 @@ namespace eLePhant.Client
 			//if in listBox
 			comboBoxCategories.Items.Clear();
 			//fixed labels
-			comboBoxCategories.Items.Add(eLePhantForm.Globalization["LBL_ALL"]);
-			comboBoxCategories.Items.Add(eLePhantForm.Globalization["LBL_VIDEO"]);
-			comboBoxCategories.Items.Add(eLePhantForm.Globalization["LBL_FILE"]);
-			comboBoxCategories.Items.Add(eLePhantForm.Globalization["LBL_AUDIO"]);
+			comboBoxCategories.Items.Add(HathiForm.Globalization["LBL_ALL"]);
+			comboBoxCategories.Items.Add(HathiForm.Globalization["LBL_VIDEO"]);
+			comboBoxCategories.Items.Add(HathiForm.Globalization["LBL_FILE"]);
+			comboBoxCategories.Items.Add(HathiForm.Globalization["LBL_AUDIO"]);
 
 			//category labels
 			ArrayList categories=krnGateway.GetCategories();
@@ -1178,57 +1178,57 @@ namespace eLePhant.Client
 
 		private void m_UpdateFilterLabels()
 		{
-			tabPageAll.Title = eLePhantForm.Globalization["LBL_ALL"];
+			tabPageAll.Title = HathiForm.Globalization["LBL_ALL"];
 			if (comboBoxCategories.SelectedIndex>0)
 				tabPageAll.Title +="-"+comboBoxCategories.Items[comboBoxCategories.SelectedIndex].ToString();
-			if (eLePhantForm.preferences.GetBool("FilterShowCount"))
+			if (HathiForm.preferences.GetBool("FilterShowCount"))
 				tabPageAll.Title +=" ("+((CFilterSummary)krnGateway.FilterSummary["All"]).Items+")";
-			if (eLePhantForm.preferences.GetBool("FilterShowTotalSizes"))
+			if (HathiForm.preferences.GetBool("FilterShowTotalSizes"))
 				tabPageAll.Title +=" "+SizeMBtoGB(((CFilterSummary)krnGateway.FilterSummary["All"]).TotalSize);
 
-			tabPageStarted.Title = eLePhantForm.Globalization["LBL_STARTED"];
+			tabPageStarted.Title = HathiForm.Globalization["LBL_STARTED"];
 			if (comboBoxCategories.SelectedIndex>0)
 				tabPageStarted.Title +="-"+comboBoxCategories.Items[comboBoxCategories.SelectedIndex].ToString();
-			if (eLePhantForm.preferences.GetBool("FilterShowCount"))
+			if (HathiForm.preferences.GetBool("FilterShowCount"))
 				tabPageStarted.Title +=" ("+((CFilterSummary)krnGateway.FilterSummary["Started"]).Items+") ";
-			if (eLePhantForm.preferences.GetBool("FilterShowTotalSizes"))
+			if (HathiForm.preferences.GetBool("FilterShowTotalSizes"))
 				tabPageStarted.Title +=" "+SizeMBtoGB(((CFilterSummary)krnGateway.FilterSummary["Started"]).TotalSize);
 			
-			tabPageStopped.Title = eLePhantForm.Globalization["LBL_STOPPED"];
+			tabPageStopped.Title = HathiForm.Globalization["LBL_STOPPED"];
 			if (comboBoxCategories.SelectedIndex>0)
 				tabPageStopped.Title +="-"+comboBoxCategories.Items[comboBoxCategories.SelectedIndex].ToString();
-			if (eLePhantForm.preferences.GetBool("FilterShowCount"))
+			if (HathiForm.preferences.GetBool("FilterShowCount"))
 				tabPageStopped.Title +=" ("+((CFilterSummary)krnGateway.FilterSummary["Stopped"]).Items+") ";
-			if (eLePhantForm.preferences.GetBool("FilterShowTotalSizes"))
+			if (HathiForm.preferences.GetBool("FilterShowTotalSizes"))
 				tabPageStopped.Title +=" "+SizeMBtoGB(((CFilterSummary)krnGateway.FilterSummary["Stopped"]).TotalSize);
 		}
 
 		private void m_Globalize()
 		{
-			toolTip1.SetToolTip(eLePhantButton1,eLePhantForm.Globalization["LBL_SHOWHIDEDETAILS"]);
-			buttonPasteeLink.Text = eLePhantForm.Globalization["LBL_PASTELINK"];
-			buttonAddeLink.Text = eLePhantForm.Globalization["LBL_ADDLINK"];
-			label1.Text = eLePhantForm.Globalization["LBL_FILTER"];
-			tabPageAll.Title = eLePhantForm.Globalization["LBL_ALL"];
-			tabPageStarted.Title = eLePhantForm.Globalization["LBL_STARTED"];
-			tabPageStopped.Title = eLePhantForm.Globalization["LBL_STOPPED"];
-			tabPageDetails.Title = eLePhantForm.Globalization["LBL_DETAILS"];
-			tabPageLists.Title = eLePhantForm.Globalization["LBL_COMMENTS"];
-			buttonSetCommet.Text = eLePhantForm.Globalization["LBL_SETCOMMENT"];
-			label3.Text = eLePhantForm.Globalization["LBL_FILCOMMENTS"];
-			buttonRename.Text = eLePhantForm.Globalization["LBL_RENAME"];
-			label2.Text = eLePhantForm.Globalization["LBL_FILENAMES"];
-			tabPageSources.Title = eLePhantForm.Globalization["LBL_SOURCES"];
-			buttonAdd.Text = eLePhantForm.Globalization["LBL_ADD"];
-			label6.Text = eLePhantForm.Globalization["LBL_PATH"]+":";
-			label5.Text = eLePhantForm.Globalization["LBL_FILE"]+":";
-			buttonCancel.Text = eLePhantForm.Globalization["LBL_CANCEL"];
-			labelCompletedAt.Text = eLePhantForm.Globalization["LBL_COMPLETEDTIME"]+":";
-			menuItemShowTotalSizes.Text=eLePhantForm.Globalization["LBL_FILTERSHOWSIZES"];
-			menuItemShowCount.Text=eLePhantForm.Globalization["LBL_FILTERSHOWCOUNT"];
-			menuItemAutoSort.Text=eLePhantForm.Globalization["LBL_AUTOSORT"];
-			toolTip1.SetToolTip(this.buttonOpenFolder, eLePhantForm.Globalization["LBL_OPENFOLDER"]);
-			manageCategories.Text=eLePhantForm.Globalization["LBL_MANAGECATEGORIES"];
+			toolTip1.SetToolTip(HathiButton1,HathiForm.Globalization["LBL_SHOWHIDEDETAILS"]);
+			buttonPasteeLink.Text = HathiForm.Globalization["LBL_PASTELINK"];
+			buttonAddeLink.Text = HathiForm.Globalization["LBL_ADDLINK"];
+			label1.Text = HathiForm.Globalization["LBL_FILTER"];
+			tabPageAll.Title = HathiForm.Globalization["LBL_ALL"];
+			tabPageStarted.Title = HathiForm.Globalization["LBL_STARTED"];
+			tabPageStopped.Title = HathiForm.Globalization["LBL_STOPPED"];
+			tabPageDetails.Title = HathiForm.Globalization["LBL_DETAILS"];
+			tabPageLists.Title = HathiForm.Globalization["LBL_COMMENTS"];
+			buttonSetCommet.Text = HathiForm.Globalization["LBL_SETCOMMENT"];
+			label3.Text = HathiForm.Globalization["LBL_FILCOMMENTS"];
+			buttonRename.Text = HathiForm.Globalization["LBL_RENAME"];
+			label2.Text = HathiForm.Globalization["LBL_FILENAMES"];
+			tabPageSources.Title = HathiForm.Globalization["LBL_SOURCES"];
+			buttonAdd.Text = HathiForm.Globalization["LBL_ADD"];
+			label6.Text = HathiForm.Globalization["LBL_PATH"]+":";
+			label5.Text = HathiForm.Globalization["LBL_FILE"]+":";
+			buttonCancel.Text = HathiForm.Globalization["LBL_CANCEL"];
+			labelCompletedAt.Text = HathiForm.Globalization["LBL_COMPLETEDTIME"]+":";
+			menuItemShowTotalSizes.Text=HathiForm.Globalization["LBL_FILTERSHOWSIZES"];
+			menuItemShowCount.Text=HathiForm.Globalization["LBL_FILTERSHOWCOUNT"];
+			menuItemAutoSort.Text=HathiForm.Globalization["LBL_AUTOSORT"];
+			toolTip1.SetToolTip(this.buttonOpenFolder, HathiForm.Globalization["LBL_OPENFOLDER"]);
+			manageCategories.Text=HathiForm.Globalization["LBL_MANAGECATEGORIES"];
 		}
 
 		public void Globalize()
@@ -1239,126 +1239,126 @@ namespace eLePhant.Client
 
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 			
-			label1.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			label1.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			label1.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			label1.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			label4.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			label4.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			label4.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			label4.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			label2.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			label2.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			label2.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			label2.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			label3.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			label3.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			label3.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			label3.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			label5.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			label5.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			label5.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			label5.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			label6.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			label6.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			label6.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			label6.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			labelCompletedAt.ForeColor=eLePhantForm.Skin.GetColor("SquaredLabelsForeColor");
-			labelCompletedAt.BackColor=eLePhantForm.Skin.GetColor("SquaredLabelsBackColor");
+			labelCompletedAt.ForeColor=HathiForm.Skin.GetColor("SquaredLabelsForeColor");
+			labelCompletedAt.BackColor=HathiForm.Skin.GetColor("SquaredLabelsBackColor");
 
-			panel_fileDetails.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel_fileDetails.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 			
-			panel5.BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
-			panel6.BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			panel5.BackColor=HathiForm.Skin.GetColor("defaultBackColor");
+			panel6.BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 
-			splitter1.BackColor=eLePhantForm.Skin.GetColor("SplittersBackColor");
+			splitter1.BackColor=HathiForm.Skin.GetColor("SplittersBackColor");
 
-			panel7.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			paneleLink.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel7.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			paneleLink.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 
-			tabControlFilter.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabControlDetails.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabControlFilter.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			tabControlDetails.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			tabControlFilter.TextInactiveColor=eLePhantForm.Skin.GetColor("tabsInactiveForeColor");
-			tabControlDetails.TextInactiveColor=eLePhantForm.Skin.GetColor("tabsInactiveForeColor");
+			tabControlFilter.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabControlDetails.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabControlFilter.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			tabControlDetails.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			tabControlFilter.TextInactiveColor=HathiForm.Skin.GetColor("tabsInactiveForeColor");
+			tabControlDetails.TextInactiveColor=HathiForm.Skin.GetColor("tabsInactiveForeColor");
 
 			imageListMinimize.Images.Clear();
-			imageListMinimize.ImageSize=eLePhantForm.Skin.GetBitmap("BtnSeparatorUp").Size;
-			imageListMinimize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorUp"));
-			imageListMinimize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorUpMousePressed"));
-			imageListMinimize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorUpMouseUp"));
+			imageListMinimize.ImageSize=HathiForm.Skin.GetBitmap("BtnSeparatorUp").Size;
+			imageListMinimize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorUp"));
+			imageListMinimize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorUpMousePressed"));
+			imageListMinimize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorUpMouseUp"));
 
 			imageListMaximize.Images.Clear();
-			imageListMaximize.ImageSize=eLePhantForm.Skin.GetBitmap("BtnSeparatorDown").Size;
-			imageListMaximize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorDown"));
-			imageListMaximize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorDownMousePressed"));
-			imageListMaximize.Images.Add(eLePhantForm.Skin.GetBitmap("BtnSeparatorDownMouseUp"));
+			imageListMaximize.ImageSize=HathiForm.Skin.GetBitmap("BtnSeparatorDown").Size;
+			imageListMaximize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorDown"));
+			imageListMaximize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorDownMousePressed"));
+			imageListMaximize.Images.Add(HathiForm.Skin.GetBitmap("BtnSeparatorDownMouseUp"));
 
-			buttonAdd.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAdd.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAdd.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAdd.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonAddeLink.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAddeLink.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAddeLink.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAddeLink.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonCancel.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonCancel.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonCancel.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonCancel.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonPasteeLink.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonPasteeLink.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonPasteeLink.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonPasteeLink.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonRename.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonRename.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonRename.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonRename.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonSetCommet.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonSetCommet.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonSetCommet.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonSetCommet.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			textBoxComment.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxComment.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxComment.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxComment.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			comboBoxCategories.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			comboBoxCategories.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			comboBoxCategories.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			comboBoxCategories.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxName.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxName.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxName.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxName.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxeLink.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxeLink.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxeLink.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxeLink.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			tx_fileName.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
-			tx_fileName.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			tx_fileName.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			tx_fileName.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
 
-			tx_completeName.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
-			tx_completeName.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			tx_completeName.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			tx_completeName.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
 
-			textBoxCompletedAt.BackColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxBackColor");
-			textBoxCompletedAt.ForeColor=eLePhantForm.Skin.GetColor("readOnlyTextBoxForeColor");
+			textBoxCompletedAt.BackColor=HathiForm.Skin.GetColor("readOnlyTextBoxBackColor");
+			textBoxCompletedAt.ForeColor=HathiForm.Skin.GetColor("readOnlyTextBoxForeColor");
 
-			listViewComments.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			listViewComments.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			listViewComments.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			listViewComments.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			listViewComments.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
+			listViewComments.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			listViewComments.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			listViewComments.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			listViewComments.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			listViewComments.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
 
-            listViewNames.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			listViewNames.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			listViewNames.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			listViewNames.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			listViewNames.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");;
+            listViewNames.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			listViewNames.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			listViewNames.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			listViewNames.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			listViewNames.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");;
 
-			sourcesList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			sourcesList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			sourcesList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			sourcesList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			sourcesList.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");;
+			sourcesList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			sourcesList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			sourcesList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			sourcesList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			sourcesList.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");;
 
-			downloadList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			downloadList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			downloadList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			downloadList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			downloadList.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
+			downloadList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			downloadList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			downloadList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			downloadList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			downloadList.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
 			
-			labelSessionFileDO.ForeColor=eLePhantForm.Skin.GetColor("StatusBarDownSpeedTextColor");
-			labelSessionFileUP.ForeColor=eLePhantForm.Skin.GetColor("StatusBarUpSpeedTextColor");
-			labelSessionFileRateDO.ForeColor=eLePhantForm.Skin.GetColor("StatusBarDownSpeedTextColor");
-			labelSessionFileRateUP.ForeColor=eLePhantForm.Skin.GetColor("StatusBarUpSpeedTextColor");
+			labelSessionFileDO.ForeColor=HathiForm.Skin.GetColor("StatusBarDownSpeedTextColor");
+			labelSessionFileUP.ForeColor=HathiForm.Skin.GetColor("StatusBarUpSpeedTextColor");
+			labelSessionFileRateDO.ForeColor=HathiForm.Skin.GetColor("StatusBarDownSpeedTextColor");
+			labelSessionFileRateUP.ForeColor=HathiForm.Skin.GetColor("StatusBarUpSpeedTextColor");
 
 			this.Refresh();
 
@@ -1380,26 +1380,26 @@ namespace eLePhant.Client
 
 		private void contextMenuFilter_Popup(object sender, EventArgs e)
 		{
-			menuItemShowCount.Checked=eLePhantForm.preferences.GetBool("FilterShowCount");
-			menuItemShowTotalSizes.Checked=eLePhantForm.preferences.GetBool("FilterShowTotalSizes");
-			menuItemAutoSort.Checked=eLePhantForm.preferences.GetBool("AutoSort");
+			menuItemShowCount.Checked=HathiForm.preferences.GetBool("FilterShowCount");
+			menuItemShowTotalSizes.Checked=HathiForm.preferences.GetBool("FilterShowTotalSizes");
+			menuItemAutoSort.Checked=HathiForm.preferences.GetBool("AutoSort");
 		}
 
 		private void menuItemShowCount_Click(object sender, EventArgs e)
 		{
-			eLePhantForm.preferences.SetProperty("FilterShowCount",!eLePhantForm.preferences.GetBool("FilterShowCount"));
+			HathiForm.preferences.SetProperty("FilterShowCount",!HathiForm.preferences.GetBool("FilterShowCount"));
 			m_UpdateFilterLabels();
 		}
 
 		private void menuItemShowTotalSizes_Click(object sender, EventArgs e)
 		{
-			eLePhantForm.preferences.SetProperty("FilterShowTotalSizes",!eLePhantForm.preferences.GetBool("FilterShowTotalSizes"));
+			HathiForm.preferences.SetProperty("FilterShowTotalSizes",!HathiForm.preferences.GetBool("FilterShowTotalSizes"));
 			m_UpdateFilterLabels();
 		}
 
 		private void menuItemAutoSort_Click(object sender, EventArgs e)
 		{
-			eLePhantForm.preferences.SetProperty("AutoSort",!eLePhantForm.preferences.GetBool("AutoSort"));
+			HathiForm.preferences.SetProperty("AutoSort",!HathiForm.preferences.GetBool("AutoSort"));
 		}
 
 		private void buttonOpenFolder_Click(object sender, System.EventArgs e)

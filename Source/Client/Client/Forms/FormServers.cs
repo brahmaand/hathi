@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -32,10 +32,10 @@ using System.Collections;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Diagnostics;
-using eLePhant.eDonkey;
-using eLePhant.Types;
+using Hathi.eDonkey;
+using Hathi.Types;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormServers.
@@ -126,7 +126,7 @@ namespace eLePhant.Client
 			this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
 			this.contextMenu1 = new System.Windows.Forms.ContextMenu();
 			this.menuItemClearLog = new System.Windows.Forms.MenuItem();
-			this.serversList = new eLePhant.Client.serversListView(this.components);
+			this.serversList = new Hathi.Client.serversListView(this.components);
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.textBoxServerMetUri = new System.Windows.Forms.TextBox();
 			this.buttonDownloadServerList = new System.Windows.Forms.Button();
@@ -302,10 +302,10 @@ namespace eLePhant.Client
 
 		private void m_Globalize()
 		{
-			contextMenu1.MenuItems[0].Text=eLePhantForm.Globalization["LBL_CLEARLOG"];
-			labelPort.Text=eLePhantForm.Globalization["LBL_PORT"]+":";
-			buttonAddServer.Text=eLePhantForm.Globalization["LBL_ADDSERVER"];
-			buttonDownloadServerList.Text=eLePhantForm.Globalization["LBL_DOWNLOAD_SERVERLIST"];
+			contextMenu1.MenuItems[0].Text=HathiForm.Globalization["LBL_CLEARLOG"];
+			labelPort.Text=HathiForm.Globalization["LBL_PORT"]+":";
+			buttonAddServer.Text=HathiForm.Globalization["LBL_ADDSERVER"];
+			buttonDownloadServerList.Text=HathiForm.Globalization["LBL_DOWNLOAD_SERVERLIST"];
 		}
 
 		public void Globalize()
@@ -319,30 +319,30 @@ namespace eLePhant.Client
 		}
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 
-			panel1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 
-			serversList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			serversList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			serversList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			serversList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			serversList.headerForeColor=eLePhantForm.Skin.GetColor("listsHeaderForeColor");
+			serversList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			serversList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			serversList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			serversList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			serversList.headerForeColor=HathiForm.Skin.GetColor("listsHeaderForeColor");
 
-			richTextBoxLog.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			richTextBoxLog.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			richTextBoxLog.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			richTextBoxLog.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			labelIP.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelIP.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelIP.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelIP.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelPort.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelPort.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelPort.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelPort.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			buttonAddServer.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonAddServer.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonAddServer.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonAddServer.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 			
-			buttonDownloadServerList.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonDownloadServerList.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonDownloadServerList.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonDownloadServerList.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 			
 			this.Refresh();
 		}

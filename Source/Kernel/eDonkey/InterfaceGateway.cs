@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -36,10 +36,10 @@ using System.Collections;
 using System.Collections.Specialized;
 //using System.Runtime.Remoting.Lifetime;
 
-using eLePhant.Types;
-using eLePhant.Classes;
+using Hathi.Types;
+using Hathi.Classes;
 
-namespace eLePhant.eDonkey
+namespace Hathi.eDonkey
 {
 	/// <summary>
 	/// Summary description for edonkeyInterfazPasarela.
@@ -1202,7 +1202,7 @@ namespace eLePhant.eDonkey
 			CKernel.Preferences.SetProperty("UDPPort", config.UDPPort);
 			CKernel.Preferences.SetProperty("TCPPort", config.TCPPort);
 			CKernel.Preferences.SetProperty("UseEmuleProtocol", config.UseeMuleProtocol);
-			CKernel.Preferences.SetProperty("UserName", (config.UserName.Length==0)?"http://not.website.yet":config.UserName);
+			CKernel.Preferences.SetProperty("UserName", (config.UserName.Length==0)?"http://hathi.sourceforge.net":config.UserName);
 			CKernel.Preferences.SetProperty("RemoteControlEnabled", config.RemoteControlEnabled);
 			CKernel.Preferences.SetProperty("DownloadServerMet", config.DownloadServerMet);
 			CKernel.Preferences.SetProperty("ServerMetUri", config.ServerMetUri);

@@ -5,8 +5,8 @@
 * andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 * 
-* Hathi is a fork of lphant version 1.0 GPL
-* lphant team
+* Hathi is a fork of Lphant Version 1.0 GPL
+* Lphant Team
 * Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 * 
@@ -33,9 +33,9 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Windows.Forms;
 using System.Threading;
-using eLePhant.eDonkey;
+using Hathi.eDonkey;
 
-namespace eLePhant.Client
+namespace Hathi.Client
 {
 	/// <summary>
 	/// Summary description for FormSearch.
@@ -351,7 +351,7 @@ namespace eLePhant.Client
 		private void buttonSearch_Click(object sender, System.EventArgs e)
 		{
 			buttonSearch.Enabled=false;
-			buttonExtend.Text=eLePhantForm.Globalization["LBL_CANCEL"];
+			buttonExtend.Text=HathiForm.Globalization["LBL_CANCEL"];
 			Crownwood.Magic.Controls.TabPage searchPage;
 			searchListView searchList=new searchListView();
 
@@ -366,10 +366,10 @@ namespace eLePhant.Client
 			searchList.IncreaseHeaderHeight = 0;
 			searchList.View = System.Windows.Forms.View.Details;
 			searchList.Initilize(krnGateway);
-			searchList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			searchList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			searchList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			searchList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			searchList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			searchList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			searchList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			searchList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
 			
 			searchPage = new Crownwood.Magic.Controls.TabPage(textBoxSearch.Text, searchList, null);
 			searchPage.Tag=m_SearchCount;
@@ -476,7 +476,7 @@ namespace eLePhant.Client
 			buttonSearch.Enabled=true;
 			progressBarSearch.Value=0;
 			progressBarSearch.Visible=false;
-			buttonExtend.Text=eLePhantForm.Globalization["LBL_SEARCHEXTEND"];
+			buttonExtend.Text=HathiForm.Globalization["LBL_SEARCHEXTEND"];
 		}
 		private void m_OnNewSearchTab(int searchID, string tabName)
 		{
@@ -502,12 +502,12 @@ namespace eLePhant.Client
 			searchList.IncreaseHeaderHeight = 0;
 			searchList.View = System.Windows.Forms.View.Details;
 			searchList.Initilize(krnGateway);
-			searchList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-			searchList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-			searchList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-			searchList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-			searchList.AlreadyDownloadingItemColor=eLePhantForm.Skin.GetColor("SearchAlreadyDownloadingItemColor");
-			searchList.AlreadyDownloadedItemColor=eLePhantForm.Skin.GetColor("SearchAlreadyDownloadedItemColor");
+			searchList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+			searchList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+			searchList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+			searchList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+			searchList.AlreadyDownloadingItemColor=HathiForm.Skin.GetColor("SearchAlreadyDownloadingItemColor");
+			searchList.AlreadyDownloadedItemColor=HathiForm.Skin.GetColor("SearchAlreadyDownloadedItemColor");
 
 			searchPage = new Crownwood.Magic.Controls.TabPage(m_NewTabName, searchList, null);
 			if (SearchesList.ContainsKey(m_SearchCount)) m_SearchCount++; //TODO review this !
@@ -520,7 +520,7 @@ namespace eLePhant.Client
 		}
 		private void buttonExtend_Click(object sender, System.EventArgs e)
 		{
-			if (buttonExtend.Text==eLePhantForm.Globalization["LBL_CANCEL"]) 
+			if (buttonExtend.Text==HathiForm.Globalization["LBL_CANCEL"]) 
 			{
 				if (tabSearchs.SelectedIndex>=0) m_OnEndSearch((int)tabSearchs.TabPages[tabSearchs.SelectedIndex].Tag);
 				if (tabSearchs.SelectedIndex>=0) krnGateway.CancelSearch((int)tabSearchs.TabPages[tabSearchs.SelectedIndex].Tag);
@@ -551,20 +551,20 @@ namespace eLePhant.Client
 
 		private void m_Globalize()
 		{
-			checkBoxSearchAny.Text = eLePhantForm.Globalization["LBL_SEARCHANY"];
-			buttonExtend.Text = eLePhantForm.Globalization["LBL_SEARCHEXTEND"];
-			buttonSearch.Text = eLePhantForm.Globalization["LBL_SEARCHFILE"];
-			labelAvailability.Text = eLePhantForm.Globalization["LBL_AVAILABILITY"] + " > ";
-			labelSizeLower.Text = eLePhantForm.Globalization["LBL_SIZELOWER"] + " < ";
-			labelSizeUpper.Text = eLePhantForm.Globalization["LBL_SIZEUPPER"] + " > ";
-			labelExclude.Text=eLePhantForm.Globalization["LBL_EXCLUDE"]+":";
+			checkBoxSearchAny.Text = HathiForm.Globalization["LBL_SEARCHANY"];
+			buttonExtend.Text = HathiForm.Globalization["LBL_SEARCHEXTEND"];
+			buttonSearch.Text = HathiForm.Globalization["LBL_SEARCHFILE"];
+			labelAvailability.Text = HathiForm.Globalization["LBL_AVAILABILITY"] + " > ";
+			labelSizeLower.Text = HathiForm.Globalization["LBL_SIZELOWER"] + " < ";
+			labelSizeUpper.Text = HathiForm.Globalization["LBL_SIZEUPPER"] + " > ";
+			labelExclude.Text=HathiForm.Globalization["LBL_EXCLUDE"]+":";
 			
 			comboBoxSearchType.Items.Clear();
-			comboBoxSearchType.Items.AddRange(new object[] {   eLePhantForm.Globalization["LBL_ANY"],
-															   eLePhantForm.Globalization["LBL_VIDEO"],
-															   eLePhantForm.Globalization["LBL_PROGRAM"],
-															   eLePhantForm.Globalization["LBL_AUDIO"],
-															   eLePhantForm.Globalization["LBL_IMAGE"]});
+			comboBoxSearchType.Items.AddRange(new object[] {   HathiForm.Globalization["LBL_ANY"],
+															   HathiForm.Globalization["LBL_VIDEO"],
+															   HathiForm.Globalization["LBL_PROGRAM"],
+															   HathiForm.Globalization["LBL_AUDIO"],
+															   HathiForm.Globalization["LBL_IMAGE"]});
 			if (comboBoxSearchType.SelectedIndex==-1) comboBoxSearchType.SelectedIndex=0;
 		}
 		
@@ -594,63 +594,63 @@ namespace eLePhant.Client
 		}
 		public void ApplySkin()
 		{
-			BackColor=eLePhantForm.Skin.GetColor("defaultBackColor");
+			BackColor=HathiForm.Skin.GetColor("defaultBackColor");
 
-			panel1.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			panel2.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
+			panel1.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			panel2.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
 
-			tabSearchs.BackColor=eLePhantForm.Skin.GetColor("panelsBackColor");
-			tabSearchs.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
+			tabSearchs.BackColor=HathiForm.Skin.GetColor("panelsBackColor");
+			tabSearchs.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
 
-			labelAvailability.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelAvailability.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelAvailability.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelAvailability.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelSizeLower.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelSizeLower.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelSizeLower.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelSizeLower.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelSizeUpper.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelSizeUpper.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelSizeUpper.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelSizeUpper.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			labelExclude.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			labelExclude.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			labelExclude.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			labelExclude.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			checkBoxSearchAny.ForeColor=eLePhantForm.Skin.GetColor("labelsForeColor");
-			checkBoxSearchAny.BackColor=eLePhantForm.Skin.GetColor("labelsBackColor");
+			checkBoxSearchAny.ForeColor=HathiForm.Skin.GetColor("labelsForeColor");
+			checkBoxSearchAny.BackColor=HathiForm.Skin.GetColor("labelsBackColor");
 
-			textBoxAvaibility.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxAvaibility.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxAvaibility.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxAvaibility.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxSearch.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxSearch.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxSearch.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxSearch.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxMaxSize.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxMaxSize.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxMaxSize.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxMaxSize.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxMinSize.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxMinSize.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxMinSize.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxMinSize.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			textBoxExclude.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			textBoxExclude.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			textBoxExclude.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			textBoxExclude.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			comboBoxSearchType.ForeColor=eLePhantForm.Skin.GetColor("TextBoxForeColor");
-			comboBoxSearchType.BackColor=eLePhantForm.Skin.GetColor("TextBoxBackColor");
+			comboBoxSearchType.ForeColor=HathiForm.Skin.GetColor("TextBoxForeColor");
+			comboBoxSearchType.BackColor=HathiForm.Skin.GetColor("TextBoxBackColor");
 
-			buttonSearch.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonSearch.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonSearch.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonSearch.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 
-			buttonExtend.BackColor=eLePhantForm.Skin.GetColor("ButtonBackColor");
-			buttonExtend.ForeColor=eLePhantForm.Skin.GetColor("ButtonForeColor");
+			buttonExtend.BackColor=HathiForm.Skin.GetColor("ButtonBackColor");
+			buttonExtend.ForeColor=HathiForm.Skin.GetColor("ButtonForeColor");
 			
 			if ((SearchesList!=null)&&(SearchesList.Count>0))
 			{
 				foreach (searchListView searchList in SearchesList.Values)
 				{
-					searchList.ForeColor=eLePhantForm.Skin.GetColor("listsForeColor");
-					searchList.BackColor=eLePhantForm.Skin.GetColor("listsBackColor");
-					searchList.headerBackColor=eLePhantForm.Skin.GetColor("listsHeaderBackColor");
-					searchList.ScrollBarBKColor=eLePhantForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
-					searchList.AlreadyDownloadingItemColor=eLePhantForm.Skin.GetColor("SearchAlreadyDownloadingItemColor");
-					searchList.AlreadyDownloadedItemColor=eLePhantForm.Skin.GetColor("SearchAlreadyDownloadedItemColor");
+					searchList.ForeColor=HathiForm.Skin.GetColor("listsForeColor");
+					searchList.BackColor=HathiForm.Skin.GetColor("listsBackColor");
+					searchList.headerBackColor=HathiForm.Skin.GetColor("listsHeaderBackColor");
+					searchList.ScrollBarBKColor=HathiForm.Skin.GetColor("listsScrollBarBackColor").ToArgb();
+					searchList.AlreadyDownloadingItemColor=HathiForm.Skin.GetColor("SearchAlreadyDownloadingItemColor");
+					searchList.AlreadyDownloadedItemColor=HathiForm.Skin.GetColor("SearchAlreadyDownloadedItemColor");
 				}
 			}
 			
