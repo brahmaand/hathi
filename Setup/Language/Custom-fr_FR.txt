@@ -1,5 +1,5 @@
 [Messages]
-LaunchlPhant=Démarrer lphant
+LaunchHathi=Démarrer Hathi
 CreateDesktopIcon=Créer l'icône sur le bureau
-WarningDotNet1=Attention : lphant nécessite le framework .NET 1.1
-WarningDotNet2=Télécharger et installer le avant d'utiliser lphant !
+WarningDotNet1=Attention : Hathi nécessite le framework .NET 2.0
+WarningDotNet2=Télécharger et installer le avant d'utiliser Hathi !

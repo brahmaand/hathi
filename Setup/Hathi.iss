@@ -5,8 +5,8 @@
 ; andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
 ; knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
 ; 
-; Hathi is a fork of lphant version 1.0 GPL
-; lphant team
+; Hathi is a fork of Lphant version 1.0 GPL
+; Lphant Team
 ; Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
 ; andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
 ; 
@@ -27,39 +27,39 @@
 
 [Setup]
 ;Never change the value AppName=lphant : read AppId in InnoSetup help
-AppName=lphant
+AppName=Hathi
 
 ;----------------- TO UPDATE FOR A NEW VERSION ----------------------
-AppVerName=lphant v1.00
-AppVersion=v1.00
+AppVerName=Hathi v0.1.0.0
+AppVersion=v0.1.0.0
 VersionInfoVersion=0.1.0.0
 ;--------------------------------------------------------------------
 
-AppPublisher=Juanjo
-AppPublisherURL=http://not.website.yet
-AppSupportURL=http://not.website.yet
-AppUpdatesURL=http://not.website.yet
+AppPublisher=Hathi Project
+AppPublisherURL=http://hathi.sourceforge.net
+AppSupportURL=http://hathi.sourceforge.net
+AppUpdatesURL=http://hathi.sourceforge.net
 ;AppMutex={lphant-DD14EC11-CB90-4956-B8F4-F5D6D708DC33}
-DefaultDirName={pf}\lphant
-DefaultGroupName=lphant
+DefaultDirName={pf}\Hathi
+DefaultGroupName=Hathi
 DisableProgramGroupPage=true
 AllowNoIcons=true
 LicenseFile=..\license.txt
-AppCopyright=Copyright © Juanjo 2003
+AppCopyright=Copyright © Hathi Project
 ShowLanguageDialog=auto
 InfoBeforeFile=..\readme.txt
 Compression=lzma
 SolidCompression=true
-UninstallDisplayIcon={app}\eLePhantClient.exe
-VersionInfoCompany=Juanjo
-VersionInfoDescription=lphant : P2P client
+UninstallDisplayIcon={app}\Hathi.Client.exe
+VersionInfoCompany=Hathi Project
+VersionInfoDescription=Hathi : P2P client
 OutputDir=..\Setup
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\Source\Client\bin\Release\eLePhantClient.exe; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\eLePhant.dll; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\eLePhant.Interface.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\Client\bin\Release\Hathi.Client.exe; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\Client\bin\Release\Hathi.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\Client\bin\Release\Hathi.Interface.dll; DestDir: {app}; Flags: ignoreversion
 Source: ..\Source\Client\bin\Release\MagicLibrary.dll; DestDir: {app}; Flags: ignoreversion
 Source: ..\Source\Client\bin\Release\ICSharpCode.SharpZipLib.dll; DestDir: {app}; Flags: ignoreversion
 Source: ..\Source\Client\bin\Release\server.met; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
@@ -76,25 +76,25 @@ Source: ..\license.txt; DestDir: {app}; Flags: ignoreversion
 Source: Language\Custom-*; DestDir: {tmp}; Flags: dontcopy
 
 [INI]
-Filename: {app}\eLePhantClient.url; Section: InternetShortcut; Key: URL; String: http://not.website.yet
-Filename: {app}\dotnet.url; Section: InternetShortcut; Key: URL; String: http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&DisplayLang=en
+Filename: {app}\Hathi.Client.url; Section: InternetShortcut; Key: URL; String: http://hathi.sourceforge.net
+Filename: {app}\dotnet.url; Section: InternetShortcut; Key: URL; String: http://www.microsoft.com/downloads/details.aspx?FamilyID=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&DisplayLang=en
 
 [Icons]
-Name: {group}\lphant; Filename: {app}\eLePhantClient.exe
+Name: {group}\Hathi; Filename: {app}\Hathi.Client.exe
 Name: {group}\Readme; Filename: {app}\readme.txt
 ; NOTE: The following entry contains an English phrase ("on the Web"). You are free to translate it into another language if required.
-Name: {group}\lphant on the Web; Filename: {app}\eLePhantClient.url
-Name: {group}\Install .NET 1.1 Framework; Filename: {app}\dotnet.url
+Name: {group}\Hathi on the Web; Filename: {app}\Hathi.Client.url
+Name: {group}\Install .NET 2.0 Framework; Filename: {app}\dotnet.url
 ; NOTE: The following entry contains an English phrase ("Uninstall"). You are free to translate it into another language if required.
-Name: {group}\Uninstall lphant; Filename: {uninstallexe}
-Name: {userdesktop}\lphant; Filename: {app}\eLePhantClient.exe; Tasks: desktopicon
+Name: {group}\Uninstall Hathi; Filename: {uninstallexe}
+Name: {userdesktop}\Hathi; Filename: {app}\Hathi.Client.exe; Tasks: desktopicon
 
 [Run]
 ; NOTE: The following entry contains an English phrase ("Launch"). You are free to translate it into another language if required.
-Filename: {app}\eLePhantClient.exe; Description: {code:GetSectionMessages|Launchlphant}; Flags: nowait postinstall skipifsilent unchecked
+Filename: {app}\Hathi.Client.exe; Description: {code:GetSectionMessages|LaunchHathi}; Flags: nowait postinstall skipifsilent unchecked
 
 [UninstallDelete]
-Type: files; Name: {app}\eLePhantClient.url
+Type: files; Name: {app}\Hathi.Client.url
 Type: files; Name: {app}\dotnet.url
 
 [Tasks]
@@ -144,9 +144,9 @@ var
   LanguageCode: String;
 begin
 	LanguageCode := Copy(ActiveLanguage(),0,2);
-	if not RegValueExists(HKLM,'SOFTWARE\Microsoft\.NETFramework\policy\v1.1','4322') then begin
+	if not RegValueExists(HKLM,'SOFTWARE\Microsoft\.NETFramework\policy\v2.0','50727') then begin
 		MsgBox(GetValue('Messages','WarningDotNet1')+#13#13+GetValue('Messages','WarningDotNet2'), mbError, MB_OK);
-		ShellExec('open', 'http://www.microsoft.com/downloads/details.aspx?FamilyID=262d25e3-f589-4842-8157-034d1e7cf3a3&DisplayLang='+LanguageCode, '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
+		ShellExec('open', 'http://www.microsoft.com/downloads/details.aspx?FamilyID=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&DisplayLang='+LanguageCode, '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
 		Result:=False;
 	end else
 		Result:=True;
@@ -156,7 +156,7 @@ procedure URLLabelOnClick(Sender: TObject);
 var
   Dummy: Integer;
 begin
-  ShellExec('open', 'http://not.website.yet', '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
+  ShellExec('open', 'http://hathi.sourceforge.net', '', '', SW_SHOWNORMAL, ewNoWait, Dummy);
 end;
 
 procedure InitializeWizard();
@@ -166,7 +166,7 @@ begin
   URLLabel := TNewStaticText.Create(WizardForm);
   URLLabel.Top := 333;
   URLLabel.Left := 20;
-  URLLabel.Caption := 'not.website.yet';
+  URLLabel.Caption := 'hathi.sourceforge.net';
   URLLabel.Font.Style := URLLabel.Font.Style + [fsUnderLine];
   URLLabel.Font.Color := clBlue;
   URLLabel.Cursor := crHand;
