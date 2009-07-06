@@ -2,24 +2,24 @@
 /*
 * This file is part of Hathi Project
 * Hathi Developers Team:
-* andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420, 
+* andrewdev, beckman16, biskvit, elnomade_devel, ershyams, grefly, jpierce420,
 * knocte, kshah05, manudenfer, palutz, ramone_hamilton, soudamini, writetogupta
-* 
+*
 * Hathi is a fork of Lphant Version 1.0 GPL
 * Lphant Team
-* Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv, 
+* Juanjo, 70n1, toertchn, FeuerFrei, mimontyf, finrold, jicxicmic, bladmorv,
 * andrerib, arcange|, montagu, wins, RangO, FAV, roytam1, Jesse
-* 
+*
 * This program is free software; you can redistribute it and/or
 * modify it under the terms of the GNU General Public License
 * as published by the Free Software Foundation; either
 * version 2 of the License, or (at your option) any later version.
-* 
+*
 * This program is distributed in the hope that it will be useful,
 * but WITHOUT ANY WARRANTY; without even the implied warranty of
 * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 * GNU General Public License for more details.
-* 
+*
 * You should have received a copy of the GNU General Public License
 * along with this program; if not, write to the Free Software
 * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
@@ -35,181 +35,175 @@ using System.Windows.Forms;
 using Hathi.eDonkey;
 namespace Hathi.Client
 {
-	/// <summary>
-	/// Summary description for commentsListView.
-	/// </summary>
-	public class commentsListView : HathiListView
-	{
-		/// <summary>
-		/// Required designer variable.
-		/// </summary>
-		
-		private CkernelGateway krnGateway;
-		private ColumnSorter TheColumnSorter;
-		private string m_strFileHash;
-		private System.ComponentModel.Container components = null;
+/// <summary>
+/// Summary description for commentsListView.
+/// </summary>
+public class commentsListView : HathiListView
+{
+    /// <summary>
+    /// Required designer variable.
+    /// </summary>
 
-		public commentsListView(System.ComponentModel.IContainer container)
-		{
-			/// <summary>
-			/// Required for Windows.Forms Class Composition Designer support
-			/// </summary>
-			container.Add(this);
-			InitializeComponent();
+    private CkernelGateway krnGateway;
+    private ColumnSorter TheColumnSorter;
+    private string m_strFileHash;
+    private System.ComponentModel.Container components = null;
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-		}
+    public commentsListView(System.ComponentModel.IContainer container)
+    {
+        /// <summary>
+        /// Required for Windows.Forms Class Composition Designer support
+        /// </summary>
+        container.Add(this);
+        InitializeComponent();
+        //
+        // TODO: Add any constructor code after InitializeComponent call
+        //
+    }
 
-		public commentsListView()
-		{
-			/// <summary>
-			/// Required for Windows.Forms Class Composition Designer support
-			/// </summary>
-			InitializeComponent();
+    public commentsListView()
+    {
+        /// <summary>
+        /// Required for Windows.Forms Class Composition Designer support
+        /// </summary>
+        InitializeComponent();
+        //
+        // TODO: Add any constructor code after InitializeComponent call
+        //
+    }
+    public void Initialize(CkernelGateway in_krnGateway)
+    {
+        Name = "listViewComments";
+        krnGateway=in_krnGateway;
+        Columns.Add("User",100,false);
+        Columns.Add("Rating",60,false);
+        Columns.Add("Comment",220,false);
+        krnGateway.OnRefreshFileComments+=new RefreshEvent(m_InvokeRefreshList);
+        TheColumnSorter=new ColumnSorter();
+        TheColumnSorter.CurrentColumn=1;
+        TheColumnSorter.sortOrder=-1;
+        this.ClickHeader+=new HeaderEventHandler(myColumnClick);
+        m_DefaultWidths=new int[] {100,60,220};
+        m_Globalize();
+        m_LoadWidths();
+    }
 
-			//
-			// TODO: Add any constructor code after InitializeComponent call
-			//
-		}
-		public void Initialize(CkernelGateway in_krnGateway)
-		{
-			Name = "listViewComments";
-			krnGateway=in_krnGateway;
-			Columns.Add("User",100,false);
-			Columns.Add("Rating",60,false);
-			Columns.Add("Comment",220,false);
-			krnGateway.OnRefreshFileComments+=new RefreshEvent(m_InvokeRefreshList);
-			TheColumnSorter=new ColumnSorter();
-			TheColumnSorter.CurrentColumn=1;
-			TheColumnSorter.sortOrder=-1;
-			this.ClickHeader+=new HeaderEventHandler(myColumnClick);
-			
-			m_DefaultWidths=new int[] {100,60,220};
-			m_Globalize();
-			m_LoadWidths();
-		}
-		
-		private void m_Globalize()
-		{
-			Columns[0].Text=HathiForm.Globalization["LBL_NAME"];
-			Columns[1].Text=HathiForm.Globalization["LBL_RATING"];
-			Columns[2].Text=HathiForm.Globalization["LBL_COMMENT"];
-		}
+    private void m_Globalize()
+    {
+        Columns[0].Text=HathiForm.Globalization["LBL_NAME"];
+        Columns[1].Text=HathiForm.Globalization["LBL_RATING"];
+        Columns[2].Text=HathiForm.Globalization["LBL_COMMENT"];
+    }
 
-		public void Globalize()
-		{
-			m_Globalize();
-			this.Refresh();
-		}
-		
-		private void myColumnClick(object sender, HeaderEventArgs e)
-		{
-			TheColumnSorter.CurrentColumn = e.ColumnIndex;
-			TheColumnSorter.sortOrder=this.sortOrder;
-			this.ListViewItemSorter = TheColumnSorter;	
-			this.Sort();
-			this.ListViewItemSorter = null;			
-		}
+    public void Globalize()
+    {
+        m_Globalize();
+        this.Refresh();
+    }
 
-		private void CommentToItem(InterfaceComment comment,ListViewItem itemComment)
-		{
-			if (comment==null) return;
-			if (itemComment.SubItems[0].Text!=comment.ClientName) itemComment.SubItems[0].Text=comment.ClientName;
-			if (itemComment.SubItems[1].Text!=comment.Rating) itemComment.SubItems[1].Text=comment.Rating;
-			if (itemComment.SubItems[2].Text!=comment.Comment) itemComment.SubItems[2].Text=comment.Comment;
-			//itemComment.Tag=comment;
-		}
-		private void m_UpdateOrAddComment(InterfaceComment comment)
-		{
-			bool updated=false;
-			foreach (ListViewItem itemComment in this.Items)
-			{
-				if (itemComment.SubItems[2].Text==comment.Comment)
-				{
-					CommentToItem(comment,itemComment);
-					updated=true;
-					break;
-				}
-			}
-			if (!updated) OnNewComment(comment);
-		}
-		private void OnNewComment(InterfaceComment comment)
-		{
-			ListViewItem itemComment=new ListViewItem(new string[]{"","",""});
-			
-			itemComment.Tag=comment;
-			CommentToItem(comment,itemComment);
-			lock(this)
-			{
-				Items.Add(itemComment);
-			}
-		}
-		private void m_InvokeRefreshList(CkernelGateway in_krnGateway)
-		{
-			this.BeginInvoke(new RefreshEvent(m_RefreshList),new object[] {in_krnGateway});
-		}
+    private void myColumnClick(object sender, HeaderEventArgs e)
+    {
+        TheColumnSorter.CurrentColumn = e.ColumnIndex;
+        TheColumnSorter.sortOrder=this.sortOrder;
+        this.ListViewItemSorter = TheColumnSorter;
+        this.Sort();
+        this.ListViewItemSorter = null;
+    }
 
-		private void m_RefreshList(CkernelGateway in_krnGateway)
-		{
-			if (m_strFileHash==null)
-			{	
-				Items.Clear();
-				return;
-			}
-			InterfaceComment[] comments=krnGateway.GetComments(m_strFileHash);
-			if (comments==null) 
-			{	
-				Items.Clear();
-				return;
-			}
-			foreach (InterfaceComment comment in comments)
-			{
-				if (comment!=null) m_UpdateOrAddComment(comment);
-			}
-		}
-		public void ReloadList(string in_strFileHash)
-		{
-			m_strFileHash=in_strFileHash;	
-			
-			InterfaceComment[] comments=krnGateway.GetComments(m_strFileHash);				
-			Items.Clear();
-			if (comments==null) return;
-			foreach (InterfaceComment comment in comments)
-			{
-				if (comment!=null) OnNewComment(comment);
-			}
-			ListViewItemSorter = TheColumnSorter;	
-			Sort();
-			ListViewItemSorter = null;	
-		}
+    private void CommentToItem(InterfaceComment comment,ListViewItem itemComment)
+    {
+        if (comment==null) return;
+        if (itemComment.SubItems[0].Text!=comment.ClientName) itemComment.SubItems[0].Text=comment.ClientName;
+        if (itemComment.SubItems[1].Text!=comment.Rating) itemComment.SubItems[1].Text=comment.Rating;
+        if (itemComment.SubItems[2].Text!=comment.Comment) itemComment.SubItems[2].Text=comment.Comment;
+        //itemComment.Tag=comment;
+    }
+    private void m_UpdateOrAddComment(InterfaceComment comment)
+    {
+        bool updated=false;
+        foreach (ListViewItem itemComment in this.Items)
+        {
+            if (itemComment.SubItems[2].Text==comment.Comment)
+            {
+                CommentToItem(comment,itemComment);
+                updated=true;
+                break;
+            }
+        }
+        if (!updated) OnNewComment(comment);
+    }
+    private void OnNewComment(InterfaceComment comment)
+    {
+        ListViewItem itemComment=new ListViewItem(new string[] {"","",""});
+        itemComment.Tag=comment;
+        CommentToItem(comment,itemComment);
+        lock (this)
+        {
+            Items.Add(itemComment);
+        }
+    }
+    private void m_InvokeRefreshList(CkernelGateway in_krnGateway)
+    {
+        this.BeginInvoke(new RefreshEvent(m_RefreshList),new object[] {in_krnGateway});
+    }
 
-		public class ColumnSorter : IComparer
-		{
-			public int CurrentColumn = -1;
-			public int sortOrder;
-			public int Compare(object x, object y)
-			{
-				if ((x==null)||(y==null)) return 0;
-				ListViewItem rowA = (ListViewItem)x;
-				ListViewItem rowB = (ListViewItem)y;
-					
-				return sortOrder*String.Compare(rowA.SubItems[CurrentColumn].Text,
-							rowB.SubItems[CurrentColumn].Text);
-			}
-		}
+    private void m_RefreshList(CkernelGateway in_krnGateway)
+    {
+        if (m_strFileHash==null)
+        {
+            Items.Clear();
+            return;
+        }
+        InterfaceComment[] comments=krnGateway.GetComments(m_strFileHash);
+        if (comments==null)
+        {
+            Items.Clear();
+            return;
+        }
+        foreach (InterfaceComment comment in comments)
+        {
+            if (comment!=null) m_UpdateOrAddComment(comment);
+        }
+    }
+    public void ReloadList(string in_strFileHash)
+    {
+        m_strFileHash=in_strFileHash;
+        InterfaceComment[] comments=krnGateway.GetComments(m_strFileHash);
+        Items.Clear();
+        if (comments==null) return;
+        foreach (InterfaceComment comment in comments)
+        {
+            if (comment!=null) OnNewComment(comment);
+        }
+        ListViewItemSorter = TheColumnSorter;
+        Sort();
+        ListViewItemSorter = null;
+    }
+
+    public class ColumnSorter : IComparer
+    {
+        public int CurrentColumn = -1;
+        public int sortOrder;
+        public int Compare(object x, object y)
+        {
+            if ((x==null)||(y==null)) return 0;
+            ListViewItem rowA = (ListViewItem)x;
+            ListViewItem rowB = (ListViewItem)y;
+            return sortOrder*String.Compare(rowA.SubItems[CurrentColumn].Text,
+                                            rowB.SubItems[CurrentColumn].Text);
+        }
+    }
 
 
-		#region Component Designer generated code
-		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
-		/// </summary>
-		private void InitializeComponent()
-		{
-			components = new System.ComponentModel.Container();
-		}
-		#endregion
-	}
+    #region Component Designer generated code
+    /// <summary>
+    /// Required method for Designer support - do not modify
+    /// the contents of this method with the code editor.
+    /// </summary>
+    private void InitializeComponent()
+    {
+        components = new System.ComponentModel.Container();
+    }
+    #endregion
+}
 }
