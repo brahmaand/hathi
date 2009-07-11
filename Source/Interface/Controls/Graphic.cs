@@ -460,8 +460,7 @@ public class HathiGraphic : PictureBox
 
     #region Component Designer generated code
     /// <summary>
-    /// Método necesario para admitir el Diseñador, no se puede modificar
-    /// el contenido del método con el editor de código.
+    /// This method is necessary for designer support and cannot be modified
     /// </summary>
     private void InitializeComponent()
     {

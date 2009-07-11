@@ -68,10 +68,10 @@ public class CMain
                 string remotePass=m_Preferences.GetString("RemotePassword","");
                 if ((remotePort>0)&&(remoteIP.Length>0)&&(remotePass.Length>0))
                 {
-                    CedonkeyCRemoto CRemoto=new CedonkeyCRemoto();
-                    if (CRemoto.Connect(remoteIP,remotePass,remotePort))
+                    CedonkeyCRemote cRemote=new CedonkeyCRemote();
+                    if (cRemote.Connect(remoteIP,remotePass,remotePort))
                     {
-                        Application.Run(new HathiForm(m_elink,m_Mutex,CRemoto.interfazremota));
+                        Application.Run(new HathiForm(m_elink,m_Mutex,cRemote.remoteInterface));
                     }
                     else
                     {

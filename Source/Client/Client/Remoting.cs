@@ -32,8 +32,7 @@ using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Messaging;
 using Hathi.eDonkey;
-//dos clases para obtener acceso a las preferecias de la aplicacion.
-//y todo por no existir todavia el formulario principal.
+
 using Hathi.Classes;
 using System.Windows.Forms;
 
@@ -47,9 +46,9 @@ using ICSharpCode.SharpZipLib;
 namespace Hathi.Client
 {
 /// <summary>
-/// Descripción breve de edonkeyCRemoto.
+/// Brief description of eDonkeyRemoting
 /// </summary>
-public class CedonkeyCRemoto
+public class CedonkeyCRemote
 {
     private TcpClientChannel m_lPhantChannel;
 
@@ -58,9 +57,9 @@ public class CedonkeyCRemoto
         return m_ip;
     }
 
-    private int m_puertos=4670;
-    public int puertos() {
-        return m_puertos;
+    private int m_Port=4670;
+    public int Port() {
+        return m_Port;
     }
 
     private string m_url;
@@ -68,16 +67,16 @@ public class CedonkeyCRemoto
         return m_url;
     }
 
-    private int m_puertor;
-    public int puertor() {
-        return m_puertor;
+    private int m_Port2;
+    public int Port2() {
+        return m_Port2;
     }
 
-    public CInterfaceGateway  interfazremota;
+    public CInterfaceGateway  remoteInterface;
     private Hashtable props ;
     private IClientChannelSinkProvider provider;
 
-    public CedonkeyCRemoto()
+    public CedonkeyCRemote()
     {
         props = new Hashtable();
         props.Add("name","HathiClient");
@@ -97,7 +96,7 @@ public class CedonkeyCRemoto
         provider = new HathiClientSinkProvider(propsinks,datasinks);
 #endif
     }
-    ~CedonkeyCRemoto()
+    ~CedonkeyCRemote()
     {
         RemotingConfiguration.Configure(null);
         ChannelServices.UnregisterChannel(m_lPhantChannel);
@@ -114,13 +113,13 @@ public class CedonkeyCRemoto
             Debug.WriteLine(e.Message);
         }
     }
-    public bool Connect(string IP,string clave,int puertor)
+    public bool Connect(string IP,string key,int port2)
     {
         m_ip = IPAddress.Parse(IP);
-        if (puertor!=0)
-            this.m_puertos=puertor;
-        this.m_url="tcp://" + IP + ":" + this.m_puertos + "/InterfazRemota";
-        this.m_puertor=puertor;
+        if (port2!=0)
+            this.m_Port=port2;
+        this.m_url="tcp://" + IP + ":" + this.m_Port + "/RemoteInterface";
+        this.m_Port2=port2;
         System.Security.Cryptography.MD5 cripto=System.Security.Cryptography.MD5.Create();
         bool valor=false;
         try
@@ -136,30 +135,30 @@ public class CedonkeyCRemoto
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }
-        interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
+        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
                          this.m_url);
-        if (interfazremota == null)
-            Debug.Write("No se pudo encontrar el servidor");
+        if (remoteInterface == null)
+            Debug.Write("Could not locate the server");
         else
         {
             try
             {
-                valor = interfazremota.CheckPw( clave );
+                valor = remoteInterface.CheckPw( key );
             }
             catch
             {
-                Debug.Write("\nNo se pudo encontrar el servidor\n");
+                Debug.Write("\nCould not locate the server\n");
             }
         }
         return valor;
     }
-    public bool Connect(string IP,int puertol,string clave,int puertor)
+    public bool Connect(string IP,int port3,string key,int port2)
     {
         m_ip = IPAddress.Parse(IP);
-        if (puertor!=0)
-            this.m_puertos=puertor;
-        this.m_url="tcp://" + IP + ":" + this.m_puertos + "/InterfazRemota";
-        this.m_puertor=puertor;
+        if (port2!=0)
+            this.m_Port=port2;
+        this.m_url="tcp://" + IP + ":" + this.m_Port + "/RemoteInterface";
+        this.m_Port2=port2;
         System.Security.Cryptography.MD5 cripto=System.Security.Cryptography.MD5.Create();
         bool valor=false;
         try
@@ -175,18 +174,18 @@ public class CedonkeyCRemoto
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }
-        interfazremota = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
+        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
                          this.m_url);
-        if (interfazremota == null)
-            Debug.Write("No se pudo encontrar el servidor");
+        if (remoteInterface == null)
+            Debug.Write("Could not locate the server");
         else
         {
-            //c = new byte[clave.Length];
-            //for (int i=0;i<clave.Length;i++) c[i]=System.Convert.ToByte(clave[i]);
+            //c = new byte[key.Length];
+            //for (int i=0;i<key.Length;i++) c[i]=System.Convert.ToByte(key[i]);
             //cripto.ComputeHash(c);
             //try
             //{
-            valor = interfazremota.CheckPw( clave );
+            valor = remoteInterface.CheckPw( key );
             /*}
             catch
             {
@@ -221,7 +220,7 @@ public class HathiClientSinkProvider : IClientChannelSinkProvider, IClientFormat
     }
     #endregion
 
-    #region Miembros de IClientChannelSinkProvider
+    #region Implementation of IClientChannelSinkProvider
 
     public IClientChannelSink CreateSink(IChannelSender channel, string url, object remoteChannelData)
     {
@@ -295,7 +294,7 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
     }
     #endregion
 
-    #region metodos publicos
+    #region public methods
     public void SetNext(object nextobject)
     {
         this.m_NextChannelSink = nextobject as IClientChannelSink;
@@ -303,15 +302,15 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
     }
     #endregion
 
-    #region Miembros de IClientChannelSink
+    #region Implementation of IClientChannelSink
 
     public void AsyncProcessRequest(IClientChannelSinkStack sinkStack, IMessage msg, ITransportHeaders headers, Stream stream)
     {
         object state = null;
         //requestStream esta cerrado, sustitucion por otra.
         if (!stream.CanWrite)
-            AbrirStream(ref stream,
-                        System.Convert.ToInt32((string)headers["TamañoComprimido"]) );
+            OpenStream(ref stream,
+                        System.Convert.ToInt32((string)headers["CompressedSize"]) );
         //Procesar el mensaje
         ProcessRequest(msg, headers, ref stream, ref state);
         try
@@ -327,16 +326,16 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
 
     public void ProcessMessage(IMessage msg, ITransportHeaders requestHeaders, Stream requestStream, out ITransportHeaders responseHeaders, out Stream responseStream)
     {
-        // Iniciacion de variable, respuesta no inicializadas, ver la documentacion de esta funcion
+        // Initialize the variable, the response is not intialized, view the documentation for this function
         responseHeaders = null;
         responseStream = null;
         object state = null;
-        //requestStream esta cerrado, abir o susutituir por otra.
+        //The requestStream is closed so we need to open it
         if (!requestStream.CanWrite)
-            AbrirStream(ref requestStream);
-        //Procesar el mensaje
+            OpenStream(ref requestStream);
+        //Process the message
         ProcessRequest(msg, requestHeaders, ref requestStream, ref state);
-        // Envio atraves del siguiente canal.
+        // Send it through the channel.
         try
         {
             if ( (bool)state)
@@ -347,11 +346,11 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
         {
             Console.Write(e.Message);
         }
-        //responseStream esta cerrado, sustitucion por otra.
+        //The requestStream is closed so we need to open it
         if (!responseStream.CanWrite)
-            AbrirStream(ref responseStream,
-                        System.Convert.ToInt32( (string)responseHeaders["TamañoComprimido"]) );
-        //PostProcesado del mensaje
+            OpenStream(ref responseStream,
+                        System.Convert.ToInt32( (string)responseHeaders["CompressedSize"]) );
+        //Post processing message
         ProcessResponse(null, responseHeaders, ref responseStream, state);
         //Depuracion
         /*if (msg.Properties["__MethodName"]==null)
@@ -373,17 +372,16 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
 
     public void AsyncProcessResponse(IClientResponseChannelSinkStack sinkStack, object state, ITransportHeaders headers, Stream stream)
     {
-        // process response como no lo he visto ejecutarse, mas vale prevenir.
         if (!stream.CanWrite)
         {
             try
             {
-                AbrirStream(ref stream);
+                OpenStream(ref stream);
             }
             catch
             {
-                AbrirStream(ref stream,
-                            System.Convert.ToInt32( (string)headers["TamañoComprimido"]) );
+                OpenStream(ref stream,
+                            System.Convert.ToInt32( (string)headers["CompressedSize"]) );
             }
         }
         ProcessResponse(null, headers, ref stream, state);
@@ -411,7 +409,7 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
 
     #endregion
 
-    #region Miembros de IChannelSinkBase
+    #region Implementation of IChannelSinkBase
 
     IDictionary IChannelSinkBase.Properties
     {
@@ -422,10 +420,10 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
 
     #endregion
 
-    #region Miembros de IMessageSink
+    #region Implementation of IMessageSink
 
-    //Aunque en ImessageSink Tambien se podria procesar los mensajes, estos no tienen header.
-    //Y en el servidor no hay implementacion de ImessageSink
+    //IMesageSink may process messages but they contain no headers.  There is no implementation
+    //for IMessageSink on the server
     public IMessage SyncProcessMessage(IMessage msg)
     {
         IMessage respMsg = null;
@@ -463,24 +461,24 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
 
     #endregion
 
-    #region Procesado de los mensajes
+    #region Process the message
     private void ProcessRequest(IMessage message, ITransportHeaders headers, ref Stream stream, ref object state)
     {
         state = true;
         if (headers!=null)
         {
-            //Comprimir peticion
-            Compresion compresor=new Compresion(stream,  m_CompressionMethod  );
-            Stream comprimido=compresor.ToStream;
-            if (comprimido != null)
+            //Compare the requests
+            Compresion compressor=new Compresion(stream,  m_CompressionMethod  );
+            Stream compressed=compressor.ToStream;
+            if (compressed != null)
             {
-                if (comprimido.Length < stream.Length)
+                if (compressed.Length < stream.Length)
                 {
                     headers["edonkeyCompress"] = "Yes";
-                    headers["TamañoComprimido"]=comprimido.Length;
-                    headers["Tamaño"]=stream.Length;
-                    headers["CompressionType"]= (int)compresor.CompressionProvider;
-                    stream=comprimido;
+                    headers["CompressedSize"]=compressed.Length;
+                    headers["Compressed"]=stream.Length;
+                    headers["CompressionType"]= (int)compressor.CompressionProvider;
+                    stream=compressed;
                 }
             }
         }
@@ -497,16 +495,13 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
                 if (Enum.GetName(typeof(CompressionType),com) != null)
                 {
                     c =(CompressionType)com;
-                    Descompresion descompresor =new Descompresion(stream,c );
-                    Stream descomprimido = descompresor.ToStream;
-                    if (descomprimido != null)
+                    Descompresion descompressor =new Descompresion(stream,c );
+                    Stream decompressed = descompressor.ToStream;
+                    if (decompressed != null)
                     {
                         headers["CompressionType"] = null;
                         headers["edonkeyCompress"] = null;
-                        //Si descomentamo no podemos hacer la depuracion
-                        //headers["TamañoComprimido"] = null;
-                        //headers["Tamaño"] = null;
-                        stream = descomprimido;
+                        stream = decompressed;
                     }
                 }
                 else
@@ -518,17 +513,17 @@ public class HathiClientSink:BaseChannelObjectWithProperties,IClientChannelSink,
     }
     #endregion
 
-    #region Otras Funciones
-    private void AbrirStream(ref Stream stream)
+    #region Other Functions
+    private void OpenStream(ref Stream stream)
     {
-        AbrirStream(ref stream,(int)stream.Length);
+        OpenStream(ref stream,(int)stream.Length);
     }
-    private void AbrirStream(ref Stream stream,int tamaño)
+    private void OpenStream(ref Stream stream,int compression)
     {
-        MemoryStream ms = new MemoryStream(tamaño);
-        byte[] Data = new byte[tamaño];
-        stream.Read(Data,0,tamaño);
-        ms.Write(Data,0,tamaño);
+        MemoryStream ms = new MemoryStream(compression);
+        byte[] Data = new byte[compression];
+        stream.Read(Data,0,compression);
+        ms.Write(Data,0,compression);
         stream=null;
         stream=ms;
     }

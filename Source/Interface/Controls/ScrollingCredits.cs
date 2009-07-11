@@ -99,7 +99,7 @@ public class ScrollingCredits : System.Windows.Forms.Control
         base.Dispose( disposing );
     }
 
-    #region Code généré par le Concepteur de composants
+    #region Component designer generated code 
     /// <summary>
     /// Required method for Designer support - do not modify
     /// the contents of this method with the code editor.

@@ -76,7 +76,7 @@ public class CkernelGateway : MarshalByRefObject
     private bool m_isLocal;
     private bool m_NotRefresh;
 
-    private CKernel edonkeyNucleo;
+    private CKernel edonkeyCore;
     private CInterfaceGateway krnGateway;
 
     public Hashtable FilterSummary;
@@ -104,7 +104,7 @@ public class CkernelGateway : MarshalByRefObject
     public CkernelGateway()
     {
         m_isLocal=true;
-        edonkeyNucleo=new CKernel();
+        edonkeyCore=new CKernel();
         krnGateway=CKernel.InterfaceGateway[0];
         Initialize();
     }
@@ -295,19 +295,19 @@ public class CkernelGateway : MarshalByRefObject
         CalculateFilterSummary(files);
     }
 
-    public InterfaceClient GetUploadClient(uint ID, ushort Puerto,uint IPServidor, byte[] HashCliente)
+    public InterfaceClient GetUploadClient(uint ID, ushort Port,uint ServerIP, byte[] HashClient)
     {
-        return krnGateway.GetUploadClient(ID, Puerto, IPServidor, HashCliente);
+        return krnGateway.GetUploadClient(ID, Port, ServerIP, HashClient);
     }
 
-    public InterfaceClient GetDownloadClient(uint IP, ushort Puerto,uint IPServidor,byte[] HashCliente,string strHashFicheroDescarga)
+    public InterfaceClient GetDownloadClient(uint IP, ushort Port, uint ServerIP, byte[] HashClient, string strHashFileDownload)
     {
-        return krnGateway.GetDownloadClient(IP,Puerto,IPServidor,HashCliente,strHashFicheroDescarga);
+        return krnGateway.GetDownloadClient(IP, Port, ServerIP, HashClient, strHashFileDownload);
     }
 
-    public InterfaceClient[] GetFileSources(string strHashFichero)
+    public InterfaceClient[] GetFileSources(string strHashFile)
     {
-        return krnGateway.GetFileSources(strHashFichero);
+        return krnGateway.GetFileSources(strHashFile);
     }
 
     public InterfaceServer[] GetServerList()
@@ -355,9 +355,9 @@ public class CkernelGateway : MarshalByRefObject
         return krnGateway.GetFileDetails(strFileHash);
     }
 
-    public void Search(int searchID, string condicion, bool matchAnyWords,string type,uint maxSize, uint minSize,uint avaibility, string exclude)
+    public void Search(int searchID, string condition, bool matchAnyWords,string type,uint maxSize, uint minSize,uint avaibility, string exclude)
     {
-        krnGateway.Search(searchID, condicion, matchAnyWords, type, maxSize, minSize,avaibility, exclude);
+        krnGateway.Search(searchID, condition, matchAnyWords, type, maxSize, minSize,avaibility, exclude);
     }
 
     public void CancelSearch(int SearchIndex)
@@ -375,9 +375,9 @@ public class CkernelGateway : MarshalByRefObject
         krnGateway.ExtendSearch(SearchIndex);
     }
 
-    public void DownloadFile(InterfaceSearchedFile fichero,int SearchIndex)
+    public void DownloadFile(InterfaceSearchedFile file,int SearchIndex)
     {
-        krnGateway.DownloadFile(fichero,SearchIndex);
+        krnGateway.DownloadFile(file,SearchIndex);
         InterfaceFile[] files=krnGateway.GetDownloadFileList();
         CalculateFilterSummary(files);
     }
@@ -449,7 +449,7 @@ public class CkernelGateway : MarshalByRefObject
         krnGateway.SetFileDownloadPrioriry(strFileHash,priority);
     }
 
-    public void RequestSharedList(uint ID, ushort Port,uint ServerIP, byte[] ClientHash)
+    public void RequestSharedList(uint ID, ushort Port, uint ServerIP, byte[] ClientHash)
     {
         krnGateway.RequestSharedList(ID,Port,ServerIP,ClientHash);
     }
@@ -570,7 +570,7 @@ public class CkernelGateway : MarshalByRefObject
                 Debug.WriteLine(e.ToString());
             }
         }
-        Debug.WriteLine("Thread finalizado");
+        Debug.WriteLine("Thread Finished");
     }
 
     //events

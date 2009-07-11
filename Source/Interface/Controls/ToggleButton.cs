@@ -38,12 +38,12 @@ using System.Drawing.Drawing2D;
 namespace Hathi.Interface
 {
 /// <summary>
-/// Descripción breve de HathiButton.
+    /// Describes the Hathi Toggle Button functionality
 /// </summary>
 public class HathiToggleButton : System.Windows.Forms.RadioButton
 {
     /// <summary>
-    /// Variable del diseñador requerida.
+    /// Required designer variables
     /// </summary>
     private System.ComponentModel.Container components = null;
     private Pen focusPen;
@@ -90,7 +90,7 @@ public class HathiToggleButton : System.Windows.Forms.RadioButton
     public HathiToggleButton(System.ComponentModel.IContainer container)
     {
         /// <summary>
-        /// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms
+        /// This is required for compatibility with the Windows.Forms classes
         /// </summary>
         container.Add(this);
         InitializeComponent();
@@ -110,7 +110,7 @@ public class HathiToggleButton : System.Windows.Forms.RadioButton
     public HathiToggleButton()
     {
         /// <summary>
-        /// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms
+        /// This is required for compatibility with the Windows.Forms classes
         /// </summary>
         InitializeComponent();
         m_SelectedBackColor=Color.White;
@@ -160,8 +160,7 @@ public class HathiToggleButton : System.Windows.Forms.RadioButton
     }
     #region Component Designer generated code
     /// <summary>
-    /// Método necesario para admitir el Diseñador, no se puede modificar
-    /// el contenido del método con el editor de código.
+    /// This method is necessary for designer support and cannot be modified
     /// </summary>
     private void InitializeComponent()
     {

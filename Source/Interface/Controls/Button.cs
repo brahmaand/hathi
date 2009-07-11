@@ -36,7 +36,7 @@ using System.Drawing.Drawing2D;
 namespace Hathi.Interface
 {
 /// <summary>
-/// Descripción breve de HathiButton.
+/// Describes the HathiButton functionality
 /// </summary>
 public class HathiButton : Button
 {
@@ -46,12 +46,12 @@ public class HathiButton : Button
     public HathiButton(System.ComponentModel.IContainer container)
     {
         /// <summary>
-        /// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms
+        /// This is required for compatibility with the Windows.Forms classes
         /// </summary>
         container.Add(this);
         InitializeComponent();
         //
-        // TODO: Agregar código de constructor después de llamar a InitializeComponent
+        // TODO: Add the constructor code ater the call to InitializeComponent
         //
         this.FlatStyle=FlatStyle.Flat;
         this.BackColor=Color.Transparent;
@@ -64,11 +64,11 @@ public class HathiButton : Button
     public HathiButton()
     {
         /// <summary>
-        /// Requerido para la compatibilidad con el Diseñador de composiciones de clases Windows.Forms
+        /// This is required for compatibility with the Windows.Forms classes
         /// </summary>
         InitializeComponent();
         //
-        // TODO: Agregar código de constructor después de llamar a InitializeComponent
+        // TODO: Add the constructor code ater the call to InitializeComponent
         //
         focusPen=new Pen(Color.Black,1);
         focusPen.DashStyle=DashStyle.Dot;
@@ -108,8 +108,7 @@ public class HathiButton : Button
 
     #region Component Designer generated code
     /// <summary>
-    /// Método necesario para admitir el Diseñador, no se puede modificar
-    /// el contenido del método con el editor de código.
+    /// This method is necessary for designer support and cannot be modified
     /// </summary>
     private void InitializeComponent()
     {
