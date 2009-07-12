@@ -351,7 +351,6 @@ internal class CFile
         m_Transferred=in_m_FileSize;
         m_FileStatus=Protocol.FileState.Complete;
         m_UpPriority=in_Prioridad;
-        permisos=permisos;
         m_Completed=true;
         m_isEmpty=false;
         m_HashSet=in_HashSet;

@@ -76,7 +76,7 @@ internal class CRemoting
         provider.TypeFilterLevel =
             System.Runtime.Serialization.Formatters.TypeFilterLevel.Full;
         m_lPhantChannel = new TcpServerChannel(props, provider);
-        ChannelServices.RegisterChannel(m_lPhantChannel);
+        ChannelServices.RegisterChannel(m_lPhantChannel, true);
 #else
         //Iniciacion
         Hashtable propsinks = new Hashtable();
@@ -88,7 +88,7 @@ internal class CRemoting
             new HathiServerSinkProvider(propsinks,datasinks);
         //Creacion
         m_lPhantChannel = new TcpServerChannel(props, provider);
-        ChannelServices.RegisterChannel(m_lPhantChannel);
+        ChannelServices.RegisterChannel(m_lPhantChannel, true);
 #endif
         RemotingConfiguration.RegisterWellKnownServiceType(
             typeof(CInterfaceGateway),
@@ -99,7 +99,7 @@ internal class CRemoting
     ~CRemoting()
     {
         ChannelServices.UnregisterChannel(m_lPhantChannel);
-        RemotingConfiguration.Configure(null);
+        RemotingConfiguration.Configure(null,true);
     }
 }
 

@@ -98,14 +98,14 @@ public class CedonkeyCRemote
     }
     ~CedonkeyCRemote()
     {
-        RemotingConfiguration.Configure(null);
+        RemotingConfiguration.Configure(null, true);
         ChannelServices.UnregisterChannel(m_lPhantChannel);
     }
     public void DisConnect()
     {
         try
         {
-            RemotingConfiguration.Configure(null);
+            RemotingConfiguration.Configure(null, true);
             ChannelServices.UnregisterChannel(m_lPhantChannel);
         }
         catch (Exception e)
@@ -125,13 +125,13 @@ public class CedonkeyCRemote
         try
         {
             m_lPhantChannel = new TcpClientChannel(props, provider);
-            ChannelServices.RegisterChannel(m_lPhantChannel);
+            ChannelServices.RegisterChannel(m_lPhantChannel, true);
         }
         catch
         {
             DisConnect();
             if (m_lPhantChannel!=null)
-                ChannelServices.RegisterChannel(m_lPhantChannel);
+                ChannelServices.RegisterChannel(m_lPhantChannel, true);
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }
@@ -164,13 +164,13 @@ public class CedonkeyCRemote
         try
         {
             m_lPhantChannel = new TcpClientChannel(props, provider);
-            ChannelServices.RegisterChannel(m_lPhantChannel);
+            ChannelServices.RegisterChannel(m_lPhantChannel, true);
         }
         catch
         {
             DisConnect();
             if (m_lPhantChannel!=null)
-                ChannelServices.RegisterChannel(m_lPhantChannel);
+                ChannelServices.RegisterChannel(m_lPhantChannel, true);
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }

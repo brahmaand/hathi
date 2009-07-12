@@ -248,7 +248,7 @@ public class CkernelGateway : MarshalByRefObject
 
     public void StartRefresh()
     {
-        RefreshThread.Resume();
+    	RefreshThread.Start();
     }
 
     public InterfaceFile GetDownloadFile(string hash)
