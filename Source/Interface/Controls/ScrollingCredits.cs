@@ -171,16 +171,34 @@ public class ScrollingCredits : System.Windows.Forms.Control
     private void m_CreateHathiTeam()
     {
         m_HathiTeam.Add(new CTeamInfo("Hathi",Role.None,Style.Header1));
-        m_HathiTeam.Add(new CTeamInfo("Copyright (C)2003 Juanjo",Role.None,Style.Header2));
+        m_HathiTeam.Add(new CTeamInfo("Copyright (C)2009 Hathi Team", Role.None, Style.Header2));
         m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("Hathi Team", Role.None, Style.Header3));
+        m_HathiTeam.Add(new CTeamInfo("alexman", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("andrewdev", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("armando-b", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("beckman16", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("biskvit", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("elnomade", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("grefly", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("jpierce420", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("loriss", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("manudenfer", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("palutz", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("ramone_hamilton", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("sdaniele", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("soudamini", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("webetes", Role.Developer, Style.Header4));
+
+        m_HathiTeam.Add(new CTeamInfo(" ", Role.None, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("lphant Team", Role.None, Style.Header3));
+
         m_HathiTeam.Add(new CTeamInfo("Developers",Role.None,Style.Header3));
         m_HathiTeam.Add(new CTeamInfo("Juanjo",Role.Developer,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("70n1",Role.Developer,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("toertchn",Role.Developer,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("FeuerFrei",Role.Developer,Style.Header4));
-        m_HathiTeam.Add(new CTeamInfo(" ",Role.None,Style.Header4));
-        m_HathiTeam.Add(new CTeamInfo("Other contributors",Role.None,Style.Header3));
         m_HathiTeam.Add(new CTeamInfo("mimontyf",Role.Developer,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("finrold",Role.Developer,Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("jicxicmic",Role.Developer,Style.Header4));

@@ -83,50 +83,49 @@ public class FormAbout : System.Windows.Forms.Form
     private void InitializeComponent()
     {
         this.components = new System.ComponentModel.Container();
-        System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(FormAbout));
         this.label5 = new System.Windows.Forms.Label();
         this.linkLabel1 = new System.Windows.Forms.LinkLabel();
         this.timer1 = new System.Windows.Forms.Timer(this.components);
         this.scrollingCredits = new Hathi.Interface.ScrollingCredits();
         this.SuspendLayout();
-        //
+        // 
         // label5
-        //
+        // 
         this.label5.AutoSize = true;
         this.label5.BackColor = System.Drawing.Color.Transparent;
-        this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+        this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.150944F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.label5.ForeColor = System.Drawing.Color.White;
         this.label5.Location = new System.Drawing.Point(13, 233);
         this.label5.Name = "label5";
-        this.label5.Size = new System.Drawing.Size(132, 16);
+        this.label5.Size = new System.Drawing.Size(149, 13);
         this.label5.TabIndex = 4;
-        this.label5.Text = "Copyright (C)2003 Juanjo";
+        this.label5.Text = "Copyright (C)2009 Hathi Team";
         this.label5.Click += new System.EventHandler(this.FormAbout_Click);
-        //
+        // 
         // linkLabel1
-        //
-        this.linkLabel1.ActiveLinkColor = System.Drawing.Color.Transparent;
+        // 
+        this.linkLabel1.ActiveLinkColor = System.Drawing.Color.White;
         this.linkLabel1.BackColor = System.Drawing.Color.Transparent;
         this.linkLabel1.DisabledLinkColor = System.Drawing.Color.Transparent;
-        this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
-        this.linkLabel1.ForeColor = System.Drawing.Color.Transparent;
+        this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.30189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+        this.linkLabel1.ForeColor = System.Drawing.Color.White;
         this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-        this.linkLabel1.LinkColor = System.Drawing.Color.Transparent;
-        this.linkLabel1.Location = new System.Drawing.Point(210, 228);
+        this.linkLabel1.LinkColor = System.Drawing.Color.White;
+        this.linkLabel1.Location = new System.Drawing.Point(11, 9);
         this.linkLabel1.Name = "linkLabel1";
-        this.linkLabel1.Size = new System.Drawing.Size(134, 26);
+        this.linkLabel1.Size = new System.Drawing.Size(300, 26);
         this.linkLabel1.TabIndex = 5;
         this.linkLabel1.TabStop = true;
-        this.linkLabel1.Text = "not.website.yet";
-        this.linkLabel1.VisitedLinkColor = System.Drawing.Color.Transparent;
+        this.linkLabel1.Text = "http://hathi.sourceforge.net";
+        this.linkLabel1.VisitedLinkColor = System.Drawing.Color.White;
         this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
-        //
+        // 
         // timer1
-        //
+        // 
         this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-        //
+        // 
         // scrollingCredits
-        //
+        // 
         this.scrollingCredits.BackColor = System.Drawing.Color.Transparent;
         this.scrollingCredits.Location = new System.Drawing.Point(-7, 62);
         this.scrollingCredits.Name = "scrollingCredits";
@@ -134,12 +133,10 @@ public class FormAbout : System.Windows.Forms.Form
         this.scrollingCredits.TabIndex = 0;
         this.scrollingCredits.Text = "scrollingCredits";
         this.scrollingCredits.Click += new System.EventHandler(this.scrollingCredits_Click);
-        //
+        // 
         // FormAbout
-        //
-        this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-        this.BackColor = System.Drawing.SystemColors.Control;
-        this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+        // 
+        this.BackColor = System.Drawing.Color.Gray;
         this.ClientSize = new System.Drawing.Size(349, 258);
         this.Controls.Add(this.linkLabel1);
         this.Controls.Add(this.label5);
@@ -152,9 +149,12 @@ public class FormAbout : System.Windows.Forms.Form
         this.ShowInTaskbar = false;
         this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
         this.Text = "About Hathi";
-        this.Click += new System.EventHandler(this.FormAbout_Click);
+        this.TransparencyKey = System.Drawing.Color.Transparent;
         this.Load += new System.EventHandler(this.FormAbout_Load);
+        this.Click += new System.EventHandler(this.FormAbout_Click);
         this.ResumeLayout(false);
+        this.PerformLayout();
+
     }
     #endregion
 
