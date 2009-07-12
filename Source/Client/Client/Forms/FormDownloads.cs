@@ -36,6 +36,7 @@ using System.IO;
 using Hathi.eDonkey;
 using Hathi.Types;
 using Crownwood.Magic.Controls;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

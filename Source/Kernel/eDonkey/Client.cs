@@ -36,6 +36,8 @@ using System.Collections.Specialized;
 using System.Threading;
 
 using Hathi.Types;
+using Hathi.eDonkey.Commands;
+using Hathi.eDonkey.CommandsServer;
 
 namespace Hathi.eDonkey
 {
@@ -1231,13 +1233,13 @@ internal class CClient
     public void ProcessIDChange(byte[] packet)
     {
         CIDClientChange CambioID=new CIDClientChange(new MemoryStream(packet));
-        if (CambioID.NewID<Protocol.LowIDLimit)
+        if (CambioID.mNewID<Protocol.LowIDLimit)
         {
-            CServer servidor=CKernel.ServersList[CambioID.ServerID,0];
+            CServer servidor=CKernel.ServersList[CambioID.mServerID,0];
             if (servidor!=null)
             {
-                m_ID=CambioID.NewID;
-                m_ServerIP=CambioID.ServerID;
+                m_ID=CambioID.mNewID;
+                m_ServerIP=CambioID.mServerID;
                 m_ServerPort=servidor.Port;
             }
         }
@@ -1247,10 +1249,10 @@ internal class CClient
             {
                 m_ID=connection.IP;
             }
-            CServer servidor=CKernel.ServersList[CambioID.ServerID,0];
+            CServer servidor=CKernel.ServersList[CambioID.mServerID,0];
             if (servidor!=null)
             {
-                m_ServerIP=CambioID.ServerID;
+                m_ServerIP=CambioID.mServerID;
                 m_ServerPort=servidor.Port;
             }
         }

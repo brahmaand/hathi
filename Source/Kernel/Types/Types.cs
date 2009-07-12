@@ -30,85 +30,91 @@ using System;
 
 namespace Hathi.Types
 {
-public class Constants
-{
-    //logs
-    public enum Log : byte
-    {
-        Verbose         = 2,
-        Info            = 1,
-        Notify          = 0,
-    }
+	public class Constants
+	{
+		//logs
+		public enum Log : byte
+		{
+			Verbose = 2,
+			Info = 1,
+			Notify = 0,
+		}
 
-    //view shared files list permisions
-    public enum AllowViewShared:byte
-    {
-        All             = 2,
-        Friends         = 1,
-        Nobody          = 0,
-    }
+		//view shared files list permisions
+		public enum AllowViewShared : byte
+		{
+			All = 2,
+			Friends = 1,
+			Nobody = 0,
+		}
 
-    //file type
-    public enum FileType:byte
-    {
-        Unknow          = 0,
-        Avi             = 1,
-        Ogm             = 2,
-        Mp3             = 3,
-        Zip             = 4,
-    }
+		//file type
+		public enum FileType : byte
+		{
+			Unknow = 0,
+			Avi = 1,
+			Ogm = 2,
+			Mp3 = 3,
+			Zip = 4,
+		}
 
-    /// <summary>
-    /// Priority includes all values for upload and download pritority
-    /// </summary>
-    public enum Priority : byte
-    {
-        VeryLow                     = 4,
-        Low                         = 0,
-        Normal                      = 1,
-        High                        = 2,
-        VeryHigh                    = 3,
-        Auto                        = 5,
-    }
+		/// <summary>
+		/// Priority includes all values for upload and download pritority
+		/// </summary>
+		public enum Priority : byte
+		{
+			VeryLow = 4,
+			Low = 0,
+			Normal = 1,
+			High = 2,
+			VeryHigh = 3,
+			Auto = 5,
+		}
 
-    /// <summary>
-    /// Priority includes all values for upload and download pritority
-    /// </summary>
-    public enum ServerPriority : byte
-    {
-        Low                         = 2,
-        High                        = 1,
-        Normal                      = 0,
-    }
+		/// <summary>
+		/// Priority includes all values for upload and download pritority
+		/// </summary>
+		public enum ServerPriority : byte
+		{
+			Low = 2,
+			High = 1,
+			Normal = 0,
+		}
 
-    //AVI files propertys
-    public enum Avi:byte
-    {
-        Size            = 0,
-        VFps            = 1,
-        Length          = 2,
-        Width           = 3,
-        Height          = 4,
-        VCodec          = 5,
-        VBitrate        = 6,
-        ACodec          = 7,
-        AChannel        = 8,
-        ABitrate        = 9,
-        ASampleRate     = 10,
-    }
+		//AVI files propertys
+		public enum Avi : byte
+		{
+			Size = 0,
+			VFps = 1,
+			Length = 2,
+			Width = 3,
+			Height = 4,
+			VCodec = 5,
+			VBitrate = 6,
+			ACodec = 7,
+			AChannel = 8,
+			ABitrate = 9,
+			ASampleRate = 10,
+		}
 
-    public enum SearchResultState:byte
-    {
-        New                 = 0,
-        AlreadyDownloading  = 1,
-        AlreadyDownloaded   = 2,
-    }
+		public enum SearchResultState : byte
+		{
+			New = 0,
+			AlreadyDownloading = 1,
+			AlreadyDownloaded = 2,
+		}
 
-    public enum FriendLevel:byte
-    {
-        NoFriend    = 0,
-        Friend      = 1,
-        FriendSlot  = 2,
-    }
-}
+		public enum FriendLevel : byte
+		{
+			NoFriend = 0,
+			Friend = 1,
+			FriendSlot = 2,
+		}
+	}
+
+	public enum CompressionType : int
+	{
+		GZip,
+		Zip,
+	}
 }

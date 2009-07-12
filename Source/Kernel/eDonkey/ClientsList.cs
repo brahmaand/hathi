@@ -30,6 +30,7 @@ using System;
 using System.Collections;
 using System.Diagnostics;
 using Hathi.Types;
+using Hathi.eDonkey.Commands;
 
 namespace Hathi.eDonkey
 {

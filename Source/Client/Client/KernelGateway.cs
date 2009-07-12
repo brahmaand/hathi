@@ -36,6 +36,7 @@ using System.Runtime.Serialization;
 using System.Runtime.Remoting.Lifetime;
 using System.Diagnostics;
 using System.Collections;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

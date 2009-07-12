@@ -39,6 +39,7 @@ using System.Globalization;
 using Hathi.eDonkey;
 using Hathi.Interface;
 using Hathi.Classes;
+using Hathi.eDonkey.InterfaceGateway;
 
 
 namespace Hathi.Client

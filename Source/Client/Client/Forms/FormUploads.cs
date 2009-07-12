@@ -35,6 +35,7 @@ using System.IO;
 using System.Diagnostics;
 using Hathi.eDonkey;
 using Hathi.Types;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

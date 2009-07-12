@@ -36,6 +36,7 @@ using System.Text.RegularExpressions;
 using System.Net;
 using Hathi.eDonkey;
 using Hathi.Types;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

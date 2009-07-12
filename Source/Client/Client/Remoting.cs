@@ -27,20 +27,23 @@
 #endregion
 
 using System;
+using System.Collections;
+using System.Diagnostics;
+using System.IO;
+using System.Net;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Tcp;
 using System.Runtime.Remoting.Messaging;
-using Hathi.eDonkey;
-
-using Hathi.Classes;
+using System.Security.Cryptography;
 using System.Windows.Forms;
 
-using System.Diagnostics;
-using System.Security.Cryptography;
-using System.Collections;
-using System.IO;
-using System.Net;
+using Hathi.Classes;
+using Hathi.eDonkey;
+using Hathi.eDonkey.InterfaceGateway;
+using Hathi.eDonkey.Utils;
+using Hathi.Types;
+
 using ICSharpCode.SharpZipLib;
 
 namespace Hathi.Client
@@ -135,7 +138,7 @@ public class CedonkeyCRemote
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }
-        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
+        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(CInterfaceGateway),
                          this.m_url);
         if (remoteInterface == null)
             Debug.Write("Could not locate the server");
@@ -174,7 +177,7 @@ public class CedonkeyCRemote
             else
                 m_lPhantChannel = new TcpClientChannel(props, provider);
         }
-        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(Hathi.eDonkey.CInterfaceGateway),
+        remoteInterface = (CInterfaceGateway) Activator.GetObject(typeof(CInterfaceGateway),
                          this.m_url);
         if (remoteInterface == null)
             Debug.Write("Could not locate the server");

@@ -156,6 +156,7 @@
     <Compile Include="Client\Lists\downloadsListView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Client\Lists\EventArguments.cs" />
     <Compile Include="Client\Lists\HathiListView.cs">
       <SubType>Component</SubType>
     </Compile>

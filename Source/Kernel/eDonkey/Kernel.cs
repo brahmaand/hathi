@@ -37,6 +37,7 @@ using System.Text;
 
 using Hathi.Types;
 using Hathi.Classes;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.eDonkey
 {

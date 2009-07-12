@@ -30,6 +30,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Collections;
 using System.Net;
+using Hathi.eDonkey.Commands;
 
 namespace Hathi.eDonkey
 {

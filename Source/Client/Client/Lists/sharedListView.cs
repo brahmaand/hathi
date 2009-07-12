@@ -35,6 +35,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 using Hathi.eDonkey;
 using Hathi.Types;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

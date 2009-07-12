@@ -32,6 +32,7 @@ using System.Net.Sockets;
 using System.Diagnostics;
 using System.IO;
 using Hathi.Types;
+using Hathi.eDonkey.Commands;
 
 namespace Hathi.eDonkey
 {

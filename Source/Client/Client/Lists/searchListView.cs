@@ -33,6 +33,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Drawing;
 using Hathi.eDonkey;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

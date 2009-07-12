@@ -34,6 +34,7 @@ using System.Windows.Forms;
 using System.Threading;
 using System.Drawing;
 using Hathi.eDonkey;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

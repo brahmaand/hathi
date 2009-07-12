@@ -33,6 +33,7 @@ using System.Collections;
 using System.Threading;
 using System.Text.RegularExpressions;
 using Hathi.Types;
+using Hathi.eDonkey.Commands;
 
 namespace Hathi.eDonkey
 {

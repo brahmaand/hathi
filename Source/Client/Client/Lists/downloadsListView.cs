@@ -38,6 +38,7 @@ using Microsoft.Win32;
 using Hathi.eDonkey;
 using Hathi.Interface;
 using Hathi.Types;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {

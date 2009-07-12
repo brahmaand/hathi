@@ -32,6 +32,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Collections;
 using Hathi.Types;
+using Hathi.eDonkey.Commands;
+using Hathi.eDonkey.CommandsServer;
 
 namespace Hathi.eDonkey
 {

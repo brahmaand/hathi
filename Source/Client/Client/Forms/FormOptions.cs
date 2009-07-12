@@ -38,6 +38,7 @@ using System.Globalization;
 using Hathi.eDonkey;
 using Hathi.Types;
 using Microsoft.Win32;
+using Hathi.eDonkey.InterfaceGateway;
 
 namespace Hathi.Client
 {
@@ -134,7 +135,7 @@ public class FormOptions : System.Windows.Forms.Form
     private System.Windows.Forms.TextBox textBoxAddNewIP;
     private System.Windows.Forms.CheckBox checkBoxStartPaused;
 
-    private Array listaCompressionMethod=Enum.GetValues(typeof(CompressionType));
+    private Array listaCompressionMethod = Enum.GetValues(typeof(Hathi.Types.CompressionType));
 
     private struct LanguageInfo
     {
