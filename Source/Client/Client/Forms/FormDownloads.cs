@@ -55,7 +55,7 @@ public class FormDownloads : System.Windows.Forms.Form
     private FormAviDetails FAviDetails;
     private CkernelGateway krnGateway;
     private System.Windows.Forms.Splitter splitter1;
-    private Hathi.Interface.HathiButton HathiButton1;
+    private Hathi.Controls.HathiButton HathiButton1;
     private System.Windows.Forms.ImageList imageListMaximize;
     private System.Windows.Forms.ImageList imageListMinimize;
     private System.Windows.Forms.Label label1;
@@ -103,7 +103,7 @@ public class FormDownloads : System.Windows.Forms.Form
     private System.Windows.Forms.MenuItem menuItemAutoSort;
     private System.Windows.Forms.Button buttonOpenFolder;
     private System.Windows.Forms.MenuItem menuItem1;
-    private Hathi.Interface.HathiInspector FileInspector;
+    private Hathi.Controls.HathiInspector FileInspector;
 
     private ComboBox comboBoxCategories;
     private MenuItem manageCategories;
@@ -226,7 +226,7 @@ public class FormDownloads : System.Windows.Forms.Form
         this.tabPageStarted = new Crownwood.Magic.Controls.TabPage();
         this.tabPageStopped = new Crownwood.Magic.Controls.TabPage();
         this.panel6 = new System.Windows.Forms.Panel();
-        this.HathiButton1 = new Hathi.Interface.HathiButton(this.components);
+        this.HathiButton1 = new Hathi.Controls.HathiButton(this.components);
         this.imageListMaximize = new System.Windows.Forms.ImageList(this.components);
         this.panel9 = new System.Windows.Forms.Panel();
         this.tabControlDetails = new Crownwood.Magic.Controls.TabControl();
@@ -244,7 +244,7 @@ public class FormDownloads : System.Windows.Forms.Form
         this.labelSessionFileRateUP = new System.Windows.Forms.Label();
         this.labelSessionFileDO = new System.Windows.Forms.Label();
         this.labelSessionFileUP = new System.Windows.Forms.Label();
-        this.FileInspector = new Hathi.Interface.HathiInspector();
+        this.FileInspector = new Hathi.Controls.HathiInspector();
         this.tabPageLists = new Crownwood.Magic.Controls.TabPage();
         this.listViewNames = new Hathi.Client.fileNamesListView(this.components);
         this.buttonSetCommet = new System.Windows.Forms.Button();

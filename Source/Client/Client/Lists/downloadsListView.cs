@@ -36,7 +36,7 @@ using System.Drawing;
 using System.IO;
 using Microsoft.Win32;
 using Hathi.eDonkey;
-using Hathi.Interface;
+using Hathi.Controls;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 

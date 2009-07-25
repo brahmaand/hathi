@@ -33,7 +33,7 @@ using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Hathi.Interface
+namespace Hathi.Controls
 {
 /// <summary>
 /// ScrollingCredits is a control to display Hathi members.

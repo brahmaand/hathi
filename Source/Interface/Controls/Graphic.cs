@@ -34,7 +34,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
 
-namespace Hathi.Interface
+namespace Hathi.Controls
 {
 /// <summary>
 /// Class to display up/down speed graphic use SetMinValue and SetMaxValue to set the limits and AddValue to add new values to the graphic

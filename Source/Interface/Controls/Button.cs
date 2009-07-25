@@ -33,7 +33,7 @@ using System.Diagnostics;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-namespace Hathi.Interface
+namespace Hathi.Controls
 {
 /// <summary>
 /// Describes the HathiButton functionality

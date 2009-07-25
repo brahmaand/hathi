@@ -37,7 +37,7 @@ using System.Threading;
 using System.IO;
 using System.Globalization;
 using Hathi.eDonkey;
-using Hathi.Interface;
+using Hathi.Controls;
 using Hathi.Classes;
 using Hathi.eDonkey.InterfaceGateway;
 
@@ -49,13 +49,13 @@ namespace Hathi.Client
 /// </summary>
 public class HathiForm : System.Windows.Forms.Form
 {
-    private Hathi.Interface.HathiToggleButton btnDownloads;
+    private Hathi.Controls.HathiToggleButton btnDownloads;
     private System.Windows.Forms.Panel panelExtensible;
     private System.Windows.Forms.Panel panelButtons;
-    private Hathi.Interface.HathiToggleButton btnServers;
-    private Hathi.Interface.HathiToggleButton btnSearch;
-    private Hathi.Interface.HathiToggleButton btnUploads;
-    private Hathi.Interface.HathiButton buttonOptions;
+    private Hathi.Controls.HathiToggleButton btnServers;
+    private Hathi.Controls.HathiToggleButton btnSearch;
+    private Hathi.Controls.HathiToggleButton btnUploads;
+    private Hathi.Controls.HathiButton buttonOptions;
     private System.Windows.Forms.ImageList imageListOptions;
     private System.Windows.Forms.ImageList imageListHelp;
     private System.ComponentModel.IContainer components;
@@ -70,10 +70,10 @@ public class HathiForm : System.Windows.Forms.Form
     public FormFriends FFriends;
     private System.Windows.Forms.ToolTip toolTipMain;
     private System.Windows.Forms.Panel panel1;
-    private Hathi.Interface.HathiButton HathiButtonConnect;
+    private Hathi.Controls.HathiButton HathiButtonConnect;
     private System.Windows.Forms.ImageList imageListServerDiscon;
     private System.Windows.Forms.ImageList imageListServerCon;
-    private Hathi.Interface.HathiGraphic graphics;
+    private Hathi.Controls.HathiGraphic graphics;
     private Form activeForm;
 
     private bool m_KernelLoaded;
@@ -87,7 +87,7 @@ public class HathiForm : System.Windows.Forms.Form
     private Mutex m_Mutex; //used to mantain a reference to the mutex to ensure it is not released
     private Icon m_ico;
     private FormWindowState m_PreviousState;
-    private Hathi.Interface.HathiToggleButton btnFriends;
+    private Hathi.Controls.HathiToggleButton btnFriends;
     private System.Windows.Forms.Label labelSessionUP;
     private System.Windows.Forms.Label labelSessionDO;
     private string m_LastChatMessage;
@@ -430,18 +430,18 @@ public class HathiForm : System.Windows.Forms.Form
         this.buttonAbout = new System.Windows.Forms.Button();
         this.labelSessionDO = new System.Windows.Forms.Label();
         this.labelSessionUP = new System.Windows.Forms.Label();
-        this.graphics = new Hathi.Interface.HathiGraphic(this.components);
+        this.graphics = new Hathi.Controls.HathiGraphic(this.components);
         this.panelToolbarRight = new System.Windows.Forms.Panel();
         this.panelButtons = new System.Windows.Forms.Panel();
-        this.HathiButtonConnect = new Hathi.Interface.HathiButton(this.components);
+        this.HathiButtonConnect = new Hathi.Controls.HathiButton(this.components);
         this.imageListServerCon = new System.Windows.Forms.ImageList(this.components);
-        this.buttonOptions = new Hathi.Interface.HathiButton(this.components);
+        this.buttonOptions = new Hathi.Controls.HathiButton(this.components);
         this.imageListOptions = new System.Windows.Forms.ImageList(this.components);
-        this.btnFriends = new Hathi.Interface.HathiToggleButton(this.components);
-        this.btnServers = new Hathi.Interface.HathiToggleButton(this.components);
-        this.btnSearch = new Hathi.Interface.HathiToggleButton(this.components);
-        this.btnUploads = new Hathi.Interface.HathiToggleButton(this.components);
-        this.btnDownloads = new Hathi.Interface.HathiToggleButton(this.components);
+        this.btnFriends = new Hathi.Controls.HathiToggleButton(this.components);
+        this.btnServers = new Hathi.Controls.HathiToggleButton(this.components);
+        this.btnSearch = new Hathi.Controls.HathiToggleButton(this.components);
+        this.btnUploads = new Hathi.Controls.HathiToggleButton(this.components);
+        this.btnDownloads = new Hathi.Controls.HathiToggleButton(this.components);
         this.imageListServerDiscon = new System.Windows.Forms.ImageList(this.components);
         this.imageListHelp = new System.Windows.Forms.ImageList(this.components);
         this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
