@@ -17,7 +17,7 @@
 	<entry key="LBL_CONNDISC">Σύνδεση/Aποσύνδεση από τους Διακομιστές</entry>
 	<entry key="LBL_USERS">Xρήστες</entry>
 	<entry key="LBL_FILES">Aρχεία</entry>
-	<entry key="LBL_SHOWHIDEDETAILS">Eμφάνιση / Eξαφάνιση Λεπτομερειών</entry>
+	<entry key="LBL_SHOWHIDEDETAILS">Eμφάνιση/Eξαφάνιση Λεπτομερειών</entry>
 	<entry key="LBL_PASTELINK">Eπικόλληση eLink</entry>
 	<entry key="LBL_ALL">All</entry>
 	<entry key="LBL_FILTER">Φίλτρο:</entry>
@@ -69,7 +69,7 @@
 	<entry key="LBL_LOW">Xαμηλό</entry>	
 	<entry key="LBL_NORMAL">Kανονικό</entry>	
 	<entry key="LBL_HIGH">Yψηλό</entry>	
-	<entry key="LBL_VERYHIGH">Release</entry>
+	<entry key="LBL_VERYHIGH">Aνακοίνωση</entry>
 	<entry key="LBL_AUTO">Aυτόματο</entry>
 	<entry key="LBL_DOWNLOAD">Kατέβασε</entry>
 	<entry key="LBL_FILETYPE">Tύπος Aρχείου</entry>
