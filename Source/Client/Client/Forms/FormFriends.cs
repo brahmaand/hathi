@@ -375,12 +375,12 @@ public class FormFriends : System.Windows.Forms.Form
         this.panelAddFriend.SuspendLayout();
         this.panel2.SuspendLayout();
         this.SuspendLayout();
-        //
+        // 
         // panel1
-        //
+        // 
         this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                              | System.Windows.Forms.AnchorStyles.Left)));
-        this.panel1.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(235)), ((System.Byte)(241)), ((System.Byte)(250)));
+                    | System.Windows.Forms.AnchorStyles.Left)));
+        this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
         this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.panel1.Controls.Add(this.buttonAddFriend);
         this.panel1.Controls.Add(this.listViewFriends);
@@ -389,9 +389,9 @@ public class FormFriends : System.Windows.Forms.Form
         this.panel1.Name = "panel1";
         this.panel1.Size = new System.Drawing.Size(168, 367);
         this.panel1.TabIndex = 0;
-        //
+        // 
         // buttonAddFriend
-        //
+        // 
         this.buttonAddFriend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.buttonAddFriend.Location = new System.Drawing.Point(6, 190);
         this.buttonAddFriend.Name = "buttonAddFriend";
@@ -399,9 +399,9 @@ public class FormFriends : System.Windows.Forms.Form
         this.buttonAddFriend.TabIndex = 2;
         this.buttonAddFriend.Text = "Add Friend";
         this.buttonAddFriend.Click += new System.EventHandler(this.buttonAddFriend_Click);
-        //
+        // 
         // listViewFriends
-        //
+        // 
         this.listViewFriends.AllowColumnReorder = true;
         this.listViewFriends.AutoArrange = false;
         this.listViewFriends.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -416,12 +416,13 @@ public class FormFriends : System.Windows.Forms.Form
         this.listViewFriends.Size = new System.Drawing.Size(154, 186);
         this.listViewFriends.sortColumn = -1;
         this.listViewFriends.TabIndex = 0;
+        this.listViewFriends.UseCompatibleStateImageBehavior = false;
         this.listViewFriends.View = System.Windows.Forms.View.Details;
         this.listViewFriends.SelectedIndexChanged += new System.EventHandler(this.OnChangeFriend);
-        //
+        // 
         // panelAddFriend
-        //
-        this.panelAddFriend.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(222)), ((System.Byte)(231)), ((System.Byte)(247)));
+        // 
+        this.panelAddFriend.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(231)))), ((int)(((byte)(247)))));
         this.panelAddFriend.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.panelAddFriend.Controls.Add(this.textBoxUserHash);
         this.panelAddFriend.Controls.Add(this.labelOptional);
@@ -439,46 +440,45 @@ public class FormFriends : System.Windows.Forms.Form
         this.panelAddFriend.Size = new System.Drawing.Size(154, 168);
         this.panelAddFriend.TabIndex = 3;
         this.panelAddFriend.Visible = false;
-        //
+        // 
         // textBoxUserHash
-        //
+        // 
         this.textBoxUserHash.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.textBoxUserHash.Location = new System.Drawing.Point(4, 88);
         this.textBoxUserHash.Name = "textBoxUserHash";
         this.textBoxUserHash.Size = new System.Drawing.Size(144, 20);
         this.textBoxUserHash.TabIndex = 6;
-        this.textBoxUserHash.Text = "";
-        //
+        // 
         // labelOptional
-        //
+        // 
         this.labelOptional.BackColor = System.Drawing.Color.Transparent;
-        this.labelOptional.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+        this.labelOptional.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.labelOptional.Location = new System.Drawing.Point(82, 74);
         this.labelOptional.Name = "labelOptional";
         this.labelOptional.Size = new System.Drawing.Size(62, 18);
         this.labelOptional.TabIndex = 10;
         this.labelOptional.Text = "(optional)";
         this.labelOptional.TextAlign = System.Drawing.ContentAlignment.TopRight;
-        //
+        // 
         // textBoxName
-        //
+        // 
         this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.textBoxName.Location = new System.Drawing.Point(4, 18);
         this.textBoxName.Name = "textBoxName";
         this.textBoxName.Size = new System.Drawing.Size(144, 20);
         this.textBoxName.TabIndex = 9;
         this.textBoxName.Text = "My new friend";
-        //
+        // 
         // labelName
-        //
+        // 
         this.labelName.Location = new System.Drawing.Point(2, 4);
         this.labelName.Name = "labelName";
         this.labelName.Size = new System.Drawing.Size(100, 18);
         this.labelName.TabIndex = 8;
         this.labelName.Text = "Name";
-        //
+        // 
         // buttonAddFriendCancel
-        //
+        // 
         this.buttonAddFriendCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.buttonAddFriendCancel.Location = new System.Drawing.Point(4, 140);
         this.buttonAddFriendCancel.Name = "buttonAddFriendCancel";
@@ -486,9 +486,9 @@ public class FormFriends : System.Windows.Forms.Form
         this.buttonAddFriendCancel.TabIndex = 7;
         this.buttonAddFriendCancel.Text = "Cancel";
         this.buttonAddFriendCancel.Click += new System.EventHandler(this.buttonAddFriendCancel_Click);
-        //
+        // 
         // buttonAddFriendOk
-        //
+        // 
         this.buttonAddFriendOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.buttonAddFriendOk.Location = new System.Drawing.Point(4, 114);
         this.buttonAddFriendOk.Name = "buttonAddFriendOk";
@@ -496,57 +496,55 @@ public class FormFriends : System.Windows.Forms.Form
         this.buttonAddFriendOk.TabIndex = 6;
         this.buttonAddFriendOk.Text = "Ok";
         this.buttonAddFriendOk.Click += new System.EventHandler(this.buttonAddFriendOk_Click);
-        //
+        // 
         // textBoxPort
-        //
+        // 
         this.textBoxPort.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.textBoxPort.Location = new System.Drawing.Point(110, 52);
         this.textBoxPort.Name = "textBoxPort";
         this.textBoxPort.Size = new System.Drawing.Size(38, 20);
         this.textBoxPort.TabIndex = 5;
-        this.textBoxPort.Text = "";
         this.textBoxPort.TextChanged += new System.EventHandler(this.textBoxPort_TextChanged);
-        //
+        // 
         // textBoxIP
-        //
+        // 
         this.textBoxIP.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.textBoxIP.Location = new System.Drawing.Point(4, 52);
         this.textBoxIP.Name = "textBoxIP";
         this.textBoxIP.Size = new System.Drawing.Size(94, 20);
         this.textBoxIP.TabIndex = 4;
-        this.textBoxIP.Text = "";
-        //
+        // 
         // labelPort
-        //
+        // 
         this.labelPort.Location = new System.Drawing.Point(102, 40);
         this.labelPort.Name = "labelPort";
         this.labelPort.Size = new System.Drawing.Size(52, 23);
         this.labelPort.TabIndex = 3;
         this.labelPort.Text = "Port";
-        //
+        // 
         // labelIP
-        //
+        // 
         this.labelIP.Location = new System.Drawing.Point(2, 40);
         this.labelIP.Name = "labelIP";
-        this.labelIP.Size = new System.Drawing.Size(68, 23);
+        this.labelIP.Size = new System.Drawing.Size(94, 23);
         this.labelIP.TabIndex = 2;
         this.labelIP.Text = "IP or ID";
-        //
+        // 
         // labelUserHash
-        //
-        this.labelUserHash.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(235)), ((System.Byte)(241)), ((System.Byte)(250)));
+        // 
+        this.labelUserHash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
         this.labelUserHash.Location = new System.Drawing.Point(2, 74);
         this.labelUserHash.Name = "labelUserHash";
         this.labelUserHash.Size = new System.Drawing.Size(116, 18);
         this.labelUserHash.TabIndex = 0;
         this.labelUserHash.Text = "User Hash";
-        //
+        // 
         // tabMessages
-        //
+        // 
         this.tabMessages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                                   | System.Windows.Forms.AnchorStyles.Left)
-                                   | System.Windows.Forms.AnchorStyles.Right)));
-        this.tabMessages.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(235)), ((System.Byte)(241)), ((System.Byte)(250)));
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+        this.tabMessages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
         this.tabMessages.HideTabsMode = Crownwood.Magic.Controls.TabControl.HideTabsModes.ShowAlways;
         this.tabMessages.Location = new System.Drawing.Point(8, 4);
         this.tabMessages.Name = "tabMessages";
@@ -556,21 +554,20 @@ public class FormFriends : System.Windows.Forms.Form
         this.tabMessages.ShrinkPagesToFit = false;
         this.tabMessages.Size = new System.Drawing.Size(412, 327);
         this.tabMessages.TabIndex = 3;
-        //
+        // 
         // textBoxMessage
-        //
+        // 
         this.textBoxMessage.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                                      | System.Windows.Forms.AnchorStyles.Right)));
+                    | System.Windows.Forms.AnchorStyles.Right)));
         this.textBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.textBoxMessage.Location = new System.Drawing.Point(8, 337);
         this.textBoxMessage.Name = "textBoxMessage";
         this.textBoxMessage.Size = new System.Drawing.Size(328, 20);
         this.textBoxMessage.TabIndex = 2;
-        this.textBoxMessage.Text = "";
         this.textBoxMessage.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxMessage_KeyUp);
-        //
+        // 
         // buttonSend
-        //
+        // 
         this.buttonSend.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
         this.buttonSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.buttonSend.Location = new System.Drawing.Point(340, 337);
@@ -579,13 +576,13 @@ public class FormFriends : System.Windows.Forms.Form
         this.buttonSend.TabIndex = 14;
         this.buttonSend.Text = "Send";
         this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
-        //
+        // 
         // panel2
-        //
+        // 
         this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                              | System.Windows.Forms.AnchorStyles.Left)
-                              | System.Windows.Forms.AnchorStyles.Right)));
-        this.panel2.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(235)), ((System.Byte)(241)), ((System.Byte)(250)));
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
+        this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(241)))), ((int)(((byte)(250)))));
         this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
         this.panel2.Controls.Add(this.tabMessages);
         this.panel2.Controls.Add(this.textBoxMessage);
@@ -594,16 +591,17 @@ public class FormFriends : System.Windows.Forms.Form
         this.panel2.Name = "panel2";
         this.panel2.Size = new System.Drawing.Size(430, 367);
         this.panel2.TabIndex = 15;
-        //
+        // 
         // imageListFriends
-        //
+        // 
+        this.imageListFriends.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
         this.imageListFriends.ImageSize = new System.Drawing.Size(16, 16);
         this.imageListFriends.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        // 
         // FormFriends
-        //
+        // 
         this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-        this.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(222)), ((System.Byte)(231)), ((System.Byte)(247)));
+        this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(231)))), ((int)(((byte)(247)))));
         this.ClientSize = new System.Drawing.Size(618, 380);
         this.Controls.Add(this.panel1);
         this.Controls.Add(this.panel2);
@@ -612,8 +610,11 @@ public class FormFriends : System.Windows.Forms.Form
         this.Text = "FormFriends";
         this.panel1.ResumeLayout(false);
         this.panelAddFriend.ResumeLayout(false);
+        this.panelAddFriend.PerformLayout();
         this.panel2.ResumeLayout(false);
+        this.panel2.PerformLayout();
         this.ResumeLayout(false);
+
     }
     #endregion
 
