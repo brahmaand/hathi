@@ -29,7 +29,7 @@
 using System;
 using System.Text.RegularExpressions;
 //using System.IO;
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for NameCleaner.

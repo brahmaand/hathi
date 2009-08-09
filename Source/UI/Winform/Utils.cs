@@ -28,7 +28,7 @@
 
 using System;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// General interface static functions should go here

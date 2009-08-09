@@ -37,7 +37,7 @@ using Hathi.eDonkey;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for FormDownloads.
@@ -54,7 +54,7 @@ namespace Hathi.Client
 		private FormAviDetails FAviDetails;
 		private CkernelGateway krnGateway;
 		private System.Windows.Forms.Splitter splitter1;
-		private Hathi.Controls.HathiButton HathiButton1;
+		private Hathi.UI.Winform.Controls.HathiButton HathiButton1;
 		private System.Windows.Forms.ImageList imageListMaximize;
 		private System.Windows.Forms.ImageList imageListMinimize;
 		private System.Windows.Forms.Label label1;
@@ -110,7 +110,7 @@ namespace Hathi.Client
 		private System.Windows.Forms.MenuItem menuItemAutoSort;
 		private System.Windows.Forms.Button buttonOpenFolder;
 		private System.Windows.Forms.MenuItem menuItem1;
-		private Hathi.Controls.HathiInspector FileInspector;
+		private Hathi.UI.Winform.Controls.HathiInspector FileInspector;
 
 		private ComboBox comboBoxCategories;
 		private MenuItem manageCategories;
@@ -218,7 +218,7 @@ namespace Hathi.Client
 			this.buttonCancel = new System.Windows.Forms.Button();
 			this.buttonAdd = new System.Windows.Forms.Button();
 			this.textBoxeLink = new System.Windows.Forms.TextBox();
-			this.downloadList = new Hathi.Client.downloadsListView();
+			this.downloadList = new Hathi.UI.Winform.downloadsListView();
 			this.panel7 = new System.Windows.Forms.Panel();
 			this.buttonPasteeLink = new System.Windows.Forms.Button();
 			this.buttonAddeLink = new System.Windows.Forms.Button();
@@ -233,7 +233,7 @@ namespace Hathi.Client
 			this.tabPageStarted = new TabPage();
 			this.tabPageStopped = new TabPage();
 			this.panel6 = new System.Windows.Forms.Panel();
-			this.HathiButton1 = new Hathi.Controls.HathiButton(this.components);
+			this.HathiButton1 = new Hathi.UI.Winform.Controls.HathiButton(this.components);
 			this.imageListMaximize = new System.Windows.Forms.ImageList(this.components);
 			this.panel9 = new System.Windows.Forms.Panel();
 			this.tabControlDetails = new TabControl();
@@ -251,18 +251,18 @@ namespace Hathi.Client
 			this.labelSessionFileRateUP = new System.Windows.Forms.Label();
 			this.labelSessionFileDO = new System.Windows.Forms.Label();
 			this.labelSessionFileUP = new System.Windows.Forms.Label();
-			this.FileInspector = new Hathi.Controls.HathiInspector();
+			this.FileInspector = new Hathi.UI.Winform.Controls.HathiInspector();
 			this.tabPageLists = new TabPage();
-			this.listViewNames = new Hathi.Client.fileNamesListView(this.components);
+			this.listViewNames = new Hathi.UI.Winform.fileNamesListView(this.components);
 			this.buttonSetCommet = new System.Windows.Forms.Button();
 			this.textBoxComment = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
-			this.listViewComments = new Hathi.Client.commentsListView(this.components);
+			this.listViewComments = new Hathi.UI.Winform.commentsListView(this.components);
 			this.buttonRename = new System.Windows.Forms.Button();
 			this.textBoxName = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
 			this.tabPageSources = new TabPage();
-			this.sourcesList = new Hathi.Client.sourcesListView(this.components);
+			this.sourcesList = new Hathi.UI.Winform.sourcesListView(this.components);
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.imageListMinimize = new System.Windows.Forms.ImageList(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);

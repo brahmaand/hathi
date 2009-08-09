@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using WeifenLuo.WinFormsUI.Docking;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// The Tab Control using the docking panels

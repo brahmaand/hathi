@@ -34,7 +34,7 @@ using System.IO;
 using System.Diagnostics;
 using System.Xml;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for CSkin.

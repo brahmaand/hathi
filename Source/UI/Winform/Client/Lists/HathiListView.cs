@@ -35,7 +35,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 //The delegate for the HeaderEventArgs class
 public delegate void HeaderEventHandler(object sender, HeaderEventArgs e);

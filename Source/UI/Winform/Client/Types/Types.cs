@@ -28,7 +28,7 @@
 
 using System;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for Types.

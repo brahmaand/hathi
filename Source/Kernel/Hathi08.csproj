@@ -307,8 +307,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PreBuildEvent> xcopy "$(ProjectDir)eDonkey\Language" "$(SolutionDir)Client\bin\Debug\Language" /I /Y &gt;result.txt
- xcopy "$(ProjectDir)eDonkey\Language" "$(SolutionDir)Client\bin\Release\Language" /I /Y &gt;result.txt</PreBuildEvent>
+    <PreBuildEvent>xcopy "$(ProjectDir)eDonkey\Language" "$(SolutionDir)UI\Winform\bin\Debug\Language" /I /Y &gt;result.txt
+ xcopy "$(ProjectDir)eDonkey\Language" "$(SolutionDir)UI\Winform\bin\Release\Language" /I /Y &gt;result.txt</PreBuildEvent>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>

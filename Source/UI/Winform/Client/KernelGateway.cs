@@ -38,7 +38,7 @@ using System.Diagnostics;
 using System.Collections;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 public delegate void RefreshEvent(CkernelGateway kernelGateway);
 

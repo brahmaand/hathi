@@ -31,7 +31,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 
 	#region HeaderEventArgs class

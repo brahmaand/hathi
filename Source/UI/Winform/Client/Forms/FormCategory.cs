@@ -33,7 +33,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Hathi.eDonkey;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for FormCategory.

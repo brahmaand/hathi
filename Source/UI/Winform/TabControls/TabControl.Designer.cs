@@ -1,4 +1,4 @@
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	partial class TabControl
 	{

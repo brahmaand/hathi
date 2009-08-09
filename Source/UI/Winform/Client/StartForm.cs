@@ -36,7 +36,7 @@ using System.Threading;
 using System.Text;
 using Hathi.Classes;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Starting form
@@ -288,7 +288,7 @@ public class StartForm : System.Windows.Forms.Form
             cRemote.DisConnect();
             if (cRemote.Connect(IP,pw.Text,RemotePort))
             {
-                Hathi.Client.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex,cRemote.remoteInterface);
+                Hathi.UI.Winform.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex,cRemote.remoteInterface);
                 FormHathi.Show();
                 this.Hide();
             }
@@ -297,7 +297,7 @@ public class StartForm : System.Windows.Forms.Form
         }
         if (this.HathiLocal.Checked)
         {
-            Hathi.Client.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex);
+            Hathi.UI.Winform.HathiForm FormHathi=new HathiForm(m_elink,m_Mutex);
             this.Hide();
             FormHathi.Show();
         }

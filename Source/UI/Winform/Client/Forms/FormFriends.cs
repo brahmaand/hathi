@@ -38,7 +38,7 @@ using Hathi.eDonkey;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for FormFriends.
@@ -363,7 +363,7 @@ namespace Hathi.Client
 			this.components = new System.ComponentModel.Container();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.buttonAddFriend = new System.Windows.Forms.Button();
-			this.listViewFriends = new Hathi.Client.HathiListView();
+			this.listViewFriends = new Hathi.UI.Winform.HathiListView();
 			this.panelAddFriend = new System.Windows.Forms.Panel();
 			this.textBoxUserHash = new System.Windows.Forms.TextBox();
 			this.labelOptional = new System.Windows.Forms.Label();

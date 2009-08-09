@@ -36,7 +36,7 @@ using Hathi.eDonkey;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for FormServers.
@@ -127,7 +127,7 @@ public class FormServers : System.Windows.Forms.Form
         this.richTextBoxLog = new System.Windows.Forms.RichTextBox();
         this.contextMenu1 = new System.Windows.Forms.ContextMenu();
         this.menuItemClearLog = new System.Windows.Forms.MenuItem();
-        this.serversList = new Hathi.Client.serversListView(this.components);
+        this.serversList = new Hathi.UI.Winform.serversListView(this.components);
         this.panel1 = new System.Windows.Forms.Panel();
         this.textBoxServerMetUri = new System.Windows.Forms.TextBox();
         this.buttonDownloadServerList = new System.Windows.Forms.Button();

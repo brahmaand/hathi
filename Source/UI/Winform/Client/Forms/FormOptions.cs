@@ -40,7 +40,7 @@ using Hathi.Types;
 using Microsoft.Win32;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for FormOptions.

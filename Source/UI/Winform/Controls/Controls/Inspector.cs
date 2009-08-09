@@ -37,7 +37,7 @@ using System.Drawing.Imaging;
 using Hathi.eDonkey;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Controls
+namespace Hathi.UI.Winform.Controls
 {
 // use BackColor for background of bar
 // use ForeColor for border around bars

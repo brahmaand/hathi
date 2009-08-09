@@ -36,11 +36,11 @@ using System.Drawing;
 using System.IO;
 using Microsoft.Win32;
 using Hathi.eDonkey;
-using Hathi.Controls;
+using Hathi.UI.Winform.Controls;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for downloadsListView.

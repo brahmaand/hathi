@@ -34,8 +34,8 @@ using System.Runtime.CompilerServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 //
-[assembly: AssemblyTitle("Hathi.Client")]
-[assembly: AssemblyDescription("Hathi Client")]
+[assembly: AssemblyTitle("Hathi.UI.Winform")]
+[assembly: AssemblyDescription("Hathi Windows Client")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("hathi.sourceforge.net")]
 [assembly: AssemblyProduct("Hathi")]
@@ -54,7 +54,7 @@ using System.Runtime.CompilerServices;
 // You can specify all the values or you can default the Revision and Build Numbers
 // by using the '*' as shown below:
 
-[assembly: AssemblyVersion("1.0.*")]
+[assembly: AssemblyVersion("0.1.2")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the

@@ -46,7 +46,7 @@ using Hathi.Types;
 
 using ICSharpCode.SharpZipLib;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Brief description of eDonkeyRemoting

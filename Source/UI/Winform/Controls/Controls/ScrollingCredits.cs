@@ -33,7 +33,7 @@ using System.Drawing;
 using System.Data;
 using System.Windows.Forms;
 
-namespace Hathi.Controls
+namespace Hathi.UI.Winform.Controls
 {
 /// <summary>
 /// ScrollingCredits is a control to display Hathi members.
@@ -182,6 +182,7 @@ public class ScrollingCredits : System.Windows.Forms.Control
         m_HathiTeam.Add(new CTeamInfo("biskvit", Role.Developer, Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("elnomade", Role.Developer, Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("grefly", Role.Developer, Style.Header4));
+        m_HathiTeam.Add(new CTeamInfo("jol1naras", Role.Developer, Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("jpierce420", Role.Developer, Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("loriss", Role.Developer, Style.Header4));
         m_HathiTeam.Add(new CTeamInfo("manudenfer", Role.Developer, Style.Header4));

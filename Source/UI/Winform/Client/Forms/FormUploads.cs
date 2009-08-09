@@ -37,7 +37,7 @@ using Hathi.eDonkey;
 using Hathi.Types;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for FormUploads.
@@ -50,7 +50,7 @@ namespace Hathi.Client
 		public uploadsListView uploadsList;
 		private System.Windows.Forms.Splitter splitter1;
 		private System.Windows.Forms.Panel panel2;
-		public Hathi.Client.sharedListView sharedListView;
+		public Hathi.UI.Winform.sharedListView sharedListView;
 		private System.Windows.Forms.Panel panel3;
 		private System.Windows.Forms.Button buttonReload;
 		private System.Windows.Forms.Panel panel4;
@@ -157,7 +157,7 @@ namespace Hathi.Client
 			this.components = new System.ComponentModel.Container();
 			System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(FormUploads));
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.uploadsList = new Hathi.Client.uploadsListView(this.components);
+			this.uploadsList = new Hathi.UI.Winform.uploadsListView(this.components);
 			this.splitter1 = new System.Windows.Forms.Splitter();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.panel3 = new System.Windows.Forms.Panel();
@@ -182,7 +182,7 @@ namespace Hathi.Client
 			this.labelSessionRequests = new System.Windows.Forms.Label();
 			this.buttonReload = new System.Windows.Forms.Button();
 			this.labelSharedFiles = new System.Windows.Forms.Label();
-			this.sharedListView = new Hathi.Client.sharedListView(this.components);
+			this.sharedListView = new Hathi.UI.Winform.sharedListView(this.components);
 			this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.buttonRename = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();

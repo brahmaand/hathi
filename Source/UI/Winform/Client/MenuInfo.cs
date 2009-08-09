@@ -33,7 +33,7 @@ using System.IO;
 using System.Collections;
 using System.Xml;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for MenuInfo.

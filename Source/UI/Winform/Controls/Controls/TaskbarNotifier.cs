@@ -47,7 +47,7 @@ using System.Runtime.InteropServices;
 using System.Timers;
 using System.Threading;
 
-namespace Hathi.Controls
+namespace Hathi.UI.Winform.Controls
 {
 /// <summary>
 /// TaskbarNotifier allows to display MSN style/Skinned instant messaging popups

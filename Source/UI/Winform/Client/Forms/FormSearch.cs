@@ -36,7 +36,7 @@ using System.Threading;
 using Hathi.eDonkey;
 using Hathi.eDonkey.InterfaceGateway;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// Summary description for FormSearch.

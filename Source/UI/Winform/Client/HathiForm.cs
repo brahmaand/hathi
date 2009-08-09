@@ -37,25 +37,25 @@ using System.Threading;
 using System.IO;
 using System.Globalization;
 using Hathi.eDonkey;
-using Hathi.Controls;
+using Hathi.UI.Winform.Controls;
 using Hathi.Classes;
 using Hathi.eDonkey.InterfaceGateway;
 
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for HathiForm.
 /// </summary>
 public class HathiForm : System.Windows.Forms.Form
 {
-    private Hathi.Controls.HathiToggleButton btnDownloads;
+    private Hathi.UI.Winform.Controls.HathiToggleButton btnDownloads;
     private System.Windows.Forms.Panel panelExtensible;
     private System.Windows.Forms.Panel panelButtons;
-    private Hathi.Controls.HathiToggleButton btnServers;
-    private Hathi.Controls.HathiToggleButton btnSearch;
-    private Hathi.Controls.HathiToggleButton btnUploads;
-    private Hathi.Controls.HathiButton buttonOptions;
+    private Hathi.UI.Winform.Controls.HathiToggleButton btnServers;
+    private Hathi.UI.Winform.Controls.HathiToggleButton btnSearch;
+    private Hathi.UI.Winform.Controls.HathiToggleButton btnUploads;
+    private Hathi.UI.Winform.Controls.HathiButton buttonOptions;
     private System.Windows.Forms.ImageList imageListOptions;
     private System.Windows.Forms.ImageList imageListHelp;
     private System.ComponentModel.IContainer components;
@@ -70,10 +70,10 @@ public class HathiForm : System.Windows.Forms.Form
     public FormFriends FFriends;
     private System.Windows.Forms.ToolTip toolTipMain;
     private System.Windows.Forms.Panel panel1;
-    private Hathi.Controls.HathiButton HathiButtonConnect;
+    private Hathi.UI.Winform.Controls.HathiButton HathiButtonConnect;
     private System.Windows.Forms.ImageList imageListServerDiscon;
     private System.Windows.Forms.ImageList imageListServerCon;
-    private Hathi.Controls.HathiGraphic graphics;
+    private Hathi.UI.Winform.Controls.HathiGraphic graphics;
     private Form activeForm;
 
     private bool m_KernelLoaded;
@@ -87,7 +87,7 @@ public class HathiForm : System.Windows.Forms.Form
     private Mutex m_Mutex; //used to mantain a reference to the mutex to ensure it is not released
     private Icon m_ico;
     private FormWindowState m_PreviousState;
-    private Hathi.Controls.HathiToggleButton btnFriends;
+    private Hathi.UI.Winform.Controls.HathiToggleButton btnFriends;
     private System.Windows.Forms.Label labelSessionUP;
     private System.Windows.Forms.Label labelSessionDO;
     private string m_LastChatMessage;
@@ -413,7 +413,7 @@ public class HathiForm : System.Windows.Forms.Form
     private void InitializeComponent()
     {
         this.components = new System.ComponentModel.Container();
-        System.Resources.ResourceManager resources = new System.Resources.ResourceManager(typeof(HathiForm));
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HathiForm));
         this.panelStatusBar = new System.Windows.Forms.Panel();
         this.panelStatusBarExtensible = new System.Windows.Forms.Panel();
         this.panelStatusBarRight = new System.Windows.Forms.Panel();
@@ -430,18 +430,18 @@ public class HathiForm : System.Windows.Forms.Form
         this.buttonAbout = new System.Windows.Forms.Button();
         this.labelSessionDO = new System.Windows.Forms.Label();
         this.labelSessionUP = new System.Windows.Forms.Label();
-        this.graphics = new Hathi.Controls.HathiGraphic(this.components);
+        this.graphics = new Hathi.UI.Winform.Controls.HathiGraphic(this.components);
         this.panelToolbarRight = new System.Windows.Forms.Panel();
         this.panelButtons = new System.Windows.Forms.Panel();
-        this.HathiButtonConnect = new Hathi.Controls.HathiButton(this.components);
+        this.HathiButtonConnect = new Hathi.UI.Winform.Controls.HathiButton(this.components);
         this.imageListServerCon = new System.Windows.Forms.ImageList(this.components);
-        this.buttonOptions = new Hathi.Controls.HathiButton(this.components);
+        this.buttonOptions = new Hathi.UI.Winform.Controls.HathiButton(this.components);
         this.imageListOptions = new System.Windows.Forms.ImageList(this.components);
-        this.btnFriends = new Hathi.Controls.HathiToggleButton(this.components);
-        this.btnServers = new Hathi.Controls.HathiToggleButton(this.components);
-        this.btnSearch = new Hathi.Controls.HathiToggleButton(this.components);
-        this.btnUploads = new Hathi.Controls.HathiToggleButton(this.components);
-        this.btnDownloads = new Hathi.Controls.HathiToggleButton(this.components);
+        this.btnFriends = new Hathi.UI.Winform.Controls.HathiToggleButton(this.components);
+        this.btnServers = new Hathi.UI.Winform.Controls.HathiToggleButton(this.components);
+        this.btnSearch = new Hathi.UI.Winform.Controls.HathiToggleButton(this.components);
+        this.btnUploads = new Hathi.UI.Winform.Controls.HathiToggleButton(this.components);
+        this.btnDownloads = new Hathi.UI.Winform.Controls.HathiToggleButton(this.components);
         this.imageListServerDiscon = new System.Windows.Forms.ImageList(this.components);
         this.imageListHelp = new System.Windows.Forms.ImageList(this.components);
         this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
@@ -459,12 +459,13 @@ public class HathiForm : System.Windows.Forms.Form
         this.panelStatusBar.SuspendLayout();
         this.panelStatusBarLeft.SuspendLayout();
         this.panelExtensible.SuspendLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.graphics)).BeginInit();
         this.panelButtons.SuspendLayout();
         this.panelGraphic.SuspendLayout();
         this.SuspendLayout();
-        //
+        // 
         // panelStatusBar
-        //
+        // 
         this.panelStatusBar.Controls.Add(this.panelStatusBarExtensible);
         this.panelStatusBar.Controls.Add(this.panelStatusBarRight);
         this.panelStatusBar.Controls.Add(this.panelStatusBarLeft);
@@ -474,27 +475,27 @@ public class HathiForm : System.Windows.Forms.Form
         this.panelStatusBar.Name = "panelStatusBar";
         this.panelStatusBar.Size = new System.Drawing.Size(880, 22);
         this.panelStatusBar.TabIndex = 11;
-        //
+        // 
         // panelStatusBarExtensible
-        //
+        // 
         this.panelStatusBarExtensible.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelStatusBarExtensible.BackgroundImage")));
         this.panelStatusBarExtensible.Dock = System.Windows.Forms.DockStyle.Fill;
         this.panelStatusBarExtensible.Location = new System.Drawing.Point(771, 0);
         this.panelStatusBarExtensible.Name = "panelStatusBarExtensible";
         this.panelStatusBarExtensible.Size = new System.Drawing.Size(95, 22);
         this.panelStatusBarExtensible.TabIndex = 10;
-        //
+        // 
         // panelStatusBarRight
-        //
+        // 
         this.panelStatusBarRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelStatusBarRight.BackgroundImage")));
         this.panelStatusBarRight.Dock = System.Windows.Forms.DockStyle.Right;
         this.panelStatusBarRight.Location = new System.Drawing.Point(866, 0);
         this.panelStatusBarRight.Name = "panelStatusBarRight";
         this.panelStatusBarRight.Size = new System.Drawing.Size(14, 22);
         this.panelStatusBarRight.TabIndex = 9;
-        //
+        // 
         // panelStatusBarLeft
-        //
+        // 
         this.panelStatusBarLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelStatusBarLeft.BackgroundImage")));
         this.panelStatusBarLeft.Controls.Add(this.labelStatusMsg);
         this.panelStatusBarLeft.Controls.Add(this.labelStatusAvgDOSpeed);
@@ -506,30 +507,30 @@ public class HathiForm : System.Windows.Forms.Form
         this.panelStatusBarLeft.Name = "panelStatusBarLeft";
         this.panelStatusBarLeft.Size = new System.Drawing.Size(771, 22);
         this.panelStatusBarLeft.TabIndex = 8;
-        //
+        // 
         // labelStatusMsg
-        //
+        // 
         this.labelStatusMsg.BackColor = System.Drawing.Color.Transparent;
-        this.labelStatusMsg.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(68)), ((System.Byte)(69)), ((System.Byte)(151)));
+        this.labelStatusMsg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(151)))));
         this.labelStatusMsg.Location = new System.Drawing.Point(3, 5);
         this.labelStatusMsg.Name = "labelStatusMsg";
         this.labelStatusMsg.Size = new System.Drawing.Size(320, 13);
         this.labelStatusMsg.TabIndex = 11;
         this.labelStatusMsg.Text = "Hathi v";
         this.labelStatusMsg.TextChanged += new System.EventHandler(this.labelStatusMsg_TextChanged);
-        //
+        // 
         // labelStatusAvgDOSpeed
-        //
+        // 
         this.labelStatusAvgDOSpeed.BackColor = System.Drawing.Color.Transparent;
-        this.labelStatusAvgDOSpeed.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(68)), ((System.Byte)(69)), ((System.Byte)(151)));
+        this.labelStatusAvgDOSpeed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(151)))));
         this.labelStatusAvgDOSpeed.Location = new System.Drawing.Point(456, 5);
         this.labelStatusAvgDOSpeed.Name = "labelStatusAvgDOSpeed";
         this.labelStatusAvgDOSpeed.Size = new System.Drawing.Size(72, 11);
         this.labelStatusAvgDOSpeed.TabIndex = 10;
         this.labelStatusAvgDOSpeed.Text = "AVGDO:0";
-        //
+        // 
         // labelStatusDOSpeed
-        //
+        // 
         this.labelStatusDOSpeed.BackColor = System.Drawing.Color.Transparent;
         this.labelStatusDOSpeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.labelStatusDOSpeed.ForeColor = System.Drawing.Color.Green;
@@ -538,9 +539,9 @@ public class HathiForm : System.Windows.Forms.Form
         this.labelStatusDOSpeed.Size = new System.Drawing.Size(48, 11);
         this.labelStatusDOSpeed.TabIndex = 9;
         this.labelStatusDOSpeed.Text = "DO:0";
-        //
+        // 
         // labelStatusUPSpeed
-        //
+        // 
         this.labelStatusUPSpeed.BackColor = System.Drawing.Color.Transparent;
         this.labelStatusUPSpeed.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.labelStatusUPSpeed.ForeColor = System.Drawing.Color.Red;
@@ -549,39 +550,40 @@ public class HathiForm : System.Windows.Forms.Form
         this.labelStatusUPSpeed.Size = new System.Drawing.Size(46, 12);
         this.labelStatusUPSpeed.TabIndex = 8;
         this.labelStatusUPSpeed.Text = "UP:0";
-        //
+        // 
         // labelStatusServer
-        //
+        // 
         this.labelStatusServer.BackColor = System.Drawing.Color.Transparent;
         this.labelStatusServer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-        this.labelStatusServer.ForeColor = System.Drawing.Color.FromArgb(((System.Byte)(68)), ((System.Byte)(69)), ((System.Byte)(151)));
+        this.labelStatusServer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(69)))), ((int)(((byte)(151)))));
         this.labelStatusServer.Location = new System.Drawing.Point(537, 6);
         this.labelStatusServer.Name = "labelStatusServer";
         this.labelStatusServer.Size = new System.Drawing.Size(216, 11);
         this.labelStatusServer.TabIndex = 6;
         this.labelStatusServer.Text = "Not connected";
         this.toolTipMain.SetToolTip(this.labelStatusServer, "Users:0 Files:0");
-        //
+        // 
         // panel1
-        //
+        // 
         this.panel1.Location = new System.Drawing.Point(0, 0);
         this.panel1.Name = "panel1";
+        this.panel1.Size = new System.Drawing.Size(200, 100);
         this.panel1.TabIndex = 0;
-        //
+        // 
         // panelContent
-        //
+        // 
         this.panelContent.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                                    | System.Windows.Forms.AnchorStyles.Left)
-                                    | System.Windows.Forms.AnchorStyles.Right)));
+                    | System.Windows.Forms.AnchorStyles.Left)
+                    | System.Windows.Forms.AnchorStyles.Right)));
         this.panelContent.Location = new System.Drawing.Point(0, 63);
         this.panelContent.Name = "panelContent";
         this.panelContent.Size = new System.Drawing.Size(880, 381);
         this.panelContent.TabIndex = 10;
-        //
+        // 
         // panelExtensible
-        //
+        // 
         this.panelExtensible.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                                       | System.Windows.Forms.AnchorStyles.Right)));
+                    | System.Windows.Forms.AnchorStyles.Right)));
         this.panelExtensible.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelExtensible.BackgroundImage")));
         this.panelExtensible.Controls.Add(this.buttonAboutMenu);
         this.panelExtensible.Controls.Add(this.buttonAbout);
@@ -591,9 +593,9 @@ public class HathiForm : System.Windows.Forms.Form
         this.panelExtensible.Name = "panelExtensible";
         this.panelExtensible.Size = new System.Drawing.Size(216, 58);
         this.panelExtensible.TabIndex = 9;
-        //
+        // 
         // buttonAboutMenu
-        //
+        // 
         this.buttonAboutMenu.BackColor = System.Drawing.Color.Transparent;
         this.buttonAboutMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
         this.buttonAboutMenu.Location = new System.Drawing.Point(127, 3);
@@ -601,10 +603,11 @@ public class HathiForm : System.Windows.Forms.Form
         this.buttonAboutMenu.Size = new System.Drawing.Size(17, 19);
         this.buttonAboutMenu.TabIndex = 10;
         this.buttonAboutMenu.Text = ">";
+        this.buttonAboutMenu.UseVisualStyleBackColor = false;
         this.buttonAboutMenu.Click += new System.EventHandler(this.buttonAboutMenu_Click);
-        //
+        // 
         // buttonAbout
-        //
+        // 
         this.buttonAbout.BackColor = System.Drawing.Color.Transparent;
         this.buttonAbout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
         this.buttonAbout.ForeColor = System.Drawing.Color.Black;
@@ -614,36 +617,37 @@ public class HathiForm : System.Windows.Forms.Form
         this.buttonAbout.TabIndex = 9;
         this.buttonAbout.TabStop = false;
         this.buttonAbout.Text = "About ...";
+        this.buttonAbout.UseVisualStyleBackColor = false;
         this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
-        //
+        // 
         // labelSessionDO
-        //
+        // 
         this.labelSessionDO.AutoSize = true;
         this.labelSessionDO.BackColor = System.Drawing.Color.Transparent;
         this.labelSessionDO.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-        this.labelSessionDO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+        this.labelSessionDO.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.labelSessionDO.ForeColor = System.Drawing.Color.Green;
         this.labelSessionDO.Location = new System.Drawing.Point(56, 24);
         this.labelSessionDO.Name = "labelSessionDO";
-        this.labelSessionDO.Size = new System.Drawing.Size(90, 14);
+        this.labelSessionDO.Size = new System.Drawing.Size(104, 13);
         this.labelSessionDO.TabIndex = 8;
         this.labelSessionDO.Text = "Downloaded: 00.0 B";
-        //
+        // 
         // labelSessionUP
-        //
+        // 
         this.labelSessionUP.AutoSize = true;
         this.labelSessionUP.BackColor = System.Drawing.Color.Transparent;
         this.labelSessionUP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-        this.labelSessionUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((System.Byte)(0)));
+        this.labelSessionUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
         this.labelSessionUP.ForeColor = System.Drawing.Color.Red;
         this.labelSessionUP.Location = new System.Drawing.Point(56, 40);
         this.labelSessionUP.Name = "labelSessionUP";
-        this.labelSessionUP.Size = new System.Drawing.Size(78, 14);
+        this.labelSessionUP.Size = new System.Drawing.Size(89, 13);
         this.labelSessionUP.TabIndex = 7;
         this.labelSessionUP.Text = "Uploaded: 00.0 B";
-        //
+        // 
         // graphics
-        //
+        // 
         this.graphics.AutoGraphicScale = false;
         this.graphics.BackColor = System.Drawing.Color.Transparent;
         this.graphics.GraphicScale = 0;
@@ -653,18 +657,18 @@ public class HathiForm : System.Windows.Forms.Form
         this.graphics.TabIndex = 0;
         this.graphics.TabStop = false;
         this.graphics.MouseUp += new System.Windows.Forms.MouseEventHandler(this.graphics_Click);
-        //
+        // 
         // panelToolbarRight
-        //
+        // 
         this.panelToolbarRight.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
         this.panelToolbarRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelToolbarRight.BackgroundImage")));
         this.panelToolbarRight.Location = new System.Drawing.Point(872, 0);
         this.panelToolbarRight.Name = "panelToolbarRight";
         this.panelToolbarRight.Size = new System.Drawing.Size(8, 58);
         this.panelToolbarRight.TabIndex = 8;
-        //
+        // 
         // panelButtons
-        //
+        // 
         this.panelButtons.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelButtons.BackgroundImage")));
         this.panelButtons.Controls.Add(this.HathiButtonConnect);
         this.panelButtons.Controls.Add(this.buttonOptions);
@@ -677,9 +681,9 @@ public class HathiForm : System.Windows.Forms.Form
         this.panelButtons.Name = "panelButtons";
         this.panelButtons.Size = new System.Drawing.Size(400, 58);
         this.panelButtons.TabIndex = 7;
-        //
+        // 
         // HathiButtonConnect
-        //
+        // 
         this.HathiButtonConnect.BackColor = System.Drawing.Color.Transparent;
         this.HathiButtonConnect.Cursor = System.Windows.Forms.Cursors.Hand;
         this.HathiButtonConnect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -689,17 +693,19 @@ public class HathiForm : System.Windows.Forms.Form
         this.HathiButtonConnect.Name = "HathiButtonConnect";
         this.HathiButtonConnect.Size = new System.Drawing.Size(40, 40);
         this.HathiButtonConnect.TabIndex = 6;
+        this.HathiButtonConnect.UseVisualStyleBackColor = false;
         this.HathiButtonConnect.Click += new System.EventHandler(this.HathiButton1_Click);
-        //
+        // 
         // imageListServerCon
-        //
-        this.imageListServerCon.ColorDepth = System.Windows.Forms.ColorDepth.Depth16Bit;
-        this.imageListServerCon.ImageSize = new System.Drawing.Size(19, 19);
+        // 
         this.imageListServerCon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListServerCon.ImageStream")));
         this.imageListServerCon.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        this.imageListServerCon.Images.SetKeyName(0, "");
+        this.imageListServerCon.Images.SetKeyName(1, "");
+        this.imageListServerCon.Images.SetKeyName(2, "");
+        // 
         // buttonOptions
-        //
+        // 
         this.buttonOptions.Cursor = System.Windows.Forms.Cursors.Hand;
         this.buttonOptions.ImageIndex = 0;
         this.buttonOptions.ImageList = this.imageListOptions;
@@ -708,15 +714,17 @@ public class HathiForm : System.Windows.Forms.Form
         this.buttonOptions.Size = new System.Drawing.Size(40, 40);
         this.buttonOptions.TabIndex = 5;
         this.buttonOptions.Click += new System.EventHandler(this.buttonOptions_Click);
-        //
+        // 
         // imageListOptions
-        //
-        this.imageListOptions.ImageSize = new System.Drawing.Size(19, 19);
+        // 
         this.imageListOptions.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListOptions.ImageStream")));
         this.imageListOptions.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        this.imageListOptions.Images.SetKeyName(0, "");
+        this.imageListOptions.Images.SetKeyName(1, "");
+        this.imageListOptions.Images.SetKeyName(2, "");
+        // 
         // btnFriends
-        //
+        // 
         this.btnFriends.Appearance = System.Windows.Forms.Appearance.Button;
         this.btnFriends.BackColor = System.Drawing.Color.Transparent;
         this.btnFriends.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -726,10 +734,11 @@ public class HathiForm : System.Windows.Forms.Form
         this.btnFriends.TabIndex = 4;
         this.btnFriends.Tag = "Friends";
         this.btnFriends.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+        this.btnFriends.UseVisualStyleBackColor = false;
         this.btnFriends.CheckedChanged += new System.EventHandler(this.btnShared_CheckedChanged);
-        //
+        // 
         // btnServers
-        //
+        // 
         this.btnServers.Appearance = System.Windows.Forms.Appearance.Button;
         this.btnServers.BackColor = System.Drawing.Color.Transparent;
         this.btnServers.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -739,10 +748,11 @@ public class HathiForm : System.Windows.Forms.Form
         this.btnServers.TabIndex = 3;
         this.btnServers.Tag = "Servers";
         this.btnServers.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+        this.btnServers.UseVisualStyleBackColor = false;
         this.btnServers.CheckedChanged += new System.EventHandler(this.btnServers_CheckedChanged);
-        //
+        // 
         // btnSearch
-        //
+        // 
         this.btnSearch.Appearance = System.Windows.Forms.Appearance.Button;
         this.btnSearch.BackColor = System.Drawing.Color.Transparent;
         this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -752,10 +762,11 @@ public class HathiForm : System.Windows.Forms.Form
         this.btnSearch.TabIndex = 2;
         this.btnSearch.Tag = "Search";
         this.btnSearch.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+        this.btnSearch.UseVisualStyleBackColor = false;
         this.btnSearch.CheckedChanged += new System.EventHandler(this.btnSearch_CheckedChanged);
-        //
+        // 
         // btnUploads
-        //
+        // 
         this.btnUploads.Appearance = System.Windows.Forms.Appearance.Button;
         this.btnUploads.BackColor = System.Drawing.Color.Transparent;
         this.btnUploads.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -765,10 +776,11 @@ public class HathiForm : System.Windows.Forms.Form
         this.btnUploads.TabIndex = 1;
         this.btnUploads.Tag = "Upload";
         this.btnUploads.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+        this.btnUploads.UseVisualStyleBackColor = false;
         this.btnUploads.CheckedChanged += new System.EventHandler(this.btnUploads_CheckedChanged);
-        //
+        // 
         // btnDownloads
-        //
+        // 
         this.btnDownloads.Appearance = System.Windows.Forms.Appearance.Button;
         this.btnDownloads.BackColor = System.Drawing.Color.White;
         this.btnDownloads.Checked = true;
@@ -780,100 +792,106 @@ public class HathiForm : System.Windows.Forms.Form
         this.btnDownloads.TabStop = true;
         this.btnDownloads.Tag = "Download";
         this.btnDownloads.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+        this.btnDownloads.UseVisualStyleBackColor = false;
         this.btnDownloads.CheckedChanged += new System.EventHandler(this.btnDownloads_CheckedChanged);
-        //
+        // 
         // imageListServerDiscon
-        //
-        this.imageListServerDiscon.ImageSize = new System.Drawing.Size(19, 19);
+        // 
         this.imageListServerDiscon.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListServerDiscon.ImageStream")));
         this.imageListServerDiscon.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        this.imageListServerDiscon.Images.SetKeyName(0, "");
+        this.imageListServerDiscon.Images.SetKeyName(1, "");
+        this.imageListServerDiscon.Images.SetKeyName(2, "");
+        // 
         // imageListHelp
-        //
-        this.imageListHelp.ImageSize = new System.Drawing.Size(19, 19);
+        // 
         this.imageListHelp.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListHelp.ImageStream")));
         this.imageListHelp.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        this.imageListHelp.Images.SetKeyName(0, "");
+        this.imageListHelp.Images.SetKeyName(1, "");
+        this.imageListHelp.Images.SetKeyName(2, "");
+        // 
         // panelGraphic
-        //
+        // 
         this.panelGraphic.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelGraphic.BackgroundImage")));
         this.panelGraphic.Controls.Add(this.graphics);
         this.panelGraphic.Location = new System.Drawing.Point(400, 0);
         this.panelGraphic.Name = "panelGraphic";
         this.panelGraphic.Size = new System.Drawing.Size(312, 58);
         this.panelGraphic.TabIndex = 12;
-        //
+        // 
         // notifyIcon1
-        //
+        // 
         this.notifyIcon1.ContextMenu = this.contextMenuNotifyIcon;
         this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
         this.notifyIcon1.Text = "Hathi";
         this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
-        //
+        // 
         // contextMenuNotifyIcon
-        //
+        // 
         this.contextMenuNotifyIcon.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemNotifyIconOpen,
             this.menuItemNotifyIconQuit,
-            this.menuItemNotifyIconOptions
-        });
-        //
+            this.menuItemNotifyIconOptions});
+        // 
         // menuItemNotifyIconOpen
-        //
+        // 
         this.menuItemNotifyIconOpen.DefaultItem = true;
         this.menuItemNotifyIconOpen.Index = 0;
         this.menuItemNotifyIconOpen.Text = "Open";
         this.menuItemNotifyIconOpen.Click += new System.EventHandler(this.notifyIcon1_DoubleClick);
-        //
+        // 
         // menuItemNotifyIconQuit
-        //
+        // 
         this.menuItemNotifyIconQuit.Index = 1;
         this.menuItemNotifyIconQuit.Text = "Quit";
         this.menuItemNotifyIconQuit.Click += new System.EventHandler(this.menuItemQuitNotifyIcon_click);
-        //
+        // 
         // menuItemNotifyIconOptions
-        //
+        // 
         this.menuItemNotifyIconOptions.Index = 2;
         this.menuItemNotifyIconOptions.Text = "Options";
         this.menuItemNotifyIconOptions.Click += new System.EventHandler(this.menuItemOptionsNotifyIcon_click);
-        //
+        // 
         // imageListIcons
-        //
-        this.imageListIcons.ImageSize = new System.Drawing.Size(16, 16);
+        // 
         this.imageListIcons.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageListIcons.ImageStream")));
         this.imageListIcons.TransparentColor = System.Drawing.Color.Transparent;
-        //
+        this.imageListIcons.Images.SetKeyName(0, "");
+        this.imageListIcons.Images.SetKeyName(1, "");
+        this.imageListIcons.Images.SetKeyName(2, "");
+        // 
         // contextMenuAbout
-        //
+        // 
         this.contextMenuAbout.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
             this.menuItemWeb,
             this.menuItemSupport,
-            this.menuItemSkins
-        });
-        //
+            this.menuItemSkins});
+        this.contextMenuAbout.Popup += new System.EventHandler(this.contextMenuAbout_Popup);
+        // 
         // menuItemWeb
-        //
+        // 
         this.menuItemWeb.Index = 0;
         this.menuItemWeb.Text = "Hathi Web";
         this.menuItemWeb.Click += new System.EventHandler(this.menuItemAbout_click);
-        //
+        // 
         // menuItemSupport
-        //
+        // 
         this.menuItemSupport.Index = 1;
         this.menuItemSupport.Text = "Hathi support";
         this.menuItemSupport.Click += new System.EventHandler(this.menuItemAbout_click);
-        //
+        // 
         // menuItemSkins
-        //
+        // 
         this.menuItemSkins.Index = 2;
         this.menuItemSkins.Text = "Hathi skins";
         this.menuItemSkins.Click += new System.EventHandler(this.menuItemAbout_click);
-        //
+        // 
         // HathiForm
-        //
+        // 
         this.AllowDrop = true;
         this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-        this.BackColor = System.Drawing.Color.FromArgb(((System.Byte)(222)), ((System.Byte)(231)), ((System.Byte)(247)));
+        this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
         this.ClientSize = new System.Drawing.Size(880, 466);
         this.Controls.Add(this.panelGraphic);
         this.Controls.Add(this.panelStatusBar);
@@ -884,18 +902,21 @@ public class HathiForm : System.Windows.Forms.Form
         this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         this.Name = "HathiForm";
         this.Text = "Hathi v";
-        this.Resize += new System.EventHandler(this.HathiForm_Resize);
-        this.Closing += new System.ComponentModel.CancelEventHandler(this.HathiForm_Closing);
         this.Load += new System.EventHandler(this.HathiForm_Load);
-        this.DragOver += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragOver);
-        this.DragDrop += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragDrop);
         this.Activated += new System.EventHandler(this.HathiForm_Activated);
+        this.DragDrop += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragDrop);
+        this.Closing += new System.ComponentModel.CancelEventHandler(this.HathiForm_Closing);
+        this.Resize += new System.EventHandler(this.HathiForm_Resize);
+        this.DragOver += new System.Windows.Forms.DragEventHandler(this.HathiForm_DragOver);
         this.panelStatusBar.ResumeLayout(false);
         this.panelStatusBarLeft.ResumeLayout(false);
         this.panelExtensible.ResumeLayout(false);
+        this.panelExtensible.PerformLayout();
+        ((System.ComponentModel.ISupportInitialize)(this.graphics)).EndInit();
         this.panelButtons.ResumeLayout(false);
         this.panelGraphic.ResumeLayout(false);
         this.ResumeLayout(false);
+
     }
     #endregion
 
@@ -1356,7 +1377,7 @@ public class HathiForm : System.Windows.Forms.Form
                 System.Diagnostics.Process.Start("http://hathi.sourceforge.net");
                 break;
             case 1:
-                System.Diagnostics.Process.Start("http://hathi.sourceforge.net/forum");
+                System.Diagnostics.Process.Start("http://sourceforge.net/forum/forum.php?forum_id=962503");
                 break;
             case 2:
                 System.Diagnostics.Process.Start("http://hathi.sourceforge.net/skins");
@@ -1418,6 +1439,11 @@ public class HathiForm : System.Windows.Forms.Form
                 if (krnGateway!=null) krnGateway.DownloadElink(txtLink,false);
             }
         }
+    }
+
+    private void contextMenuAbout_Popup(object sender, EventArgs e)
+    {
+
     }
 
 }

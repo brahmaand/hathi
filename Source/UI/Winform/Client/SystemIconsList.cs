@@ -33,7 +33,7 @@ using System.IO;
 using System.Drawing;
 using System.Runtime.InteropServices;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Cache of the system icons associated to file extensions

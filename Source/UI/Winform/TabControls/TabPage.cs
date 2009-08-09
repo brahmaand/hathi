@@ -4,7 +4,7 @@ using System.Text;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 	/// <summary>
 	/// This is a control deriving from DockContent and acts like a tab page

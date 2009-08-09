@@ -33,7 +33,7 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using System.Threading;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for FormAbout.
@@ -43,7 +43,7 @@ public class FormAbout : System.Windows.Forms.Form
     private System.Windows.Forms.Label label5;
     private System.Windows.Forms.LinkLabel linkLabel1;
     private System.Windows.Forms.Timer timer1;
-    private Hathi.Controls.ScrollingCredits scrollingCredits;
+    private Hathi.UI.Winform.Controls.ScrollingCredits scrollingCredits;
     private System.ComponentModel.IContainer components;
     private double m_dblOpacityIncrement = .1;
     private double m_dblOpacityDecrement = .1;
@@ -86,7 +86,7 @@ public class FormAbout : System.Windows.Forms.Form
         this.label5 = new System.Windows.Forms.Label();
         this.linkLabel1 = new System.Windows.Forms.LinkLabel();
         this.timer1 = new System.Windows.Forms.Timer(this.components);
-        this.scrollingCredits = new Hathi.Controls.ScrollingCredits();
+        this.scrollingCredits = new Hathi.UI.Winform.Controls.ScrollingCredits();
         this.SuspendLayout();
         // 
         // label5

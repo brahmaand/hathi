@@ -30,7 +30,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Drawing;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 public class Win32
 {

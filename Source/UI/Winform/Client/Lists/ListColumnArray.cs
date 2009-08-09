@@ -29,7 +29,7 @@
 using System;
 using System.Collections;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Summary description for ListColumnArray.

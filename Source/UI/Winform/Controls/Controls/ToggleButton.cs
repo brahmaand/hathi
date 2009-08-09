@@ -35,7 +35,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 
 
-namespace Hathi.Controls
+namespace Hathi.UI.Winform.Controls
 {
 /// <summary>
     /// Describes the Hathi Toggle Button functionality

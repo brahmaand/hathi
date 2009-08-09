@@ -34,7 +34,7 @@ using System.Windows.Forms;
 using Hathi.eDonkey;
 using Hathi.Types;
 
-namespace Hathi.Client
+namespace Hathi.UI.Winform
 {
 /// <summary>
 /// Descripción breve de FormAviDetails.
