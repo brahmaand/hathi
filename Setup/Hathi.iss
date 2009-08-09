@@ -30,9 +30,9 @@
 AppName=Hathi
 
 ;----------------- TO UPDATE FOR A NEW VERSION ----------------------
-AppVerName=Hathi v0.1.0.0
-AppVersion=v0.1.0.0
-VersionInfoVersion=0.1.0.0
+AppVerName=Hathi v0.1.2.0
+AppVersion=v0.1.2.0
+VersionInfoVersion=0.1.2.0
 ;--------------------------------------------------------------------
 
 AppPublisher=Hathi Project
@@ -50,24 +50,24 @@ ShowLanguageDialog=auto
 InfoBeforeFile=..\readme.txt
 Compression=lzma
 SolidCompression=true
-UninstallDisplayIcon={app}\Hathi.Client.exe
+UninstallDisplayIcon={app}\Hathi.UI.Winform.exe
 VersionInfoCompany=Hathi Project
 VersionInfoDescription=Hathi : P2P client
 OutputDir=..\Setup
 
 [Files]
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
-Source: ..\Source\Client\bin\Release\Hathi.Client.exe; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\Hathi.dll; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\Hathi.Interface.dll; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\MagicLibrary.dll; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\ICSharpCode.SharpZipLib.dll; DestDir: {app}; Flags: ignoreversion
-Source: ..\Source\Client\bin\Release\server.met; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
+Source: ..\Source\UI\Winform\bin\Release\Hathi.UI.Winform.exe; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\Hathi.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\Hathi.UI.Winform.Controls.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\WeifenLuo.WinFormsUI.Docking.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\ICSharpCode.SharpZipLib.dll; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\server.met; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
 ;Source: ..\Source\Client\bin\Release\ipfilter.dat; DestDir: {app}; Flags: ignoreversion skipifsourcedoesntexist
-Source: ..\Source\Client\bin\Release\webSearchs.xml; DestDir: {app}; Flags: ignoreversion
+Source: ..\Source\UI\Winform\bin\Release\webSearchs.xml; DestDir: {app}; Flags: ignoreversion
 ; Check: BackupFile({app}\webSearchs.xml)
-Source: ..\Source\Client\bin\Release\Language\*; DestDir: {app}\Language; Flags: ignoreversion recursesubdirs
-Source: ..\Source\Client\bin\Release\Skins\*; DestDir: {app}\Skins; Flags: ignoreversion recursesubdirs
+Source: ..\Source\UI\Winform\bin\Release\Language\*; DestDir: {app}\Language; Flags: ignoreversion recursesubdirs
+Source: ..\Source\UI\Winform\bin\Release\Skins\*; DestDir: {app}\Skins; Flags: ignoreversion recursesubdirs
 Source: ..\changelog.txt; DestDir: {app}; Flags: ignoreversion isreadme
 Source: ..\readme.txt; DestDir: {app}; Flags: ignoreversion
 Source: ..\license.txt; DestDir: {app}; Flags: ignoreversion
@@ -76,25 +76,25 @@ Source: ..\license.txt; DestDir: {app}; Flags: ignoreversion
 Source: Language\Custom-*; DestDir: {tmp}; Flags: dontcopy
 
 [INI]
-Filename: {app}\Hathi.Client.url; Section: InternetShortcut; Key: URL; String: http://hathi.sourceforge.net
+Filename: {app}\Hathi.url; Section: InternetShortcut; Key: URL; String: http://hathi.sourceforge.net
 Filename: {app}\dotnet.url; Section: InternetShortcut; Key: URL; String: http://www.microsoft.com/downloads/details.aspx?FamilyID=0856EACB-4362-4B0D-8EDD-AAB15C5E04F5&DisplayLang=en
 
 [Icons]
-Name: {group}\Hathi; Filename: {app}\Hathi.Client.exe
+Name: {group}\Hathi; Filename: {app}\Hathi.UI.Winform.exe
 Name: {group}\Readme; Filename: {app}\readme.txt
 ; NOTE: The following entry contains an English phrase ("on the Web"). You are free to translate it into another language if required.
-Name: {group}\Hathi on the Web; Filename: {app}\Hathi.Client.url
+Name: {group}\Hathi on the Web; Filename: {app}\Hathi.url
 Name: {group}\Install .NET 2.0 Framework; Filename: {app}\dotnet.url
 ; NOTE: The following entry contains an English phrase ("Uninstall"). You are free to translate it into another language if required.
 Name: {group}\Uninstall Hathi; Filename: {uninstallexe}
-Name: {userdesktop}\Hathi; Filename: {app}\Hathi.Client.exe; Tasks: desktopicon
+Name: {userdesktop}\Hathi; Filename: {app}\Hathi.UI.Winform.exe; Tasks: desktopicon
 
 [Run]
 ; NOTE: The following entry contains an English phrase ("Launch"). You are free to translate it into another language if required.
-Filename: {app}\Hathi.Client.exe; Description: {code:GetSectionMessages|LaunchHathi}; Flags: nowait postinstall skipifsilent unchecked
+Filename: {app}\Hathi.UI.Winform.exe; Description: {code:GetSectionMessages|LaunchHathi}; Flags: nowait postinstall skipifsilent unchecked
 
 [UninstallDelete]
-Type: files; Name: {app}\Hathi.Client.url
+Type: files; Name: {app}\Hathi.url
 Type: files; Name: {app}\dotnet.url
 
 [Tasks]
