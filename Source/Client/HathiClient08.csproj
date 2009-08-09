@@ -1,4 +1,4 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
   <PropertyGroup>
     <ProjectType>Local</ProjectType>
     <ProductVersion>9.0.30729</ProductVersion>
@@ -77,11 +77,6 @@
       <Name>ICSharpCode.SharpZipLib</Name>
       <HintPath>..\Kernel\ICSharpCode.SharpZipLib.dll</HintPath>
     </Reference>
-    <Reference Include="MagicLibrary">
-      <Name>MagicLibrary</Name>
-      <HintPath>MagicLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System">
       <Name>System</Name>
     </Reference>
@@ -102,6 +97,10 @@
     </Reference>
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.3.1.24483, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
     </Reference>
     <ProjectReference Include="..\Interface\Hathi.Controls.csproj">
       <Project>{68817627-41F1-43C9-A912-20906FD7E5CC}</Project>
@@ -219,6 +218,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="TabControls\TabControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TabControls\TabControl.designer.cs">
+      <DependentUpon>TabControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TabControls\TabPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Utils.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -226,19 +234,16 @@
     <Content Include="Client\webSearchs.xml" />
     <Content Include="Language\interface_ca-ES.xml" />
     <Content Include="Language\interface_de-DE.xml" />
-    <Content Include="Language\interface_el-GR.xml" />
     <Content Include="Language\interface_en-US.xml" />
     <Content Include="Language\interface_es-ES.xml" />
     <Content Include="Language\interface_fi-FI.xml" />
     <Content Include="Language\interface_fr-FR.xml" />
     <Content Include="Language\interface_gl-ES.xml" />
-    <Content Include="Language\interface_hi-IN.xml" />
     <Content Include="Language\interface_hu-HU.xml" />
     <Content Include="Language\interface_it-IT.xml" />
     <Content Include="Language\interface_pl-PL.xml" />
     <Content Include="Language\interface_pt-BR.xml" />
     <Content Include="Language\interface_ru-RU.xml" />
-    <Content Include="Language\interface_uk-UA.xml" />
     <Content Include="Language\interface_zh-TW.xml" />
     <Content Include="MagicLibrary.dll" />
     <EmbeddedResource Include="Client\HathiForm.resx">

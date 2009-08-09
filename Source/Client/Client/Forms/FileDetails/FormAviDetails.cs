@@ -33,7 +33,6 @@ using System.ComponentModel;
 using System.Windows.Forms;
 using Hathi.eDonkey;
 using Hathi.Types;
-using Crownwood.Magic.Controls;
 
 namespace Hathi.Client
 {
