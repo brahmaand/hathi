@@ -1,0 +1,48 @@
+﻿<Window x:Class="Hathi.UI.Wpf.HathiWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Hathi" Height="550" Width="877"
+         Background="{DynamicResource MainBackgroundBrush}"
+        Closing="Window_Closing">
+    <Grid>
+        <DockPanel Name="Dockpanel1" LastChildFill="True" Grid.RowSpan="3">
+            <Border Height="50" DockPanel.Dock="Top" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,0,0,1" x:Name="HeaderBorder" Padding="10,0,10,0" >
+                <DockPanel x:Name="Header" >
+                    <TextBlock xml:space="preserve" Opacity="1" FontFamily="Segoe UI" FontSize="24" FontStretch="Normal" FontWeight="Light" TextWrapping="Wrap" Foreground="{DynamicResource FontColor}" VerticalAlignment="Bottom" Margin="0,0,0,5"><Run Foreground="#FFCFD3DA">Hathi - P2P Client</Run></TextBlock>
+                </DockPanel>
+            </Border>
+            <Border x:Name="MenuBorder" VerticalAlignment="Top" DockPanel.Dock="Top" Margin="0,5,0,5">
+                <Menu VerticalAlignment="Bottom" Margin="5,0,0,0" Style="{DynamicResource MenuStyle}" >
+                    <MenuItem Header="_Servers" x:Name="ServersMenu" Style="{DynamicResource MenuItemStyle}" Click="ServersMenu_Click" />
+                    <MenuItem Header="_Friends" x:Name="FriendsMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click" />
+                    <MenuItem Header="_Download" x:Name="DownloadMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click"/>
+                    <MenuItem Header="_Upload" x:Name="UploadMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click"/>
+                    <MenuItem Header="_Search" x:Name="SearchMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click"/>
+                    <MenuItem Header="_Options" x:Name="OptionsMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click"/>
+                    <MenuItem Header="_About" x:Name="AboutMenu" Style="{DynamicResource MenuItemStyle}" Click="OtherMenu_Click" />
+                </Menu>
+            </Border>
+            <Border x:Name="ContentWindow" Margin="5"/>
+        </DockPanel>
+
+        <Grid.ContextMenu>
+            <ContextMenu MenuItem.Click="OnContextMenuItemClick" Width="100" Height="110">
+                <MenuItem Tag=".\Skins\BlackSkin.xaml" IsChecked="True">
+                    <MenuItem.Header>
+                        <Label Content="Black"/>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Tag=".\Skins\GreenSkin.xaml">
+                    <MenuItem.Header>
+                        <Label Content="Green"/>
+                    </MenuItem.Header>
+                </MenuItem>
+                <MenuItem Tag=".\Skins\BlueSkin.xaml">
+                    <MenuItem.Header>
+                        <Label Content="Blue"/>
+                    </MenuItem.Header>
+                </MenuItem>
+            </ContextMenu>
+        </Grid.ContextMenu>
+    </Grid>
+</Window>
